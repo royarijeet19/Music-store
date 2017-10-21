@@ -4,6 +4,10 @@ from random import randint as rint
 from time import sleep
 import csv
 
+"""
+
+"""
+
 def track_length():
     """
     Fetches length/duration of song in MM:SS format
@@ -48,36 +52,54 @@ def fetch_meta(artist, track):
     
     clientID = '2104584822-2DA6486B91DF135895A29CC1A6A3A6E7'
     userID = '49075496506642242-F63F92D359342233D28026EFFADCE3A0'
-    result = pygn.search(clientID=clientID, userID=userID, artist=artist, track=track)
+    meta = False
+    try:
+        result = pygn.search(clientID=clientID,
+                             userID=userID,
+                             artist=artist,
+                             track=track)
+    except:
+        result = False
+        
     
-    meta = {
-        "track" : result["track_title"],
-        "album" : result["album_title"],
-        "artist" : result["album_artist_name"],
-        "track_no" : result["track_number"],
-        "genre" : ", ".join([y["TEXT"] for x,y in result["genre"].iteritems()]),
-        "mood" : ", ".join([y["TEXT"] for x,y in result["mood"].iteritems()]),
-        "year" : result["album_year"],
-        "art" : fix_art(result["album_art_url"]),
-        "duration": track_length(),
-        "price": track_price()
-    }
+    if result:
+        meta = {
+            "track" : result["track_title"],
+            "album" : result["album_title"],
+            "artist" : result["album_artist_name"],
+            "track_no" : result["track_number"],
+            "genre" : [y["TEXT"] for x,y in result["genre"].iteritems()],
+            "mood" : [y["TEXT"] for x,y in result["mood"].iteritems()],
+            "year" : result["album_year"],
+            "art" : fix_art(result["album_art_url"]),
+            "length": track_length(),
+            "price": track_price()
+        }
     return meta
 
 
 def download_metadata(test=False):
+    """
+    Downloads metadata for songs in some_music_to_insert.csv
+    and stores in metadata.json
+    """
+    
     meta = []
+    count = 0
     meta_file = "metadata.json"
     with open('some_music_to_insert.csv', 'rb') as csvfile:
         spamreader = csv.reader(csvfile, delimiter=',', quotechar='"')
         for track,artist in spamreader:
             track_meta = fetch_meta(artist,track)
+            count+=1
+            if not track_meta:
+                continue
             meta.append(track_meta)
             print ""
-            print artist,'-' ,track
+            print count,'-',artist,'-' ,track
             print track_meta
-            sleep(2)
-            if test and (rint(0,10)<3):
+            sleep(1)
+            if test and (rint(0,200)<5):
                 break
                 
 
@@ -85,6 +107,6 @@ def download_metadata(test=False):
         json.dump(meta, w, indent=2)
 
 if __name__ == '__main__':
-    download_metadata(test=True)
+    download_metadata(test=False)
     print "done!"
         
