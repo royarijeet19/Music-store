@@ -16,6 +16,16 @@ def track_length():
     seconds = str(n%60)
     return "{0}:{1}".format(minutes,seconds)
 
+def track_price():
+    """
+    Fetches price of song in dollar.cent format
+    randomly.
+
+    total cost = .99 cent + 2*(random(0, 100)/100)
+    """
+    n = 0.99+2*(rint(0,100)/100.0)
+    return str(n)
+
 
 def fix_art(art_url):
     """
@@ -36,11 +46,9 @@ def fetch_meta(artist, track):
     track, album, artist, track_no, genre, mood, year, art, duration    
     """
     
-    clientID = '2104584822-2DA6486B91DF135895A29CC1A6A3A6E7' # Enter your Client ID from developer.gracenote.com here
-    userID = '49075496506642242-F63F92D359342233D28026EFFADCE3A0' # Get a User ID from pygn.register() - Only register once per end-user
+    clientID = '2104584822-2DA6486B91DF135895A29CC1A6A3A6E7'
+    userID = '49075496506642242-F63F92D359342233D28026EFFADCE3A0'
     result = pygn.search(clientID=clientID, userID=userID, artist=artist, track=track)
-    # print(type(result))
-    # print(json.dumps(result, sort_keys:True, indent:2))
     
     meta = {
         "track" : result["track_title"],
@@ -51,13 +59,13 @@ def fetch_meta(artist, track):
         "mood" : ", ".join([y["TEXT"] for x,y in result["mood"].iteritems()]),
         "year" : result["album_year"],
         "art" : fix_art(result["album_art_url"]),
-        "duration": track_length()
+        "duration": track_length(),
+        "price": track_price()
     }
     return meta
 
-# pprint(fetch_meta("Coldplay", "scientist"))
 
-def download_metadata():
+def download_metadata(test=False):
     meta = []
     meta_file = "metadata.json"
     with open('some_music_to_insert.csv', 'rb') as csvfile:
@@ -68,12 +76,15 @@ def download_metadata():
             print ""
             print artist,'-' ,track
             print track_meta
-            sleep(.1)
+            sleep(2)
+            if test and (rint(0,10)<3):
+                break
+                
 
     with open(meta_file, 'w') as w:
-        json.dump(meta, w)
+        json.dump(meta, w, indent=2)
 
 if __name__ == '__main__':
-    download_metadata()
+    download_metadata(test=True)
     print "done!"
         
