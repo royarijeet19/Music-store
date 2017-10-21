@@ -23,7 +23,10 @@ def fix_art(art_url):
     old url: http://akamai-b.cdn.cddbp.net/cds/2.0/cover/C7D4/F9A2/FBAC/1752_medium_front.jpg?cid=2104584822
     new url: http://akamai-b.cdn.cddbp.net/cds/2.0/cover/C7D4/F9A2/FBAC/1752_large_front.jpg
     """
-    return 
+    art_url = art_url.replace('medium_','large_')
+    art_url = art_url.split('?')[0]
+    
+    return art_url
     
     
 
@@ -47,7 +50,7 @@ def fetch_meta(artist, track):
         "genre" : ", ".join([y["TEXT"] for x,y in result["genre"].iteritems()]),
         "mood" : ", ".join([y["TEXT"] for x,y in result["mood"].iteritems()]),
         "year" : result["album_year"],
-        "art" : result["album_art_url"],
+        "art" : fix_art(result["album_art_url"]),
         "duration": track_length()
     }
     return meta
