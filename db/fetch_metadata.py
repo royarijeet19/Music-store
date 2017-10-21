@@ -42,7 +42,10 @@ def fix_art(art_url):
     
     return art_url
     
-    
+def non_unicode(text):
+    text = ''.join([i if ord(i) < 128 else ' ' for i in text])
+    text = text.replace("'",'')
+    return text
 
 def fetch_meta(artist, track):
     """
@@ -64,9 +67,9 @@ def fetch_meta(artist, track):
     
     if result:
         meta = {
-            "track" : result["track_title"],
-            "album" : result["album_title"],
-            "artist" : result["album_artist_name"],
+            "track" : non_unicode(result["track_title"]),
+            "album" : non_unicode(result["album_title"]),
+            "artist" : non_unicode(result["album_artist_name"]),
             "track_no" : result["track_number"],
             "genre" : [y["TEXT"] for x,y in result["genre"].iteritems()],
             "mood" : [y["TEXT"] for x,y in result["mood"].iteritems()],
