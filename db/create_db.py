@@ -21,12 +21,17 @@ cur.execute("drop table if exists genre")
 cur.execute("drop table if exists mood")
 cur.execute("drop table if exists track")
 cur.execute("drop table if exists album")
+cur.execute("drop table if exists purchase")
+cur.execute("drop table if exists user")
 
 # Create tables
 cur.execute("create table album(album_id char(32), album_name char(50), artist char(30), year int, art char(80), primary key (album_id))")
 cur.execute("create table track(track_id char(32), album_id char(32),track_name char(20), track_no int(3), length char(5), price char(5), primary key (track_id), foreign key (album_id) references album(album_id))")
 cur.execute("create table mood(track_id char(32), mood char(50), foreign key (track_id) references track(track_id))")
 cur.execute("create table genre(track_id char(32), genre char(50), foreign key (track_id) references track(track_id))")
+
+cur.execute("create table user(uname char(10), pwd char(32), admin bit, email char(32), primary key (uname));")
+cur.execute("create table purchase(purchase_id char(32),uname char(10), date datetime, track_id char(32), foreign key (uname) references user(uname));")
 
 
 def mood_insert(track_id, moods):
@@ -65,13 +70,22 @@ def track_insert(**kwargs):
 
 with open('metadata.json') as r:
     meta = json.load(r)
+    inserted = []
     for el in meta:
         print ""
+
+        # todo: remove 3 lines later
+        el['album'] = ''.join([i if ord(i) < 128 else ' ' for i in el['album']]).replace("'",'')
+        el['artist'] = ''.join([i if ord(i) < 128 else ' ' for i in el['artist']]).replace("'",'')
+        el['track'] = ''.join([i if ord(i) < 128 else ' ' for i in el['track']]).replace("'",'')
+
         pprint(el)
         track_id = hashlib.md5(el['track']+el['artist']).hexdigest()
         album_id = hashlib.md5(el['album']+el['artist']).hexdigest()
         print "track_id=", track_id
         print "album_id=", album_id
+        if track_id in inserted:
+            continue
         album_insert(album_id=album_id,
                      album_name=el['album'],
                      artist=el['artist'],
@@ -85,7 +99,7 @@ with open('metadata.json') as r:
                      price=el['price'])
         mood_insert(track_id, el['mood'])
         genre_insert(track_id, el['genre'])
-        
+        inserted.append(track_id)
         db.commit()
         
 print "done!"
