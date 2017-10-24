@@ -1,9 +1,12 @@
 # Node backend calls
 
 ## Sign up page: sign up new user
-*frontend:* Check if all mandatory fields are filled, check for strong pwd. Hash pwd.<br>
-*backend:* store uname, pwd, emailid, address in user table.\\
-If uname or email address already exists return 400 else return 201\\
+*frontend:* Check if all mandatory fields are filled, check for strong pwd. Hash pwd.
+
+*backend:* store uname, pwd, emailid, address in user table.
+
+If uname or email address already exists return 400 else return 201
+
 **input:**
 ```
 fail={
