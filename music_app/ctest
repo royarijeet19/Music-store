@@ -1,0 +1,32 @@
+#!/bin/bash
+sleep 1;
+
+url='http://localhost:3000/db/track/fetchOne'
+echo -e "\n\nGET"
+echo "url = $url"
+curl -s -X GET -H 'Content-Type: application/json' $url
+
+url='http://localhost:3000/db/track/fetch'
+echo -e "\n\nPOST"
+echo "url = $url"
+curl -s -X POST -H 'Content-Type: application/json' $url -d '{"track_id":"549e1ffd66ac099ccadbf6f61729897b"}' 
+
+url='http://localhost:3000/login'
+echo -e "\n\nPOST: incorrect login"
+echo "url = $url"
+curl -s -X POST --cookie-jar cookie_file -H 'Content-Type: application/json' $url -d '{"unam":"test", "pwd": "test123"}' 
+
+url='http://localhost:3000/login/auth-status'
+echo -e "\n\nGET: test incorrect login"
+echo "url = $url"
+curl -s -X GET --cookie cookie_file -H 'Content-Type: application/json' $url
+
+url='http://localhost:3000/login'
+echo -e "\n\nPOST: incorrect login"
+echo "url = $url"
+curl -s -X POST --cookie-jar cookie_file -H 'Content-Type: application/json' $url -d '{"uname":"test", "pwd": "test123"}' 
+
+url='http://localhost:3000/login/auth-status'
+echo -e "\n\nGET: test incorrect login"
+echo "url = $url"
+curl -s -X GET --cookie cookie_file -H 'Content-Type: application/json' $url
