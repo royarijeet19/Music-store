@@ -74,7 +74,8 @@ def fetch_meta(artist, track):
             "genre" : [y["TEXT"] for x,y in result["genre"].iteritems()],
             "mood" : [y["TEXT"] for x,y in result["mood"].iteritems()],
             "year" : result["album_year"],
-            "art" : fix_art(result["album_art_url"]),
+            "album_art" : fix_art(result["album_art_url"]),
+            "artist_art" : fix_art(result["artist_image_url"]),
             "length": track_length(),
             "price": track_price()
         }
@@ -90,7 +91,7 @@ def download_metadata(test=False):
     meta = []
     count = 0
     meta_file = "metadata.json"
-    with open('some_music_to_insert.csv', 'rb') as csvfile:
+    with open('itunes_music_list.csv', 'rb') as csvfile:
         spamreader = csv.reader(csvfile, delimiter=',', quotechar='"')
         for track,artist in spamreader:
             track_meta = fetch_meta(artist,track)
