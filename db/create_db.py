@@ -9,6 +9,7 @@ import MySQLdb
 import json
 from pprint import pprint
 import hashlib
+from time import sleep
 
 db = MySQLdb.connect(host="localhost",  
                      user="root",  
@@ -25,13 +26,18 @@ cur.execute("drop table if exists purchase")
 cur.execute("drop table if exists user")
 
 # Create tables
-cur.execute("create table album(album_id char(32), album_name char(50), artist char(30), year int, art char(80), primary key (album_id))")
+cur.execute("create table album(album_id char(32), album_name char(50), artist char(30), year int, album_art char(80), artist_art char(80), primary key (album_id))")
 cur.execute("create table track(track_id char(32), album_id char(32),track_name char(20), track_no int(3), length char(5), price char(5), primary key (track_id), foreign key (album_id) references album(album_id))")
 cur.execute("create table mood(track_id char(32), mood char(50), foreign key (track_id) references track(track_id))")
 cur.execute("create table genre(track_id char(32), genre char(50), foreign key (track_id) references track(track_id))")
 
-cur.execute("create table user(uname char(10), pwd char(32), admin bit, email char(32), primary key (uname));")
+cur.execute("create table user(uname char(10), pwd char(32), admin bit, email char(32), address varchar(100), primary key (uname));")
 cur.execute("create table purchase(purchase_id char(32),uname char(10), date datetime, track_id char(32), foreign key (uname) references user(uname));")
+
+# Insert some default user data
+cur.execute("insert into user values('admin', '123', 1, 'admin@admin.com', 'richardson');");
+cur.execute("insert into user values('user', '123', 0, 'user@user.com', 'richardson');");
+db.commit()
 
 
 def mood_insert(track_id, moods):
@@ -54,13 +60,15 @@ def album_insert(**kwargs):
     exists = cur.execute("select * from album where album_id='{0}'".format(kwargs['album_id']))
     if exists:
         return
-    album_fmt = "insert into album (album_id, album_name, artist, year, art) values ('{album_id}','{album_name}','{artist}','{year}','{art}');"
+    album_fmt = "insert into album (album_id, album_name, artist, year, album_art, artist_art) values ('{album_id}','{album_name}','{artist}','{year}','{album_art}','{artist_art}');"
     kwargs['album_name']=kwargs['album_name'].replace("'",'')
     insert_str = album_fmt.format(**kwargs)
     print insert_str
     cur.execute(insert_str)
     
 def track_insert(**kwargs):
+    # truncate track
+    kwargs['track_name']=kwargs['track_name'].split("(")[0].strip()
     track_fmt = "insert into track (track_id, album_id, track_name, track_no, length, price) values('{track_id}', '{album_id}', '{track_name}', '{track_no}', '{length}', '{price}');"
     kwargs['track_name']=kwargs['track_name'].replace("'",'')
     insert_str = track_fmt.format(**kwargs)
@@ -90,7 +98,8 @@ with open('metadata.json') as r:
                      album_name=el['album'],
                      artist=el['artist'],
                      year=el['year'],
-                     art=el['art'])
+                     album_art=el['album_art'],
+                     artist_art=el['artist_art'])
         track_insert(track_id=track_id,
                      album_id=album_id,
                      track_name=el['track'],
