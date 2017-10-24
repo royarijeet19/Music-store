@@ -1,9 +1,9 @@
 # Node backend calls
 
 ## Sign up page: sign up new user
-*frontend:* Check if all mandatory fields are filled, check for strong pwd. Hash pwd.
-*backend:* store uname, pwd, emailid, address in user table.
-If uname or email address already exists return 400 else return 201
+*frontend:* Check if all mandatory fields are filled, check for strong pwd. Hash pwd.\\
+*backend:* store uname, pwd, emailid, address in user table.\\
+If uname or email address already exists return 400 else return 201\\
 **input:**
 ```
 fail={
@@ -26,8 +26,8 @@ pass={"status":201}
 ```
 
 ## Login page: authenticate user
-*frontend:* hash pwd.
-*backend:* check if both uname and pwd match from user table.
+*frontend:* hash pwd.\\
+*backend:* check if both uname and pwd match from user table.\\
 **input:**
 ```
 {
@@ -42,7 +42,7 @@ pass={"status":200}
 ```
 
 ## Home page: search track
-For now, only use search on track. Implement searching on other fields later
+For now, only use search on track. Implement searching on other fields later\\
 **input:**
 ```
 {
@@ -136,9 +136,9 @@ response=[
 ```
 
 ## Search page: add to cart
-*frontend:* extract track_id from card class/div
-*backend:* Add track_id into cart table with key as username. Do not add entry if already exists
-use session variables to determine username.
+*frontend:* extract track_id from card class/div\\
+*backend:* Add track_id into cart table with key as username. Do not add entry if already exists\\
+use session variables to determine username.\\
 **input:**
 ```
 {
@@ -152,7 +152,7 @@ pass={"status":200}
 ```
 
 ## Cart page: fetch cart
-*backend:* Fetch all entries from cart. Get uname from session variables.
+*backend:* Fetch all entries from cart. Get uname from session variables.\\
 **type:** GET
 **response:**
 ```
@@ -160,8 +160,8 @@ same as search
 ```
 
 ## cart page: delete from cart
-*frontend:* extract track_id from card class/div. remove card after response
-*backend:* remove row from cart table with key as username and value as track_id.
+*frontend:* extract track_id from card class/div. remove card after response\\
+*backend:* remove row from cart table with key as username and value as track_id.\\
 use session variables to determine username.
 **input:**
 ```
@@ -175,9 +175,9 @@ fail={"status":500}
 pass={"status":200}
 ```
 ## cart page: purchase
-*frontend:* remove all cards on cart. display message purchase complete.
-*backend:* move items from cart table to purchase table.
-**type:**GET
+*frontend:* remove all cards on cart. display message purchase complete.\\
+*backend:* move items from cart table to purchase table.\\
+**type:**GET\\
 **response:**
 ```
 response=[{
