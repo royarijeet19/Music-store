@@ -24,15 +24,23 @@ cur.execute("drop table if exists track")
 cur.execute("drop table if exists album")
 cur.execute("drop table if exists purchase")
 cur.execute("drop table if exists user")
+cur.execute("drop table if exists cart")
 
 # Create tables
+#---------------
+
+
+# Music tables: album, track, mood, genre
 cur.execute("create table album(album_id char(32), album_name char(50), artist char(30), year int, album_art char(80), artist_art char(80), primary key (album_id))")
 cur.execute("create table track(track_id char(32), album_id char(32),track_name char(20), track_no int(3), length char(5), price char(5), primary key (track_id), foreign key (album_id) references album(album_id))")
 cur.execute("create table mood(track_id char(32), mood char(50), foreign key (track_id) references track(track_id))")
 cur.execute("create table genre(track_id char(32), genre char(50), foreign key (track_id) references track(track_id))")
 
+# User tables: user, purchase, cart
 cur.execute("create table user(uname char(10), pwd char(32), admin bit, email char(32), address varchar(100), primary key (uname));")
 cur.execute("create table purchase(purchase_id char(32),uname char(10), date datetime, track_id char(32), foreign key (uname) references user(uname));")
+cur.execute("create table cart(uname char(10), track_id char(32), foreign key (uname) references user(uname));")
+
 
 # Insert some default user data
 cur.execute("insert into user values('admin', '123', 1, 'admin@admin.com', 'richardson');");
@@ -76,6 +84,7 @@ def track_insert(**kwargs):
     cur.execute(insert_str)
     
 
+# populate tables
 with open('metadata.json') as r:
     meta = json.load(r)
     inserted = []
@@ -112,4 +121,3 @@ with open('metadata.json') as r:
         db.commit()
         
 print "done!"
-

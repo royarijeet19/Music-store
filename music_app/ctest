@@ -22,11 +22,13 @@ echo "url = $url"
 curl -s -X GET --cookie cookie_file -H 'Content-Type: application/json' $url
 
 url='http://localhost:3000/login'
-echo -e "\n\nPOST: incorrect login"
+echo -e "\n\nPOST: correct login"
 echo "url = $url"
 curl -s -X POST --cookie-jar cookie_file -H 'Content-Type: application/json' $url -d '{"uname":"test", "pwd": "test123"}' 
 
 url='http://localhost:3000/login/auth-status'
-echo -e "\n\nGET: test incorrect login"
+echo -e "\n\nGET: test correct login"
 echo "url = $url"
 curl -s -X GET --cookie cookie_file -H 'Content-Type: application/json' $url
+
+
