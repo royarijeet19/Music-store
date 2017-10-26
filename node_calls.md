@@ -46,6 +46,18 @@ fail={"status":401}
 pass={"status":200}
 ```
 
+## any page: get the type of user
+*backend:* Check if the user is logged in. if not, return guest.
+ If the user is logged in, check if admin or regular user and return the same.
+
+**type:** GET
+**response:**
+```
+for admin = {"user_type": "admin"}
+for guest = {"user_type":"guest"}
+for user = {"user_type":"user"}
+```
+
 ## Home page: search track
 For now, only use search on track. Implement searching on other fields later
 
