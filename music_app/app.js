@@ -73,6 +73,65 @@ app.get('/login/auth-status', function(req,res){
     }
 });
 
+
+//----------------------------
+// Add item to user Cart
+// input: {"track_id":"549e1ffd66ac099ccadbf6f61729897b"}
+app.post('/add_to_cart', function(req,res){
+    console.log('POST: /add_to_cart');
+    console.log(JSON.stringify(req.body));
+
+});
+
+// Return the type of user
+// output: {"user_type": x}
+// where x is any of "admin" "user" "guest"
+app.get('/user_type', function(req,res){
+    console.log('POST: /user_type');
+
+    res.send({"user_type": "admin"});
+
+});
+
+
+
+//--------------------------
+//---------Pages------------
+//--------------------------
+app.get('/search', function(req,res){
+    res.sendFile(__dirname+'/pages/search.html');
+});
+
+
+//--------------------------
+//-------Resources----------
+//--------------------------
+app.get('/css/bg_slides.css', function(req,res){
+    res.sendFile(__dirname+'/css/bg_slides.css');
+});
+
+app.get('/css/search_style.css', function(req,res){
+    res.sendFile(__dirname+'/css/search_style.css');
+});
+
+app.get('/css/font-awesome.css', function(req,res){
+    res.sendFile(__dirname+'/css/font-awesome.css');
+});
+
+app.get('/fonts/fontawesome-webfont.woff', function(req,res){
+    res.sendFile(__dirname+'/fonts/fontawesome-webfont.woff');
+});
+
+app.get('/fonts/fontawesome-webfont.woff2', function(req,res){
+    res.sendFile(__dirname+'/fonts/fontawesome-webfont.woff2');
+});
+
+
+app.get('/other/metadata.json', function(req,res){
+    res.sendFile(__dirname+'/other/metadata.json');
+});
+
+
 app.listen(3000);
 console.log('Running on port 3000');
 
