@@ -132,6 +132,31 @@ app.get('/other/metadata.json', function(req,res){
 });
 
 
+app.get('/css/1.jpg', function(req,res){
+    res.sendFile(__dirname+'/other/1.jpg');
+});
+
+app.get('/css/2.jpg', function(req,res){
+    res.sendFile(__dirname+'/other/2.jpg');
+});
+
+app.get('/css/3.jpg', function(req,res){
+    res.sendFile(__dirname+'/other/3.jpg');
+});
+
+app.get('/css/4.jpg', function(req,res){
+    res.sendFile(__dirname+'/other/4.jpg');
+});
+
+app.get('/css/5.jpg', function(req,res){
+    res.sendFile(__dirname+'/other/5.jpg');
+});
+
+app.get('/css/6.jpg', function(req,res){
+    res.sendFile(__dirname+'/other/6.jpg');
+});
+
+
 app.listen(3000);
 console.log('Running on port 3000');
 

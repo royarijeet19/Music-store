@@ -40,6 +40,7 @@
          
            constructor(album_art, track, artist, album, track_no, length, year, genre, price) {
              this.track = track;
+	     length = length.split(":");
              genre = genre[0];
              this.card = '<div class="card">' +
                '<div class="card_left">' +
@@ -52,7 +53,7 @@
                '  <div class="card_right__details">' +
                '    <ul>' +
                '      <li>#' + track_no + '</li>' +
-               '      <li>' + length[0] + ' min 29 sec</li>' +
+               '      <li>' + length[0] + ' min '+length[1]+' sec</li>' +
                '      <li>' + year + '</li>' +
                '      <li>' + genre + '</li>' +
                '    </ul>' +
@@ -75,7 +76,7 @@
            }
            cartable() {
              var button = '    <div class="card_right__button">' +
-               "      <a onclick='edit_item(\"" + this.track + "\")'>" +
+               "      <a onclick='add_to_cart(\"" + this.track + "\")'>" +
                '        <i class="fa fa-shopping-cart" aria-hidden="true"></i>' +
                '        ADD TO CART' +
                '      </a>' +
