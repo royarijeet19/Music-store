@@ -1,0 +1,1909 @@
+[
+  {
+    "track": "Thunder", 
+    "price": "2.77", 
+    "year": "2017", 
+    "genre": [
+      "Alternative & Punk", 
+      "Indie Pop", 
+      "Indie Rock"
+    ], 
+    "artist_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/image-artist/5874/5F20/83A7/01EF_large_front.jpg", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/7158/3EFD/1716/4874_large_front.jpg", 
+    "album": "Evolve", 
+    "mood": [], 
+    "artist": "Imagine Dragons", 
+    "length": "2:59", 
+    "track_no": "9"
+  }, 
+  {
+    "track": "Gorgeous", 
+    "price": "1.29", 
+    "year": "2017", 
+    "genre": [
+      "Pop", 
+      "Adult Alternative Pop", 
+      "Western Pop"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/C75B/94CB/06CF/C82D_large_front.jpg", 
+    "album": "Gorgeous", 
+    "mood": [
+      "Cool", 
+      "Wary / Defiant"
+    ], 
+    "artist": "Taylor Swift", 
+    "length": "4:11", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "Perfect", 
+    "price": "2.87", 
+    "year": "2017", 
+    "genre": [
+      "Pop", 
+      "Adult Alternative Pop", 
+      "Western Pop"
+    ], 
+    "artist_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/image-artist/E7B4/94EC/F57E/BF6B_large_front.jpg", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/90B5/DEC8/3F5B/7E83_large_front.jpg", 
+    "album": "  [Deluxe]", 
+    "mood": [
+      "Empowering", 
+      "Dramatic Emotion"
+    ], 
+    "artist": "Ed Sheeran", 
+    "length": "2:4", 
+    "track_no": "5"
+  }, 
+  {
+    "track": "Havana", 
+    "price": "2.59", 
+    "year": "2017", 
+    "genre": [
+      "Urban", 
+      "Urban Crossover", 
+      "Contemporary R&B/Soul"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/9D16/02B4/24F0/E706_large_front.jpg", 
+    "album": "Havana [Single]", 
+    "mood": [
+      "Cool", 
+      "Cool Confidence"
+    ], 
+    "artist": "Camila Cabello Feat. Young Thug", 
+    "length": "6:41", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "Feel It Still", 
+    "price": "1.71", 
+    "year": "2017", 
+    "genre": [
+      "Alternative & Punk", 
+      "General Indie Rock", 
+      "Indie Rock"
+    ], 
+    "artist_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/image-artist/FD3D/3D28/694C/5F0D_large_front.jpg", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/2E6E/4D30/E40D/9088_large_front.jpg", 
+    "album": "Woodstock", 
+    "mood": [
+      "Cool", 
+      "Wary / Defiant"
+    ], 
+    "artist": "Portugal. The Man", 
+    "length": "3:40", 
+    "track_no": "4"
+  }, 
+  {
+    "track": "What Lovers Do (Featuring SZA)", 
+    "price": "1.35", 
+    "year": "2017", 
+    "genre": [
+      "Pop", 
+      "Adult Alternative Pop", 
+      "Western Pop"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/F764/6709/6E9C/7F07_large_front.jpg", 
+    "album": "What Lovers Do (Featuring SZA)", 
+    "mood": [
+      "Cool", 
+      "Wary / Defiant"
+    ], 
+    "artist": "Maroon 5", 
+    "length": "2:47", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "Look What You Made Me Do", 
+    "price": "1.43", 
+    "year": "2017", 
+    "genre": [
+      "Pop", 
+      "Adult Alternative Pop", 
+      "Western Pop"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/FB22/0DAA/4BBD/E903_large_front.jpg", 
+    "album": "Look What You Made Me Do [Single]", 
+    "mood": [
+      "Energizing", 
+      "Edgy / Sexy"
+    ], 
+    "artist": "Taylor Swift", 
+    "length": "3:1", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "Bad At Love", 
+    "price": "1.93", 
+    "year": "2017", 
+    "genre": [
+      "Electronica", 
+      "Pop Electronica", 
+      "Electronica Mainstream"
+    ], 
+    "artist_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/image-artist/C80C/7BFF/2CA0/A439_large_front.jpg", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/1383/B46D/5950/80F0_large_front.jpg", 
+    "album": "Hopeless Fountain Kingdom", 
+    "mood": [
+      "Sensual", 
+      "Intimate"
+    ], 
+    "artist": "Halsey", 
+    "length": "5:29", 
+    "track_no": "10"
+  }, 
+  {
+    "track": "Believer", 
+    "price": "2.67", 
+    "year": "2017", 
+    "genre": [
+      "Alternative & Punk", 
+      "Indie Pop", 
+      "Indie Rock"
+    ], 
+    "artist_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/image-artist/5874/5F20/83A7/01EF_large_front.jpg", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/7158/3EFD/1716/4874_large_front.jpg", 
+    "album": "Evolve", 
+    "mood": [], 
+    "artist": "Imagine Dragons", 
+    "length": "6:58", 
+    "track_no": "3"
+  }, 
+  {
+    "track": "Too Good At Goodbyes", 
+    "price": "2.75", 
+    "year": "2017", 
+    "genre": [
+      "Urban", 
+      "Neo-Soul", 
+      "Contemporary R&B/Soul"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/DCC1/C6D1/5183/7035_large_front.jpg", 
+    "album": "The Thrill Of It All", 
+    "mood": [
+      "Sophisticated", 
+      "Smoky / Romantic"
+    ], 
+    "artist": "Sam Smith", 
+    "length": "3:55", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "What About Us", 
+    "price": "1.69", 
+    "year": "2017", 
+    "genre": [
+      "Pop", 
+      "Dance Pop", 
+      "Western Pop"
+    ], 
+    "artist_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/image-artist/A35B/7367/00DF/F0F9_large_front.jpg", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/727F/19DD/3B84/A3AB_large_front.jpg", 
+    "album": "Beautiful Trauma", 
+    "mood": [
+      "Sensual", 
+      "Dreamy Pulse"
+    ], 
+    "artist": "P!nk", 
+    "length": "3:23", 
+    "track_no": "4"
+  }, 
+  {
+    "track": "...Ready For It?", 
+    "price": "1.09", 
+    "year": "2017", 
+    "genre": [
+      "Pop", 
+      "Adult Alternative Pop", 
+      "Western Pop"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/C763/30DE/4C89/B208_large_front.jpg", 
+    "album": "...Ready For It? [Single]", 
+    "mood": [
+      "Aggressive", 
+      "Dark Hard Beat"
+    ], 
+    "artist": "Taylor Swift", 
+    "length": "3:15", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "What Ifs", 
+    "price": "1.89", 
+    "year": "2016", 
+    "genre": [
+      "Traditional", 
+      "Contemporary Country", 
+      "Country"
+    ], 
+    "artist_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/image-artist/D19D/939E/3A82/3CC9_large_front.jpg", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/3320/523D/AE98/5F05_large_front.jpg", 
+    "album": "Kane Brown", 
+    "mood": [
+      "Upbeat", 
+      "Happy / Soulful"
+    ], 
+    "artist": "Kane Brown", 
+    "length": "4:17", 
+    "track_no": "2"
+  }, 
+  {
+    "track": "Millionaire", 
+    "price": "2.25", 
+    "year": "2017", 
+    "genre": [
+      "Traditional", 
+      "Alternative Country", 
+      "Country"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/E728/0695/C2FF/0A53_large_front.jpg", 
+    "album": "From A Room: Volume 2", 
+    "mood": [
+      "Empowering", 
+      "Strong / Stable"
+    ], 
+    "artist": "Chris Stapleton", 
+    "length": "5:34", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "Greatest Love Story", 
+    "price": "2.33", 
+    "year": "2016", 
+    "genre": [
+      "Traditional", 
+      "Contemporary Country", 
+      "Country"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/23BB/3539/476D/0803_large_front.jpg", 
+    "album": "Extended Play", 
+    "mood": [
+      "Empowering", 
+      "Strong / Stable"
+    ], 
+    "artist": "LANco", 
+    "length": "5:18", 
+    "track_no": "3"
+  }, 
+  {
+    "track": "Praying", 
+    "price": "2.37", 
+    "year": "2017", 
+    "genre": [
+      "Pop", 
+      "Dance Pop", 
+      "Western Pop"
+    ], 
+    "artist_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/image-artist/A181/0A35/DAD1/3F86_large_front.jpg", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/3702/E0F4/456A/CE63_large_front.jpg", 
+    "album": "Rainbow", 
+    "mood": [
+      "Empowering", 
+      "Dramatic Emotion"
+    ], 
+    "artist": "Kesha", 
+    "length": "6:9", 
+    "track_no": "5"
+  }, 
+  {
+    "track": "Strip That Down", 
+    "price": "1.85", 
+    "year": "2017", 
+    "genre": [
+      "Pop", 
+      "Urban Crossover: Pop", 
+      "Western Pop"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/67DA/C561/F216/9796_large_front.jpg", 
+    "album": "Strip That Down [Single]", 
+    "mood": [
+      "Cool", 
+      "Wary / Defiant"
+    ], 
+    "artist": "Liam Payne Feat. Quavo", 
+    "length": "6:41", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "Love So Soft", 
+    "price": "2.81", 
+    "year": "2017", 
+    "genre": [
+      "Pop", 
+      "Adult Alternative Pop", 
+      "Western Pop"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/5C75/FF46/30EF/5E74_large_front.jpg", 
+    "album": "Love So Soft [Single]", 
+    "mood": [
+      "Excited", 
+      "Euphoric Energy"
+    ], 
+    "artist": "Kelly Clarkson", 
+    "length": "5:8", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "Miss Me More", 
+    "price": "1.87", 
+    "year": "2017", 
+    "genre": [
+      "Traditional", 
+      "Contemporary Country", 
+      "Country"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/F507/15E7/9DC8/70F3_large_front.jpg", 
+    "album": "Unapologetically", 
+    "mood": [
+      "Urgent", 
+      "Dark Pop Intensity"
+    ], 
+    "artist": "Kelsea Ballerini", 
+    "length": "2:57", 
+    "track_no": "2"
+  }, 
+  {
+    "track": "When It Rains It Pours", 
+    "price": "2.79", 
+    "year": "2017", 
+    "genre": [
+      "Traditional", 
+      "Contemporary Country", 
+      "Country"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/70C4/14A8/77BD/E3FE_large_front.jpg", 
+    "album": "This Ones For You", 
+    "mood": [], 
+    "artist": "Luke Combs", 
+    "length": "5:45", 
+    "track_no": "8"
+  }, 
+  {
+    "track": "Bedroom Floor", 
+    "price": "1.53", 
+    "year": "2017", 
+    "genre": [
+      "Pop", 
+      "Teen Boy Band", 
+      "Western Pop"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/F24B/89A3/EFC4/ABC0_large_front.jpg", 
+    "album": "Bedroom Floor [Single]", 
+    "mood": [
+      "Excited", 
+      "Euphoric Energy"
+    ], 
+    "artist": "Liam Payne", 
+    "length": "6:32", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "New Rules", 
+    "price": "0.99", 
+    "year": "2017", 
+    "genre": [
+      "Pop", 
+      "Dance Pop", 
+      "Western Pop"
+    ], 
+    "artist_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/image-artist/8F35/EA43/F72F/6777_large_front.jpg", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/AD54/E258/C52C/2D6C_large_front.jpg", 
+    "album": "Dua Lipa", 
+    "mood": [
+      "Sensual", 
+      "Intimate"
+    ], 
+    "artist": "Dua Lipa", 
+    "length": "6:19", 
+    "track_no": "10"
+  }, 
+  {
+    "track": "Young Dumb & Broke", 
+    "price": "1.03", 
+    "year": "2017", 
+    "genre": [
+      "Urban", 
+      "Neo-Soul", 
+      "Contemporary R&B/Soul"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/2B12/B4D4/AA41/BFCA_large_front.jpg", 
+    "album": "American Teen", 
+    "mood": [
+      "Excited", 
+      "Euphoric Energy"
+    ], 
+    "artist": "Khalid", 
+    "length": "3:31", 
+    "track_no": "2"
+  }, 
+  {
+    "track": "Body Like A Back Road", 
+    "price": "1.09", 
+    "year": "2017", 
+    "genre": [
+      "Traditional", 
+      "Contemporary Country", 
+      "Country"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/88AB/1CD8/83EB/C777_large_front.jpg", 
+    "album": "Body Like A Back Road [Single]", 
+    "mood": [
+      "Yearning", 
+      "Sensitive / Exploring"
+    ], 
+    "artist": "Sam Hunt", 
+    "length": "6:8", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "Unforgettable", 
+    "price": "2.77", 
+    "year": "2017", 
+    "genre": [
+      "Traditional", 
+      "Contemporary Country", 
+      "Country"
+    ], 
+    "artist_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/image-artist/6C96/27E8/7A8E/9BD4_large_front.jpg", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/D518/3629/4D98/35DD_large_front.jpg", 
+    "album": "Life Changes", 
+    "mood": [
+      "Upbeat", 
+      "Happy / Soulful"
+    ], 
+    "artist": "Thomas Rhett", 
+    "length": "4:36", 
+    "track_no": "2"
+  }, 
+  {
+    "track": "Every Little Thing", 
+    "price": "1.91", 
+    "year": "2017", 
+    "genre": [
+      "Traditional", 
+      "Contemporary Country", 
+      "Country"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/3EB9/A730/009C/A6F8_large_front.jpg", 
+    "album": "Every Little Thing", 
+    "mood": [
+      "Empowering", 
+      "Dramatic Emotion"
+    ], 
+    "artist": "Carly Pearce", 
+    "length": "4:14", 
+    "track_no": "3"
+  }, 
+  {
+    "track": "Losing Sleep", 
+    "price": "2.75", 
+    "year": "2017", 
+    "genre": [
+      "Traditional", 
+      "Contemporary Country", 
+      "Country"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/2DE8/14B1/3199/B296_large_front.jpg", 
+    "album": "Losing Sleep", 
+    "mood": [
+      "Brooding", 
+      "Dreamy Brooding"
+    ], 
+    "artist": "Chris Young", 
+    "length": "4:2", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "Slow Hands", 
+    "price": "2.87", 
+    "year": "2017", 
+    "genre": [
+      "Pop", 
+      "Teen Pop", 
+      "Western Pop"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/9C74/50B6/E1C3/8394_large_front.jpg", 
+    "album": "Flicker", 
+    "mood": [
+      "Cool", 
+      "Casual Groove"
+    ], 
+    "artist": "Niall Horan", 
+    "length": "3:37", 
+    "track_no": "4"
+  }, 
+  {
+    "track": "Despacito (Remix)", 
+    "price": "1.19", 
+    "year": "2017", 
+    "genre": [
+      "Other", 
+      "General Latin Pop", 
+      "Latin Pop"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/02F1/F953/5340/DD4F_large_front.jpg", 
+    "album": "NOW Thats What I Call Music! 97 [Disc 1]", 
+    "mood": [
+      "Energizing", 
+      "Edgy / Sexy"
+    ], 
+    "artist": "Various Artists", 
+    "length": "2:43", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "Attention", 
+    "price": "1.93", 
+    "year": "2017", 
+    "genre": [
+      "Pop", 
+      "Teen Pop", 
+      "Western Pop"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/BD78/C743/32C0/8D16_large_front.jpg", 
+    "album": "Attention [Single]", 
+    "mood": [
+      "Yearning", 
+      "Energetic Yearning"
+    ], 
+    "artist": "Charlie Puth", 
+    "length": "3:23", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "How Long", 
+    "price": "2.17", 
+    "year": "2017", 
+    "genre": [
+      "Pop", 
+      "Teen Pop", 
+      "Western Pop"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/E471/B438/5E17/AB71_large_front.jpg", 
+    "album": "How Long [Single]", 
+    "mood": [
+      "Energizing", 
+      "Edgy / Sexy"
+    ], 
+    "artist": "Charlie Puth", 
+    "length": "3:14", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "If I Told You", 
+    "price": "1.89", 
+    "year": "2017", 
+    "genre": [
+      "Traditional", 
+      "Contemporary Country", 
+      "Country"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/51A1/F71F/E5D1/2D8A_large_front.jpg", 
+    "album": "When Was the Last Time", 
+    "mood": [], 
+    "artist": "Darius Rucker", 
+    "length": "4:54", 
+    "track_no": "4"
+  }, 
+  {
+    "track": "Theres Nothing Holdin Me Back", 
+    "price": "2.99", 
+    "year": "2017", 
+    "genre": [
+      "Pop", 
+      "Teen Pop", 
+      "Western Pop"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/52B7/2D3F/2928/7E54_large_front.jpg", 
+    "album": "Illuminate (Deluxe)", 
+    "mood": [
+      "Rowdy", 
+      "Ramshackle / Rollicking"
+    ], 
+    "artist": "Shawn Mendes", 
+    "length": "4:46", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "Tennessee Whiskey", 
+    "price": "1.79", 
+    "year": "2015", 
+    "genre": [
+      "Traditional", 
+      "Alternative Country", 
+      "Country"
+    ], 
+    "artist_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/image-artist/C3EA/07B1/F0BB/5B17_large_front.jpg", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/8452/8F9F/CEF1/FC15_large_front.jpg", 
+    "album": "Traveller", 
+    "mood": [
+      "Melancholy", 
+      "Sad / Soulful"
+    ], 
+    "artist": "Chris Stapleton", 
+    "length": "2:48", 
+    "track_no": "3"
+  }, 
+  {
+    "track": "I Wont Back Down (Live From Saturday Night Live)", 
+    "price": "2.01", 
+    "year": "", 
+    "genre": [
+      "Traditional", 
+      "Contemporary Country", 
+      "Country"
+    ], 
+    "artist_art": "", 
+    "album_art": "", 
+    "album": "I Wont Back Down", 
+    "mood": [
+      "Defiant", 
+      "Heavy Brooding"
+    ], 
+    "artist": "Jason Aldean", 
+    "length": "5:1", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "Right in the Night (Fall in Love with Music) (DJ Kid Paul Mix)", 
+    "price": "1.63", 
+    "year": "1993", 
+    "genre": [
+      "Electronica", 
+      "Trance", 
+      "Trance"
+    ], 
+    "artist_art": "", 
+    "album_art": "", 
+    "album": "Right in the Night (Fall in Love with Music) (Remixes)", 
+    "mood": [
+      "Sensual", 
+      "Dreamy Pulse"
+    ], 
+    "artist": "Jam & Spoon", 
+    "length": "4:40", 
+    "track_no": "4"
+  }, 
+  {
+    "track": "Like I Loved You", 
+    "price": "1.69", 
+    "year": "2017", 
+    "genre": [
+      "Traditional", 
+      "Contemporary Country", 
+      "Country"
+    ], 
+    "artist_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/image-artist/60ED/42EB/B4CB/3528_large_front.jpg", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/8749/EABA/C033/9AEB_large_front.jpg", 
+    "album": "Brett Young", 
+    "mood": [
+      "Empowering", 
+      "Strong / Stable"
+    ], 
+    "artist": "Brett Young", 
+    "length": "6:27", 
+    "track_no": "3"
+  }, 
+  {
+    "track": "You Broke Up With Me", 
+    "price": "1.57", 
+    "year": "2017", 
+    "genre": [
+      "Traditional", 
+      "Contemporary Country", 
+      "Country"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/7E1B/9D75/938B/C745_large_front.jpg", 
+    "album": "You Broke Up With Me [Single]", 
+    "mood": [], 
+    "artist": "Walker Hayes", 
+    "length": "5:15", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "Ill Name The Dogs", 
+    "price": "1.33", 
+    "year": "2017", 
+    "genre": [
+      "Traditional", 
+      "Contemporary Country", 
+      "Country"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/B048/8EE8/8C88/D7A1_large_front.jpg", 
+    "album": "Ill Name The Dogs [Single]", 
+    "mood": [
+      "Yearning", 
+      "Sensitive / Exploring"
+    ], 
+    "artist": "Blake Shelton", 
+    "length": "5:27", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "Broken Halos", 
+    "price": "2.13", 
+    "year": "2017", 
+    "genre": [
+      "Traditional", 
+      "Alternative Country", 
+      "Country"
+    ], 
+    "artist_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/image-artist/C3EA/07B1/F0BB/5B17_large_front.jpg", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/A921/A005/7C0A/4ED0_large_front.jpg", 
+    "album": "From A Room: Volume 1", 
+    "mood": [
+      "Empowering", 
+      "Strong / Stable"
+    ], 
+    "artist": "Chris Stapleton", 
+    "length": "5:5", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "Shape Of You", 
+    "price": "2.39", 
+    "year": "2017", 
+    "genre": [
+      "Pop", 
+      "Adult Alternative Pop", 
+      "Western Pop"
+    ], 
+    "artist_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/image-artist/E7B4/94EC/F57E/BF6B_large_front.jpg", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/90B5/DEC8/3F5B/7E83_large_front.jpg", 
+    "album": "  [Deluxe]", 
+    "mood": [
+      "Energizing", 
+      "Edgy / Sexy"
+    ], 
+    "artist": "Ed Sheeran", 
+    "length": "3:51", 
+    "track_no": "4"
+  }, 
+  {
+    "track": "Shabba feat. A$AP Rocky", 
+    "price": "2.83", 
+    "year": "2014", 
+    "genre": [
+      "Pop", 
+      "Teen Boy Band", 
+      "Western Pop"
+    ], 
+    "artist_art": "", 
+    "album_art": "", 
+    "album": "TWERK EM ALL", 
+    "mood": [], 
+    "artist": "V", 
+    "length": "6:26", 
+    "track_no": "14"
+  }, 
+  {
+    "track": "Something Just Like This", 
+    "price": "2.53", 
+    "year": "2017", 
+    "genre": [
+      "Electronica", 
+      "Dubstep", 
+      "Dubstep"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/A919/DAAF/F67A/C3B6_large_front.jpg", 
+    "album": "Something Just Like This [Single]", 
+    "mood": [
+      "Excited", 
+      "Euphoric Energy"
+    ], 
+    "artist": "The Chainsmokers & Coldplay", 
+    "length": "6:49", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "Meant to Be (Featuring Florida Georgia Line)", 
+    "price": "2.13", 
+    "year": "", 
+    "genre": [
+      "Pop", 
+      "Dance Pop", 
+      "Western Pop"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/BF08/DC26/B403/8D85_large_front.jpg", 
+    "album": "All Your Fault: Pt. 2", 
+    "mood": [
+      "Sensual", 
+      "Intimate"
+    ], 
+    "artist": "Bebe Rexha", 
+    "length": "5:19", 
+    "track_no": "6"
+  }, 
+  {
+    "track": "On The Loose", 
+    "price": "1.47", 
+    "year": "2017", 
+    "genre": [
+      "Pop", 
+      "Teen Pop", 
+      "Western Pop"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/9C74/50B6/E1C3/8394_large_front.jpg", 
+    "album": "Flicker", 
+    "mood": [
+      "Urgent", 
+      "Dark Pop"
+    ], 
+    "artist": "Niall Horan", 
+    "length": "5:31", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "Glorious (Featuring Skylar Grey)", 
+    "price": "1.55", 
+    "year": "2017", 
+    "genre": [
+      "Urban", 
+      "Conscious Hip-Hop/Rap", 
+      "Western Hip-Hop/Rap"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/0F82/06DD/CC4E/C866_large_front.jpg", 
+    "album": "Glorious (Featuring Skylar Grey)", 
+    "mood": [
+      "Defiant", 
+      "Attitude / Defiant"
+    ], 
+    "artist": "Macklemore", 
+    "length": "5:16", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "Mi Gente", 
+    "price": "2.75", 
+    "year": "2017", 
+    "genre": [
+      "Electronica", 
+      "Ethno-Lounge Electronica", 
+      "Electronica Fusion"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/79A0/64BF/FD58/F316_large_front.jpg", 
+    "album": "Mi Gente [Single]", 
+    "mood": [
+      "Sensual", 
+      "Intimate"
+    ], 
+    "artist": "J Balvin & Willy William", 
+    "length": "5:31", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "Wagon Wheel", 
+    "price": "2.79", 
+    "year": "2013", 
+    "genre": [
+      "Traditional", 
+      "Contemporary Country", 
+      "Country"
+    ], 
+    "artist_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/image-artist/18D0/8D50/660B/6054_large_front.jpg", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/D6FC/BF59/1A93/9455_large_front.jpg", 
+    "album": "True Believers", 
+    "mood": [
+      "Empowering", 
+      "Strong / Stable"
+    ], 
+    "artist": "Darius Rucker", 
+    "length": "6:7", 
+    "track_no": "3"
+  }, 
+  {
+    "track": "Yours", 
+    "price": "1.77", 
+    "year": "2017", 
+    "genre": [
+      "Traditional", 
+      "Contemporary Country", 
+      "Country"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/9F37/59DA/47F0/ED52_large_front.jpg", 
+    "album": "Yours", 
+    "mood": [
+      "Yearning", 
+      "Sensitive / Exploring"
+    ], 
+    "artist": "Russell Dickerson", 
+    "length": "5:33", 
+    "track_no": "2"
+  }, 
+  {
+    "track": "Renegade Silence (Feat. The Rhythm Method)", 
+    "price": "1.97", 
+    "year": "2008", 
+    "genre": [
+      "Alternative & Punk", 
+      "General Punk", 
+      "Punk"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/3531/1A08/FB64/7B96_large_front.jpg", 
+    "album": "Sebastien Grainger & The Mountains", 
+    "mood": [
+      "Fiery", 
+      "Fiery Groove"
+    ], 
+    "artist": "Sebastien Grainger", 
+    "length": "6:44", 
+    "track_no": "12"
+  }, 
+  {
+    "track": "Human", 
+    "price": "2.85", 
+    "year": "2017", 
+    "genre": [
+      "Urban", 
+      "Neo-Soul", 
+      "Contemporary R&B/Soul"
+    ], 
+    "artist_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/image-artist/9314/F4FD/46DA/C3CB_large_front.jpg", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/3530/1565/C191/F8B8_large_front.jpg", 
+    "album": "Human", 
+    "mood": [
+      "Cool", 
+      "Wary / Defiant"
+    ], 
+    "artist": "RagNBone Man", 
+    "length": "4:23", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "From Dusk Till Dawn", 
+    "price": "1.37", 
+    "year": "2016", 
+    "genre": [
+      "Rock", 
+      "Heavy Metal", 
+      "Metal"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/6062/BE97/B34E/23FF_large_front.jpg", 
+    "album": "METAL RESISTANCE", 
+    "mood": [
+      "Defiant", 
+      "Heavy Brooding"
+    ], 
+    "artist": "BABYMETAL", 
+    "length": "5:52", 
+    "track_no": "7"
+  }, 
+  {
+    "track": "Rockstar", 
+    "price": "2.71", 
+    "year": "2017", 
+    "genre": [
+      "Urban", 
+      "Neo-Soul", 
+      "Contemporary R&B/Soul"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/7EDE/1F41/59A5/6874_large_front.jpg", 
+    "album": "Rockstar [Single]", 
+    "mood": [
+      "Sensual", 
+      "Intimate"
+    ], 
+    "artist": "Post Malone Feat. 21 Savage", 
+    "length": "2:38", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "Slow Hands", 
+    "price": "2.73", 
+    "year": "2017", 
+    "genre": [
+      "Pop", 
+      "Teen Pop", 
+      "Western Pop"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/9C74/50B6/E1C3/8394_large_front.jpg", 
+    "album": "Flicker", 
+    "mood": [
+      "Cool", 
+      "Casual Groove"
+    ], 
+    "artist": "Niall Horan", 
+    "length": "3:7", 
+    "track_no": "4"
+  }, 
+  {
+    "track": "Sorry Not Sorry", 
+    "price": "1.97", 
+    "year": "2017", 
+    "genre": [
+      "Pop", 
+      "Dance Pop", 
+      "Western Pop"
+    ], 
+    "artist_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/image-artist/76DF/0474/AFED/2539_large_front.jpg", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/6394/DF3C/65F9/6DC2_large_front.jpg", 
+    "album": "Tell Me You Love Me", 
+    "mood": [
+      "Energizing", 
+      "Abstract Beat"
+    ], 
+    "artist": "Demi Lovato", 
+    "length": "3:42", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "In Case You Didnt Know", 
+    "price": "0.99", 
+    "year": "2017", 
+    "genre": [
+      "Traditional", 
+      "Contemporary Country", 
+      "Country"
+    ], 
+    "artist_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/image-artist/60ED/42EB/B4CB/3528_large_front.jpg", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/8749/EABA/C033/9AEB_large_front.jpg", 
+    "album": "Brett Young", 
+    "mood": [
+      "Empowering", 
+      "Strong / Stable"
+    ], 
+    "artist": "Brett Young", 
+    "length": "6:43", 
+    "track_no": "4"
+  }, 
+  {
+    "track": "Say You Wont Let Go", 
+    "price": "2.07", 
+    "year": "2016", 
+    "genre": [
+      "Pop", 
+      "Pop Vocal", 
+      "Western Pop"
+    ], 
+    "artist_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/image-artist/82E9/3A0A/370C/DD2D_large_front.jpg", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/7CB2/7DE6/497E/9450_large_front.jpg", 
+    "album": "Back From The Edge", 
+    "mood": [], 
+    "artist": "James Arthur", 
+    "length": "5:56", 
+    "track_no": "2"
+  }, 
+  {
+    "track": "Cant Stop The Feeling!", 
+    "price": "2.35", 
+    "year": "2016", 
+    "genre": [
+      "Pop", 
+      "Urban Crossover: Pop", 
+      "Western Pop"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/EBAD/80F5/EB60/13E2_large_front.jpg", 
+    "album": "Cant Stop The Feeling! [Single]", 
+    "mood": [
+      "Cool", 
+      "Casual Groove"
+    ], 
+    "artist": "Justin Timberlake", 
+    "length": "4:27", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "24K Magic", 
+    "price": "1.85", 
+    "year": "2016", 
+    "genre": [
+      "Pop", 
+      "Urban Crossover: Pop", 
+      "Western Pop"
+    ], 
+    "artist_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/image-artist/1EED/C8FE/E50D/B5DB_large_front.jpg", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/B1A0/A9B4/13B6/E0D2_large_front.jpg", 
+    "album": "24K Magic", 
+    "mood": [
+      "Energizing", 
+      "Edgy / Sexy"
+    ], 
+    "artist": "Bruno Mars", 
+    "length": "4:52", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "Let Me Go (With Alesso, Florida Georgia Line & Watt)", 
+    "price": "2.13", 
+    "year": "2017", 
+    "genre": [
+      "Pop", 
+      "Pop Vocal", 
+      "Western Pop"
+    ], 
+    "artist_art": "", 
+    "album_art": "", 
+    "album": "Let Me Go (With Alesso, Florida Georgia Line & Watt)", 
+    "mood": [
+      "Excited", 
+      "Euphoric Energy"
+    ], 
+    "artist": "Hailee Steinfeld & Alesso", 
+    "length": "4:1", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "Small Town Boy", 
+    "price": "2.39", 
+    "year": "2017", 
+    "genre": [
+      "Traditional", 
+      "Contemporary Country", 
+      "Country"
+    ], 
+    "artist_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/image-artist/2DB9/4FE6/A7F7/32D6_large_front.jpg", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/A549/D7C1/53A1/44CC_large_front.jpg", 
+    "album": "Current Mood", 
+    "mood": [
+      "Upbeat", 
+      "Happy / Soulful"
+    ], 
+    "artist": "Dustin Lynch", 
+    "length": "4:51", 
+    "track_no": "3"
+  }, 
+  {
+    "track": "Boy", 
+    "price": "2.89", 
+    "year": "2017", 
+    "genre": [
+      "Traditional", 
+      "Contemporary Country", 
+      "Country"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/41AF/EC20/DA30/54BC_large_front.jpg", 
+    "album": "Boy [Single]", 
+    "mood": [
+      "Romantic", 
+      "Heartfelt Passion"
+    ], 
+    "artist": "Lee Brice", 
+    "length": "5:28", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "Smooth", 
+    "price": "1.97", 
+    "year": "2016", 
+    "genre": [
+      "Traditional", 
+      "Contemporary Country", 
+      "Country"
+    ], 
+    "artist_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/image-artist/C8AB/C3BA/2877/0755_large_front.jpg", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/A7C5/A78D/2732/2CF0_large_front.jpg", 
+    "album": "Dig Your Roots", 
+    "mood": [
+      "Empowering", 
+      "Dramatic Emotion"
+    ], 
+    "artist": "Florida Georgia Line", 
+    "length": "3:9", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "Rise Up", 
+    "price": "1.15", 
+    "year": "2015", 
+    "genre": [
+      "Urban", 
+      "Neo-Soul", 
+      "Contemporary R&B/Soul"
+    ], 
+    "artist_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/image-artist/48AE/0A07/C912/96FA_large_front.jpg", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/D82B/55EF/D7FD/00EA_large_front.jpg", 
+    "album": "Cheers To The Fall", 
+    "mood": [
+      "Empowering", 
+      "Dramatic Emotion"
+    ], 
+    "artist": "Andra Day", 
+    "length": "3:56", 
+    "track_no": "11"
+  }, 
+  {
+    "track": "Light It Up", 
+    "price": "2.43", 
+    "year": "2017", 
+    "genre": [
+      "Traditional", 
+      "Contemporary Country", 
+      "Country"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/4B99/FA9D/10FE/A9E7_large_front.jpg", 
+    "album": "Light It Up", 
+    "mood": [
+      "Brooding", 
+      "Energetic Melancholy"
+    ], 
+    "artist": "Luke Bryan", 
+    "length": "4:31", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "Jump Up, Super Star!", 
+    "price": "2.11", 
+    "year": "2017", 
+    "genre": [
+      "Soundtrack", 
+      "General Film Music", 
+      "Original Film/TV Music"
+    ], 
+    "artist_art": "", 
+    "album_art": "", 
+    "album": "Jump Up, Super Star! [Single]", 
+    "mood": [], 
+    "artist": "The Super Mario Players Feat. Kate Davis", 
+    "length": "5:5", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "What About Us", 
+    "price": "2.37", 
+    "year": "2017", 
+    "genre": [
+      "Pop", 
+      "Dance Pop", 
+      "Western Pop"
+    ], 
+    "artist_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/image-artist/A35B/7367/00DF/F0F9_large_front.jpg", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/727F/19DD/3B84/A3AB_large_front.jpg", 
+    "album": "Beautiful Trauma", 
+    "mood": [
+      "Sensual", 
+      "Dreamy Pulse"
+    ], 
+    "artist": "P!nk", 
+    "length": "3:33", 
+    "track_no": "4"
+  }, 
+  {
+    "track": "Too Good At Goodbyes", 
+    "price": "1.67", 
+    "year": "2017", 
+    "genre": [
+      "Urban", 
+      "Neo-Soul", 
+      "Contemporary R&B/Soul"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/DCC1/C6D1/5183/7035_large_front.jpg", 
+    "album": "The Thrill Of It All", 
+    "mood": [
+      "Sophisticated", 
+      "Smoky / Romantic"
+    ], 
+    "artist": "Sam Smith", 
+    "length": "5:17", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "The Long Way", 
+    "price": "1.69", 
+    "year": "2017", 
+    "genre": [
+      "Traditional", 
+      "Contemporary Country", 
+      "Country"
+    ], 
+    "artist_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/image-artist/4348/0145/641D/89F5_large_front.jpg", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/273E/24C9/7E11/1E66_large_front.jpg", 
+    "album": "Brett Eldredge", 
+    "mood": [
+      "Yearning", 
+      "Sensitive / Exploring"
+    ], 
+    "artist": "Brett Eldredge", 
+    "length": "5:59", 
+    "track_no": "3"
+  }, 
+  {
+    "track": "No Promises (Featuring Demi Lovato)", 
+    "price": "2.07", 
+    "year": "", 
+    "genre": [
+      "Electronica", 
+      "General House", 
+      "House"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/E956/9CB1/DAEF/22CB_large_front.jpg", 
+    "album": "No Promises (Featuring Demi Lovato)", 
+    "mood": [
+      "Sensual", 
+      "Intimate"
+    ], 
+    "artist": "Cheat Codes", 
+    "length": "5:44", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "Castle On The Hill", 
+    "price": "2.95", 
+    "year": "2017", 
+    "genre": [
+      "Pop", 
+      "Adult Alternative Pop", 
+      "Western Pop"
+    ], 
+    "artist_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/image-artist/E7B4/94EC/F57E/BF6B_large_front.jpg", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/90B5/DEC8/3F5B/7E83_large_front.jpg", 
+    "album": "  [Deluxe]", 
+    "mood": [
+      "Brooding", 
+      "Energetic Melancholy"
+    ], 
+    "artist": "Ed Sheeran", 
+    "length": "5:33", 
+    "track_no": "2"
+  }, 
+  {
+    "track": "Walk On Water", 
+    "price": "1.11", 
+    "year": "2017", 
+    "genre": [
+      "Alternative & Punk", 
+      "Emo", 
+      "Emo & Hardcore"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/2123/FCB0/6C2E/94C6_large_front.jpg", 
+    "album": "Walk On Water [Single]", 
+    "mood": [
+      "Excited", 
+      "Euphoric Energy"
+    ], 
+    "artist": "30 Seconds To Mars", 
+    "length": "3:21", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "The Rest Of Our Life", 
+    "price": "2.17", 
+    "year": "2017", 
+    "genre": [
+      "Traditional", 
+      "Contemporary Country", 
+      "Country"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/0C43/2959/4820/C860_large_front.jpg", 
+    "album": "The Rest Of Our Life [Single]", 
+    "mood": [
+      "Empowering", 
+      "Dramatic Emotion"
+    ], 
+    "artist": "Tim McGraw & Faith Hill", 
+    "length": "2:34", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "Galway Girl", 
+    "price": "1.39", 
+    "year": "2017", 
+    "genre": [
+      "Pop", 
+      "Adult Alternative Pop", 
+      "Western Pop"
+    ], 
+    "artist_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/image-artist/E7B4/94EC/F57E/BF6B_large_front.jpg", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/90B5/DEC8/3F5B/7E83_large_front.jpg", 
+    "album": "  [Deluxe]", 
+    "mood": [
+      "Yearning", 
+      "Sensitive / Exploring"
+    ], 
+    "artist": "Ed Sheeran", 
+    "length": "5:39", 
+    "track_no": "6"
+  }, 
+  {
+    "track": "Tin Man", 
+    "price": "2.55", 
+    "year": "2016", 
+    "genre": [
+      "Traditional", 
+      "Contemporary Country", 
+      "Country"
+    ], 
+    "artist_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/image-artist/ACB3/8A86/0A23/F07E_large_front.jpg", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/FAB4/D7C7/86FE/6C18_large_front.jpg", 
+    "album": "The Weight Of These Wings [Disc 2]", 
+    "mood": [
+      "Melancholy", 
+      "Light Melancholy"
+    ], 
+    "artist": "Miranda Lambert", 
+    "length": "6:0", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "Heartache On The Dance Floor", 
+    "price": "1.21", 
+    "year": "2016", 
+    "genre": [
+      "Traditional", 
+      "Contemporary Country", 
+      "Country"
+    ], 
+    "artist_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/image-artist/3F2A/2D51/D6FA/F37C_large_front.jpg", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/C55B/EADB/8DF7/6598_large_front.jpg", 
+    "album": "California Sunrise", 
+    "mood": [
+      "Yearning", 
+      "Energetic Yearning"
+    ], 
+    "artist": "Jon Pardi", 
+    "length": "6:43", 
+    "track_no": "9"
+  }, 
+  {
+    "track": "The Sound Of Silence", 
+    "price": "2.41", 
+    "year": "2015", 
+    "genre": [
+      "Rock", 
+      "Nu-Metal", 
+      "Metal"
+    ], 
+    "artist_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/image-artist/9BB0/424B/C37E/77E8_large_front.jpg", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/6378/BC6D/771E/AEBB_large_front.jpg", 
+    "album": "Immortalized", 
+    "mood": [
+      "Sentimental", 
+      "Tender / Sincere"
+    ], 
+    "artist": "Disturbed", 
+    "length": "5:39", 
+    "track_no": "11"
+  }, 
+  {
+    "track": "Wish I Knew You", 
+    "price": "1.39", 
+    "year": "2015", 
+    "genre": [
+      "Rock", 
+      "Adult Alternative Rock", 
+      "Adult Alternative Rock"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/A518/1328/2182/BA17_large_front.jpg", 
+    "album": "Men Amongst Mountains", 
+    "mood": [
+      "Yearning", 
+      "Energetic Yearning"
+    ], 
+    "artist": "The Revivalists", 
+    "length": "2:55", 
+    "track_no": "2"
+  }, 
+  {
+    "track": "Good Old Days (Featuring Kesha)", 
+    "price": "1.25", 
+    "year": "", 
+    "genre": [
+      "Urban", 
+      "Conscious Hip-Hop/Rap", 
+      "Western Hip-Hop/Rap"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/B9EE/6548/BFC8/06C7_large_front.jpg", 
+    "album": "Good Old Days (Featuring Kesha)", 
+    "mood": [
+      "Yearning", 
+      "Energetic Yearning"
+    ], 
+    "artist": "Macklemore", 
+    "length": "5:53", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "Despacito (Featuring Daddy Yankee)", 
+    "price": "2.53", 
+    "year": "2017", 
+    "genre": [
+      "Other", 
+      "General Latin Pop", 
+      "Latin Pop"
+    ], 
+    "artist_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/image-artist/0856/1113/2138/EA46_large_front.jpg", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/67FF/A812/8D9E/E043_large_front.jpg", 
+    "album": "Despacito", 
+    "mood": [], 
+    "artist": "Luis Fonsi", 
+    "length": "5:15", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "Up Down (Featuring Florida Georgia Line)", 
+    "price": "2.91", 
+    "year": "2017", 
+    "genre": [
+      "Traditional", 
+      "Contemporary Country", 
+      "Country"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/FC7C/7DC5/221B/7A19_large_front.jpg", 
+    "album": "Up Down (Featuring Florida Georgia Line)", 
+    "mood": [
+      "Yearning", 
+      "Sensitive / Exploring"
+    ], 
+    "artist": "Morgan Wallen", 
+    "length": "3:33", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "Whatever It Takes", 
+    "price": "1.95", 
+    "year": "2017", 
+    "genre": [
+      "Alternative & Punk", 
+      "Indie Pop", 
+      "Indie Rock"
+    ], 
+    "artist_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/image-artist/5874/5F20/83A7/01EF_large_front.jpg", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/7158/3EFD/1716/4874_large_front.jpg", 
+    "album": "Evolve", 
+    "mood": [], 
+    "artist": "Imagine Dragons", 
+    "length": "2:11", 
+    "track_no": "2"
+  }, 
+  {
+    "track": "Thinking Out Loud", 
+    "price": "1.35", 
+    "year": "2014", 
+    "genre": [
+      "Pop", 
+      "Adult Alternative Pop", 
+      "Western Pop"
+    ], 
+    "artist_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/image-artist/E7B4/94EC/F57E/BF6B_large_front.jpg", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/4885/44A2/7764/4290_large_front.jpg", 
+    "album": "x", 
+    "mood": [
+      "Empowering", 
+      "Dramatic Emotion"
+    ], 
+    "artist": "Ed Sheeran", 
+    "length": "2:54", 
+    "track_no": "11"
+  }, 
+  {
+    "track": "Versace On The Floor", 
+    "price": "1.67", 
+    "year": "2016", 
+    "genre": [
+      "Pop", 
+      "Urban Crossover: Pop", 
+      "Western Pop"
+    ], 
+    "artist_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/image-artist/1EED/C8FE/E50D/B5DB_large_front.jpg", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/B1A0/A9B4/13B6/E0D2_large_front.jpg", 
+    "album": "24K Magic", 
+    "mood": [
+      "Empowering", 
+      "Dramatic Emotion"
+    ], 
+    "artist": "Bruno Mars", 
+    "length": "4:14", 
+    "track_no": "5"
+  }, 
+  {
+    "track": "Shes Got a Way", 
+    "price": "1.99", 
+    "year": "2017", 
+    "genre": [
+      "Traditional", 
+      "Contemporary Country", 
+      "Country"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/2DE8/14B1/3199/B296_large_front.jpg", 
+    "album": "Losing Sleep", 
+    "mood": [
+      "Yearning", 
+      "Sensitive / Exploring"
+    ], 
+    "artist": "Chris Young", 
+    "length": "5:19", 
+    "track_no": "6"
+  }, 
+  {
+    "track": "Location", 
+    "price": "2.57", 
+    "year": "2017", 
+    "genre": [
+      "Urban", 
+      "Neo-Soul", 
+      "Contemporary R&B/Soul"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/2B12/B4D4/AA41/BFCA_large_front.jpg", 
+    "album": "American Teen", 
+    "mood": [
+      "Cool", 
+      "Wary / Defiant"
+    ], 
+    "artist": "Khalid", 
+    "length": "4:41", 
+    "track_no": "3"
+  }, 
+  {
+    "track": "Bodak Yellow", 
+    "price": "1.27", 
+    "year": "2017", 
+    "genre": [
+      "Urban", 
+      "General Hip-Hop/Rap", 
+      "Western Hip-Hop/Rap"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/0C91/6075/2FB3/E3F9_large_front.jpg", 
+    "album": "Bodak Yellow [Single]", 
+    "mood": [
+      "Defiant", 
+      "Attitude / Defiant"
+    ], 
+    "artist": "Cardi B", 
+    "length": "5:31", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "Fix A Drink", 
+    "price": "1.39", 
+    "year": "2017", 
+    "genre": [
+      "Traditional", 
+      "Contemporary Country", 
+      "Country"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/063C/5B9E/0822/9773_large_front.jpg", 
+    "album": "Everybody", 
+    "mood": [
+      "Empowering", 
+      "Powerful / Heroic"
+    ], 
+    "artist": "Chris Janson", 
+    "length": "6:10", 
+    "track_no": "5"
+  }, 
+  {
+    "track": "Anywhere", 
+    "price": "2.75", 
+    "year": "2017", 
+    "genre": [
+      "Pop", 
+      "Urban Crossover: Pop", 
+      "Western Pop"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/840F/CC92/197D/DA28_large_front.jpg", 
+    "album": "Anywhere [Single]", 
+    "mood": [
+      "Urgent", 
+      "Dark Pop Intensity"
+    ], 
+    "artist": "Rita Ora", 
+    "length": "6:33", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "I Could Use A Love Song", 
+    "price": "2.97", 
+    "year": "2016", 
+    "genre": [
+      "Traditional", 
+      "Contemporary Country", 
+      "Country"
+    ], 
+    "artist_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/image-artist/8870/F72D/6009/7091_large_front.jpg", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/21D9/7F92/3519/AB1A_large_front.jpg", 
+    "album": "Hero", 
+    "mood": [
+      "Empowering", 
+      "Dramatic Emotion"
+    ], 
+    "artist": "Maren Morris", 
+    "length": "4:16", 
+    "track_no": "4"
+  }, 
+  {
+    "track": "Tell Me You Love Me", 
+    "price": "1.95", 
+    "year": "2017", 
+    "genre": [
+      "Pop", 
+      "Dance Pop", 
+      "Western Pop"
+    ], 
+    "artist_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/image-artist/76DF/0474/AFED/2539_large_front.jpg", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/6394/DF3C/65F9/6DC2_large_front.jpg", 
+    "album": "Tell Me You Love Me", 
+    "mood": [
+      "Yearning", 
+      "Energetic Yearning"
+    ], 
+    "artist": "Demi Lovato", 
+    "length": "5:21", 
+    "track_no": "2"
+  }, 
+  {
+    "track": "Flicker", 
+    "price": "1.89", 
+    "year": "2017", 
+    "genre": [
+      "Pop", 
+      "Teen Pop", 
+      "Western Pop"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/9C74/50B6/E1C3/8394_large_front.jpg", 
+    "album": "Flicker", 
+    "mood": [
+      "Sentimental", 
+      "Tender / Sincere"
+    ], 
+    "artist": "Niall Horan", 
+    "length": "3:9", 
+    "track_no": "8"
+  }, 
+  {
+    "track": "Round Here Buzz", 
+    "price": "1.29", 
+    "year": "2015", 
+    "genre": [
+      "Traditional", 
+      "Contemporary Country", 
+      "Country"
+    ], 
+    "artist_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/image-artist/77A2/3A25/FF04/D3FC_large_front.jpg", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/FE3D/B19E/2526/6413_large_front.jpg", 
+    "album": "Mr. Misunderstood", 
+    "mood": [
+      "Gritty", 
+      "Sober / Determined"
+    ], 
+    "artist": "Eric Church", 
+    "length": "2:36", 
+    "track_no": "6"
+  }, 
+  {
+    "track": "Meaning Of Life", 
+    "price": "2.05", 
+    "year": "2017", 
+    "genre": [
+      "Pop", 
+      "Adult Alternative Pop", 
+      "Western Pop"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/5C75/FF46/30EF/5E74_large_front.jpg", 
+    "album": "Meaning Of Life [Single]", 
+    "mood": [
+      "Yearning", 
+      "Energetic Yearning"
+    ], 
+    "artist": "Kelly Clarkson", 
+    "length": "2:6", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "For the First Time", 
+    "price": "2.03", 
+    "year": "2017", 
+    "genre": [
+      "Traditional", 
+      "Contemporary Country", 
+      "Country"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/51A1/F71F/E5D1/2D8A_large_front.jpg", 
+    "album": "When Was the Last Time", 
+    "mood": [], 
+    "artist": "Darius Rucker", 
+    "length": "2:33", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "Butterfly Effect", 
+    "price": "1.93", 
+    "year": "2017", 
+    "genre": [
+      "Urban", 
+      "Southern Rap", 
+      "Western Hip-Hop/Rap"
+    ], 
+    "artist_art": "", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/1CBA/18C2/B250/FEB0_large_front.jpg", 
+    "album": "Butterfly Effect [Single]", 
+    "mood": [
+      "Energizing", 
+      "Abstract Beat"
+    ], 
+    "artist": "Travis Scott", 
+    "length": "4:13", 
+    "track_no": "1"
+  }, 
+  {
+    "track": "Blue Aint Your Color", 
+    "price": "1.03", 
+    "year": "2016", 
+    "genre": [
+      "Traditional", 
+      "Contemporary Country", 
+      "Country"
+    ], 
+    "artist_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/image-artist/A3C1/96AF/A328/1A4E_large_front.jpg", 
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/D74C/E7EC/C5F1/FB91_large_front.jpg", 
+    "album": "Ripcord", 
+    "mood": [
+      "Sensual", 
+      "Soft Soulful"
+    ], 
+    "artist": "Keith Urban", 
+    "length": "5:39", 
+    "track_no": "7"
+  }
+]

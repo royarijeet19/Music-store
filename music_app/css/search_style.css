@@ -1,0 +1,173 @@
+@import url(font-awesome.css);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+body {
+  background: #e2e2e2;
+  width: 98%;
+  height: 100vh;
+}
+body .card {
+  width: 750px;
+  height: 225px;
+  background: rgba(255, 255, 255, 0.88);
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  box-shadow: 0px 10px 20px 3px rgba(0, 0, 0, 0.15);
+}
+body .card_left {
+  width: 30%;
+  height: 225px;
+  float: left;
+  overflow: hidden;
+}
+body .card_left img {
+  width:auto;
+  height:100%;
+  display:block;
+  border-radius: 10px 0 0 10px;
+  -webkit-border-radius: 10px 0 0 10px;
+  -moz-border-radius: 10px 0 0 10px;
+  position: relative;
+}
+body .card_right {
+  width: 70%;
+  float: left;
+  color: black;
+  height: 225px;
+  border-radius: 0 10px 10px 0;
+  -webkit-border-radius: 0 10px 10px 0;
+  -moz-border-radius: 0 10px 10px 0;
+}
+body .card_right h1 {
+  color: #333;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  text-align: left;
+  font-size: 30px;
+  margin: 18px 0 0 0;
+  padding: 0 0 0 35px;
+  letter-spacing: 1px;
+}
+body .card_right h2 {
+  color: #333;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  text-align: left;
+  font-size: 15px;
+  margin: 6px 0 0 0;
+  padding: 0 0 0 40px;
+  letter-spacing: 1px;
+}
+body .card_right__cost {
+  color: #333;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  text-align: left;
+  font-size: 30px;
+  margin: 27px 0 0 0;
+  padding: 0 0 0 40px;
+  letter-spacing: 1px;
+}
+body .card_right__details ul {
+  list-style-type: none;
+  padding: 0 0 0 40px;
+  margin: 10px 0 0 0;
+}
+body .card_right__details ul li {
+  display: inline;
+  color: #333;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 0 40px 0 0;
+}
+body .card_right__review p {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  padding: 0 40px 0 40px;
+  letter-spacing: 1px;
+  margin: 10px 0 10px 0;
+  line-height: 20px;
+}
+body .card_right__review a {
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  padding: 0 0 0 40px;
+  color: #ffda00;
+  margin: 0;
+}
+body .card_right__button {
+
+  padding: 0 0 0 35px;
+  margin: -27px 0 0 350px;
+}
+body .card_right__button a {
+  color: #777;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  border: 2px solid #777;
+  padding: 10px 10px 10px 10px;
+  font-size: 12px;
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+  background-position: 7% 50%;
+  border-radius: 5px;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: .5s;
+  transition-duration: .5s;
+}
+body .card_right__button a:hover {
+  color: #000000;
+  background-color: #f5d45c;
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+  background-position: 10% 50%;
+  cursor: pointer;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: .5s;
+  transition-duration: .5s;
+}
+body .card_right__ebutton {
+  float: left;
+  padding-left: 250px;
+  margin-top: -25px;
+}
+body .card_right__ebutton a {
+  color: #af7171;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  border: 2px solid #af7171;
+  padding: 10px 10px 10px 10px;
+  font-size: 12px;
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+  background-position: 7% 50%;
+  border-radius: 5px;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: .5s;
+  transition-duration: .5s;
+}
+body .card_right__ebutton a:hover {
+  color: #fff;
+  border: 0px solid #fff;
+  background-color: #ff4949;
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+  background-position: 10% 50%;
+  cursor: pointer;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: .5s;
+  transition-duration: .5s;
+}
+

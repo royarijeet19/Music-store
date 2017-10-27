@@ -1,0 +1,125 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="css/bg_slides.css"/>
+  <link rel="stylesheet" type="text/css" href="css/search_style.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  function add_to_cart(x){
+    console.log("add_to_cart: "+x);
+    data={"track_id": x};
+
+    $.ajax({
+      url:"add_to_cart",
+      contentType: "application/json",
+      type: "POST",
+      data: JSON.stringify(data),
+      success: function(res){
+        console.log(res);
+      },
+      error: function(res){
+        alert("error adding to cart");
+      }
+      });
+  }
+
+  function userType(){
+  var request = new XMLHttpRequest();
+  request.open('GET', 'user_type', false);  // `false` makes the request synchronous
+  request.send(null);
+
+  if (request.status === 200) {// That's HTTP for 'ok'
+  req = JSON.parse(request.responseText);
+  return req.user_type;
+  }
+  return 'guest';
+  }
+
+  class CardBuilder{
+  
+  constructor(album_art, track, artist, album, track_no, length, year, genre, price){
+  this.track=track;
+  genre=genre[0];
+  this.card = '<div class="card">'+
+        '<div class="card_left">'+
+        '<img src="'+album_art+'">'+
+        '</div>'+
+        '<div class="card_right">'+
+        '  <h1>'+track.slice(0,25)+'</h1>'+
+        '  <h2>'+artist+'</h2>'+
+        '  <h2>'+album+'</h2>'+
+        '  <div class="card_right__details">'+
+        '    <ul>'+
+        '      <li>#'+track_no+'</li>'+
+        '      <li>'+length[0]+' min 29 sec</li>'+
+        '      <li>'+year+'</li>'+
+        '      <li>'+genre+'</li>'+
+        '    </ul>'+
+        '  </div>'+
+        '  <span>'+
+        '    <div class="card_right__cost">$'+price+'</div>'+
+	'replace_placeholder'+
+        '  </span>'+
+        '</div>  </div><br>';
+}
+
+editable(){
+var ebutton = '    <div class="card_right__ebutton">'+
+        "      <a onclick='edit_item(\""+this.track+"\")'>"+
+        '        <i class="fa fa-cog" aria-hidden="true"></i>'+
+        '        EDIT ITEM'+
+        '      </a>'+
+        '    </div>';
+  this.card = this.card.replace('replace_placeholder', ebutton);
+  }
+cartable(){
+var button =         '    <div class="card_right__button">'+
+        "      <a onclick='edit_item(\""+this.track+"\")'>"+
+        '        <i class="fa fa-shopping-cart" aria-hidden="true"></i>'+
+        '        ADD TO CART'+
+        '      </a>'+
+        '    </div>';
+  this.card = this.card.replace('replace_placeholder', button);
+    }
+    get cardHTML(){
+  this.card = this.card.replace('replace_placeholder', '');
+    return this.card;
+    }
+  }
+  
+  $(document).ready(function() {
+  user_type = userType();
+    $.ajax({
+      url:"other/metadata.json",
+      dataType: "JSON",
+      success: function(data){
+    $(data).each(function(i, el){
+  var c = new CardBuilder(el.album_art, el.track, el.artist, el.album, el.track_no, el.length, el.year, el.genre, el.price);
+  if (user_type!='guest'){
+  c.cartable();
+  }
+        $('#result_container').append(c.cardHTML);
+
+      })
+  },
+  error: function(data){
+      alert("error loading file");
+  }
+    });
+    
+});
+
+  </script>
+</head>
+<body>
+  <!-- <ul class="cb-slideshow"> -->
+  <!--           <li><span>Image 01</span><div><h3></h3></div></li> -->
+  <!--           <li><span>Image 02</span><div><h3></h3></div></li> -->
+  <!--           <li><span>Image 03</span><div><h3></h3></div></li> -->
+  <!--           <li><span>Image 04</span><div><h3></h3></div></li> -->
+  <!--           <li><span>Image 05</span><div><h3></h3></div></li> -->
+  <!--           <li><span>Image 06</span><div><h3></h3></div></li> -->
+  <!--       </ul> -->
+  <div id='result_container'>
+  </div>
+</body>
+</html>
