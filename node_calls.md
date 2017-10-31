@@ -12,19 +12,18 @@ If uname or email address already exists return 400 else return 201
 fail={
     "uname":"user",
     "pwd":"123",
-    "email":"test@test.com",
-    "address":"street"
+    "email":"test@test.com"
 }
 pass={
     "uname":"user1",
     "pwd":"123",
-    "email":"test@test.com",
-    "address":"street"
+    "email":"test@test.com"
 }
 ```
 **response:**
 ```
-fail={"status":400}
+fail={"status":400, "msg":"user already exists, try a different username"}
+{"status":400, "msg":"email address already exists, try a different email address"}
 pass={"status":201}
 ```
 
@@ -242,4 +241,17 @@ response=[{
 		}
 	]
 }]
+```
+
+## any page: sign out
+*frontend:* redirect to home if success.
+
+*backend:* remove session username and set usertype to guest
+
+**type:** GET
+
+**response:**
+```
+fail={"status":500}
+pass={"status":200}
 ```
