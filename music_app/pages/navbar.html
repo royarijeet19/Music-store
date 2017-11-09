@@ -24,6 +24,9 @@
              }
            });
     }
+    function home(){
+      window.location.href="/";
+    }
     function login(){
       window.location.href="/login";
     }
@@ -64,7 +67,8 @@
 	});
 </script>
   <div class="navbar">
-     <button id="additem" class="navbtn" onclick="additem()">Add item</button>
+    <button id="home" class="navbtn" onclick="home()">Home</button>
+    <button id="additem" class="navbtn" onclick="additem()">Add item</button>
     <button id="edititems" class="navbtn" onclick="edititems()">Edit items</button>
     <button id="purchases" class="navbtn" onclick="purchases()">Purchases</button>
     <button id="cart" class="navbtn" onclick="cart()">Cart</button>
