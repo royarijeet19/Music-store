@@ -17,6 +17,7 @@ for el in data:
     album_id = hashlib.md5(el['album']+el['artist']).hexdigest()
     el['track_id'] = track_id
     el['album_id'] = album_id
+    el['deleted'] = False
     print el['track']
     posts.insert_one(el)
     
