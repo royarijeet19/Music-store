@@ -2,7 +2,6 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 body {
   background: #e2e2e2;
-  width: 98%;
   height: 100vh;
 }
 body .card {
@@ -14,9 +13,7 @@ body .card {
   margin: auto;
   top: 0;
   bottom: 0;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
+  border-radius: 1px;
   box-shadow: 0px 10px 20px 3px rgba(0, 0, 0, 0.15);
 }
 body .card_left {
@@ -29,9 +26,6 @@ body .card_left img {
   width:auto;
   height:100%;
   display:block;
-  border-radius: 10px 0 0 10px;
-  -webkit-border-radius: 10px 0 0 10px;
-  -moz-border-radius: 10px 0 0 10px;
   position: relative;
 }
 body .card_right {
@@ -39,9 +33,6 @@ body .card_right {
   float: left;
   color: black;
   height: 225px;
-  border-radius: 0 10px 10px 0;
-  -webkit-border-radius: 0 10px 10px 0;
-  -moz-border-radius: 0 10px 10px 0;
 }
 body .card_right h1 {
   color: #333;
@@ -171,3 +162,30 @@ body .card_right__ebutton a:hover {
   transition-duration: .5s;
 }
 
+body .top_container{
+  background-color: rgba(80, 80, 80, 0.67);
+  padding-left: 20%;
+  padding-right:20%;
+  padding-top:30px;
+}
+body .result_container{
+  background-color: #e2e2e2;
+  padding-left: 20%;
+  padding-right:20%;
+  padding-top:80px;
+}
+body .top_title {
+  color: #dedede;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  text-align: left;
+  font-size: 30px;
+  margin: 10px 0 20px 0;
+  padding: 0 0 0 35px;
+  letter-spacing: 1px;
+}
+h1 {
+  padding-left: 20%;
+  padding-top: 5%;
+  color: #3c3c3c;
+}

@@ -1,0 +1,47 @@
+@import url(font-awesome.css);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+body {
+  background: #e2e2e2;
+  width:100%;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+}
+.searchbar {
+  width 100%;
+  height: 70px;
+  background: #424242;
+  padding-right: 20%;
+  text-align: right;
+}
+.sbutton{
+  background: #ffea00;
+  border:none;
+  color: #525252;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 100;
+  letter-spacing: 1px;
+  margin-left: -5px;
+  margin-top: 2px;
+  overflow: hidden;
+  height: 40px;
+  padding: 8px;
+  transition: all 0.15s ease-in-out 0s;
+  box-shadow: 0 2px 4px 0px rgba(0,0,0,0.16);
+}
+.sbutton:hover {
+  background: #fbff00;
+  box-shadow: 0 2px 4px 0px rgba(0,0,0,0.16), 0 2px 4px 0px rgba(0,0,0,0.23);
+}
+.modal_input{
+  border: none;
+  border-radius: 0;
+  margin-top: 0px;
+  padding: 12px;
+  padding-left: 30px;
+  width: 70%;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 0 2px 4px 0px rgba(0,0,0,0.30)
+}

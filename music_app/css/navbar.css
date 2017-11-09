@@ -1,0 +1,36 @@
+@import url(font-awesome.css);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+body {
+  background: #e2e2e2;
+  width:100%;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+}
+body .navbar {
+  width 100%;
+  height: 50px;
+  background: #424242;
+  padding-right: 20%;
+  text-align: right;
+}
+.navbtn{
+  background: #424242;
+  border:none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 100;
+  letter-spacing: 1px;
+  margin-top: 5px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  padding: 8px;
+  transition: all 0.15s ease-in-out 0s;
+}
+.navbtn:hover {
+  background: #000;
+  box-shadow: 0 2px 4px 0px rgba(0,0,0,0.16), 0 2px 4px 0px rgba(0,0,0,0.23);
+}
