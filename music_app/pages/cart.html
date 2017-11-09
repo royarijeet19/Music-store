@@ -19,6 +19,23 @@
              }
            });
          }
+
+         function purchase() {
+           console.log("purchase");
+         
+           $.ajax({
+             url: "make_purchase",
+             contentType: "application/json",
+             type: "GET",
+             data: JSON.stringify(data),
+             success: function (res) {
+               alert("workded");
+             },
+             error: function (res) {
+               alert("error purchasing cart");
+             }
+           });
+         }
          
          function userType() {
            var request = new XMLHttpRequest();
@@ -118,3 +135,5 @@
       <h1>Music tracks in cart</h1>
       <div id='result_container' class='result_container'>
       </div>
+      <div class='result_container'>
+      <center><button class="pbutton" onclick="purchase()"><i class="fa fa-usd" aria-hidden="true"></i> Purchase</button></center></div>

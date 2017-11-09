@@ -1,7 +1,7 @@
 @import url(font-awesome.css);
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 body {
-  background: #e2e2e2;
+  background: #424242;
   height: 100vh;
 }
 body .card {
@@ -26,7 +26,6 @@ body .card_left img {
   width:auto;
   height:100%;
   display:block;
-  position: relative;
 }
 body .card_right {
   width: 70%;
@@ -169,7 +168,7 @@ body .top_container{
   padding-top:30px;
 }
 body .result_container{
-  background-color: #e2e2e2;
+  background-color: #313131;
   padding-left: 20%;
   padding-right:20%;
   padding-top:80px;
@@ -187,5 +186,6 @@ body .top_title {
 h1 {
   padding-left: 20%;
   padding-top: 5%;
-  color: #3c3c3c;
+  color: #ccc;
 }
+

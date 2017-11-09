@@ -16,8 +16,23 @@
 			}
 		});
 	}
+
+			$( function() {
+				
+				$( '#cd-dropdown' ).dropdown();
+
+			});
+
 </script>
   <div class="searchbar">
   	<input class="modal_input" id="searchbar" type="text" placeholder="Search for music"/>
   	 <button class="sbutton" onclick="search()"><i class="fa fa-search" aria-hidden="true"></i> Search</button>
+  	 <br>
+  	 <select id="cd-dropdown" class="cd-select">
+		<option value="-1" selected>Sort by parameter</option>
+		<option value="1" class="fa fa-usd"> Cost</option>
+		<option value="2" class="fa fa-calendar"> Year</option>
+		<option value="3" class="fa fa-hashtag"> Track no</option>
+		<option value="4" class="fa fa-clock-o"> Duration</option>
+	</select>
   </div>
