@@ -1,0 +1,62 @@
+<script>
+  function signup(){
+    uname = $('#uname').val();
+    pwd = $('#pwd').val();
+    email = $('#email').val();
+    pwd_hash =sha512(pwd);
+    if (uname.length==0){
+      alert("missing username");
+      return;
+    }
+    if(pwd.length<7){
+      alert("Password should be atleast 8 characters long");
+      return;
+    }
+    if(email.length==0){
+      alert("missing email address");
+      return;
+    }
+    if (uname.length<2){
+      alert("username should be atleaset 3 characters");
+      return;
+    }
+    if (uname.length<2){
+      alert("username should be atleaset 3 characters");
+      return;
+    }
+    unamex=new RegExp('^[0-9a-zA-Z]+$');
+    emailx=/\S+@\S+\.\S+/;
+    if(!unamex.test(uname)){
+      alert("username should only contain digits and alphabets without spaces");
+      return;
+    }
+    if(!emailx.test(email)){
+      alert("invalid email address");
+      return;
+    }
+
+    data = {"uname": uname, "pwd":pwd_hash, "email":email}
+     $.ajax({
+             url: "signup",
+             contentType: "application/json",
+             type: "POST",
+             data: JSON.stringify(data),
+             success: function (res) {
+               console.log(res);
+               window.location.href = '/';
+             },
+             error: function (res) {
+               alert("error signing up");
+             }
+           });
+   }
+
+  </script>
+  <div class="modal">
+    <div class="modal_header2">Sign up in seconds</div>
+    <label>username</label>
+    <input class="modal_input" id="uname" type="uname" placeholder="username"/>
+    <input class="modal_input" id="email" type="email" placeholder="email address"/>
+    <input class="modal_input" id="pwd" type="password" placeholder="password"/>
+    <button  class="btn" onclick="signup()">sign me up!</button>
+  </div>

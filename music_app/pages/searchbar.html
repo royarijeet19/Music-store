@@ -1,0 +1,23 @@
+<script type="text/javascript">
+	function search(){
+		query=$('#searchbar').val();
+		data={"query":query}
+		console.log(query);
+		$.ajax({
+			url:"/search",
+			contentType: "application/json",
+			type: "POST",
+			data: JSON.stringify(data),
+			success: function(res){
+				window.location.href="/search"
+			},
+			error: function(res){
+				alert("error while search");
+			}
+		});
+	}
+</script>
+  <div class="searchbar">
+  	<input class="modal_input" id="searchbar" type="text" placeholder="Search for music"/>
+  	 <button class="sbutton" onclick="search()"><i class="fa fa-search" aria-hidden="true"></i> Search</button>
+  </div>

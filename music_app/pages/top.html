@@ -1,42 +1,10 @@
 
-      <script>
-         function add_to_cart(x) {
-           console.log("add_to_cart: " + x);
-           data = {
-             "track_id": x
-           };
-         
-           $.ajax({
-             url: "add_to_cart",
-             contentType: "application/json",
-             type: "POST",
-             data: JSON.stringify(data),
-             success: function (res) {
-               console.log(res);
-             },
-             error: function (res) {
-               alert("error adding to cart");
-             }
-           });
-         }
-         
-         function userType() {
-           var request = new XMLHttpRequest();
-           request.open('GET', 'user_type', false); // `false` makes the request synchronous
-           request.send(null);
-         
-           if (request.status === 200) { // That's HTTP for 'ok'
-             req = JSON.parse(request.responseText);
-             return req.user_type;
-           }
-           return 'guest';
-         }
-         
-         class CardBuilder {
+<script>
+  class CardBuilder {
          
            constructor(album_art, track, artist, album, track_no, length, year, genre, price) {
              this.track = track;
-	     length = length.split(":");
+       length = length.split(":");
              genre = genre[0];
              this.card = '<div class="card">' +
                '<div class="card_left">' +
@@ -86,17 +54,13 @@
          }
          
          $(document).ready(function () {
-           user_type = userType();
            $.ajax({
-             url: "other/metadata.json",
+             url: "/other/metadata.json",
              dataType: "JSON",
              success: function (data) {
                $(data).each(function (i, el) {
                  var c = new CardBuilder(el.album_art, el.track, el.artist, el.album, el.track_no, el.length, el.year, el.genre, el.price);
-                 if (user_type != 'guest') {
-                   c.cartable();
-                 }
-                 $('#result_container').append(c.cardHTML);
+                 $('#top_container').append(c.cardHTML);
          
                })
              },
@@ -106,14 +70,16 @@
            });
          
          });
-      </script>
-<!--        <ul class="cb-slideshow"> 
+  </script>
+
+  <div class="top_container" id='top_container'>
+           <ul class="cb-slideshow"> 
                  <li><span>Image 01</span><div><h3></h3></div></li> 
                  <li><span>Image 02</span><div><h3></h3></div></li> 
                  <li><span>Image 03</span><div><h3></h3></div></li> 
                  <li><span>Image 04</span><div><h3></h3></div></li> 
                  <li><span>Image 05</span><div><h3></h3></div></li> 
                  <li><span>Image 06</span><div><h3></h3></div></li> 
-             </ul>  -->
-      <div id='result_container' class='result_container'>
-      </div>
+             </ul> 
+    <h1 class="top_title">Top tracks</h1>
+  </div>
