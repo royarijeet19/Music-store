@@ -1,7 +1,7 @@
 @import url(font-awesome.css);
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
 body {
-  background: #e2e2e2;
+  background: #313131;
   width: 98%;
   height: 100vh;
 }
@@ -15,7 +15,7 @@ body .modal {
   top: 0;
   bottom: 0;
   margin-top: 10%;
-
+  margin-bottom: 10%;
   border-radius: 10px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 10px;
@@ -26,7 +26,6 @@ body .modal label{
   display: block;
   padding-top: 30px;
   padding-left: 30px;
-  visibility: hidden;
 }
 body .modal_input{
   border: none;
