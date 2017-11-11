@@ -7,7 +7,22 @@ html
     link(rel='stylesheet', href='/css/bg_slides.css')
     link(rel='stylesheet', href='/css/search_style.css')
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    script(src='/js/cardbuilds.js')
   body
     include ../pages/navbar.html
     include ../pages/searchbar.html
-    include ../pages/top.html
+    ul(class='cb-slideshow')
+      - for (var x = 1; x < 7; x++)
+        li
+          span
+            item
+    div(class="top_container" id="top_container1")
+      h1(class="top_title") Top Tracks
+    div(class="top_container" id="top_container2")
+      h1(class="top_title") Top Trending
+    div(class="top_container" id="top_container3")
+      h1(class="top_title") Tastemakers
+
+
+
+
