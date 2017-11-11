@@ -255,3 +255,135 @@ response=[{
 fail={"status":500}
 pass={"status":200}
 ```
+
+## edit items page: add item/edit item
+*frontend:* specify the type of request: add or edit
+
+*backend:* for edit_type=add, add the item to db, if already exists returns error. For edit_type=edit, edit the existing item. This item is guarenteed to exist in db so, not required to check existance and raise an error
+
+**input:**
+```
+ add_item = {
+    "edit_type": "add",
+    "track": "Doomsday", 
+    "price": "5", 
+    "year": "2017", 
+    "genre": ["metal"],
+    "album_art": "https://images.genius.com/8f6f7d5c8e3fe84dfcb3afb33fe59124.960x960x1.jpg", 
+    "album": "Ruin", 
+    "artist": "Architechts", 
+    "length": "2:59", 
+    "track_no": "1"
+  }
+edit_item =   {
+    "track": "Thunder", 
+    "price": "2.77", 
+    "year": "2017", 
+    "genre": "Rock",
+    "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/7158/3EFD/1716/4874_large_front.jpg", 
+    "album": "Evolve", 
+    "artist": "Imagine Dragons", 
+    "length": "2:59", 
+    "track_no": "9"
+  }
+```
+**response:**
+```
+fail={"status":500}
+pass={"status":200}
+```
+
+## edit items page: delete item
+*backend:* delete item from db
+
+**input:**
+```
+  {
+    "track_id": "606d2f43781119993f90f1f4cc522871",
+  }
+```
+**response:**
+```
+fail={"status":500}
+pass={"status":200}
+```
+
+## purchases: purchase history
+*backend:* Fetch the user information from session variables
+
+**type:**GET
+
+**response:**
+```
+[{
+        "timestamp": [{
+                "track": "What Lovers Do (Featuring SZA)",
+                "track_id": "606d2f43781119993f90f1f4cc522871",
+                "price": "1.35",
+                "year": "2017",
+                "genre": [
+                    "Pop",
+                    "Adult Alternative Pop",
+                    "Western Pop"
+                ],
+                "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/F764/6709/6E9C/7F07_large_front.jpg",
+                "album": "What Lovers Do (Featuring SZA)",
+                "artist": "Maroon 5",
+                "length": "2:47",
+                "track_no": "1"
+            },
+            {
+                "track": "Look What You Made Me Do",
+                "track_id": "e3d64c16949ca20548118cf05798de16",
+                "price": "1.43",
+                "year": "2017",
+                "genre": [
+                    "Pop",
+                    "Adult Alternative Pop",
+                    "Western Pop"
+                ],
+                "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/FB22/0DAA/4BBD/E903_large_front.jpg",
+                "album": "Look What You Made Me Do [Single]",
+                "artist": "Taylor Swift",
+                "length": "3:1",
+                "track_no": "1"
+            }
+        ]
+    },
+    {
+        "timestamp": [{
+                "track": "What Lovers Do (Featuring SZA)",
+                "track_id": "606d2f43781119993f90f1f4cc522871",
+                "price": "1.35",
+                "year": "2017",
+                "genre": [
+                    "Pop",
+                    "Adult Alternative Pop",
+                    "Western Pop"
+                ],
+                "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/F764/6709/6E9C/7F07_large_front.jpg",
+                "album": "What Lovers Do (Featuring SZA)",
+                "artist": "Maroon 5",
+                "length": "2:47",
+                "track_no": "1"
+            },
+            {
+                "track": "Look What You Made Me Do",
+                "track_id": "e3d64c16949ca20548118cf05798de16",
+                "price": "1.43",
+                "year": "2017",
+                "genre": [
+                    "Pop",
+                    "Adult Alternative Pop",
+                    "Western Pop"
+                ],
+                "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/FB22/0DAA/4BBD/E903_large_front.jpg",
+                "album": "Look What You Made Me Do [Single]",
+                "artist": "Taylor Swift",
+                "length": "3:1",
+                "track_no": "1"
+            }
+        ]
+    }
+]
+```
