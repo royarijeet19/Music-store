@@ -94,7 +94,7 @@ function userType(callback) {
 
 function populateSearch(user_type) {
     $.ajax({
-        url: "other/metadata.json",
+        url: "/api/search_track",
         dataType: "JSON",
         success: function(data) {
             $(data).each(function(i, el) {

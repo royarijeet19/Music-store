@@ -133,9 +133,16 @@ app.get('/signup', function(req,res){
 // //--------------------------
 // //---------Pages------------
 // //--------------------------
-// app.get('/search', function(req,res){
-//     res.render('search');
-// });
+app.post('/search', function(req,res){
+    console.log(JSON.stringify(req.body));
+    console.log(req.body.search_track);
+    req.session.search_track=req.body.search_track;
+    res.render('search');
+});
+app.get('/search', function(req,res){
+    console.log(JSON.stringify(req.body));
+    res.render('search');
+});
 // app.post('/search', function(req,res){
 //      console.log('POST: /search');
 //      console.log(JSON.stringify(req.body));

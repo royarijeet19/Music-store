@@ -1,7 +1,7 @@
 <script type="text/javascript">
 	function search(){
 		query=$('#searchbar').val();
-		data={"query":query}
+		data={"search_track":query}
 		console.log(query);
 		$.ajax({
 			url:"/search",
