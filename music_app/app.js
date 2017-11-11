@@ -17,7 +17,7 @@ app.use('/api', api);
 var con = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "",
+    password: "root",
     database: "musicstore"
 });
 

@@ -53,7 +53,7 @@ def mood_insert(track_id, moods):
     for mood in moods:
         mood=mood.lower().replace("'",'')
         insert_str = mood_fmt.format(track_id, mood)
-        print insert_str
+        print (insert_str)
         cur.execute(insert_str)
     
 def genre_insert(track_id, genres):
@@ -61,7 +61,7 @@ def genre_insert(track_id, genres):
     for genre in genres:
         genre=genre.lower().replace("'",'')
         insert_str = genre_fmt.format(track_id, genre)
-        print insert_str
+        print (insert_str)
         cur.execute(insert_str)
     
 def album_insert(**kwargs):
@@ -71,7 +71,7 @@ def album_insert(**kwargs):
     album_fmt = "insert into album (album_id, album_name, artist, year, album_art, artist_art) values ('{album_id}','{album_name}','{artist}','{year}','{album_art}','{artist_art}');"
     kwargs['album_name']=kwargs['album_name'].replace("'",'')
     insert_str = album_fmt.format(**kwargs)
-    print insert_str
+    print (insert_str)
     cur.execute(insert_str)
     
 def track_insert(**kwargs):
@@ -80,7 +80,7 @@ def track_insert(**kwargs):
     track_fmt = "insert into track (track_id, album_id, track_name, track_no, length, price) values('{track_id}', '{album_id}', '{track_name}', '{track_no}', '{length}', '{price}');"
     kwargs['track_name']=kwargs['track_name'].replace("'",'')
     insert_str = track_fmt.format(**kwargs)
-    print insert_str
+    print (insert_str)
     cur.execute(insert_str)
     
 
@@ -89,7 +89,7 @@ with open('metadata.json') as r:
     meta = json.load(r)
     inserted = []
     for el in meta:
-        print ""
+        print ("")
 
         # todo: remove 3 lines later
         el['album'] = ''.join([i if ord(i) < 128 else ' ' for i in el['album']]).replace("'",'')
@@ -99,8 +99,8 @@ with open('metadata.json') as r:
         pprint(el)
         track_id = hashlib.md5(el['track']+el['artist']).hexdigest()
         album_id = hashlib.md5(el['album']+el['artist']).hexdigest()
-        print "track_id=", track_id
-        print "album_id=", album_id
+        print ("track_id=", track_id)
+        print ("album_id=", album_id)
         if track_id in inserted:
             continue
         album_insert(album_id=album_id,
@@ -120,4 +120,4 @@ with open('metadata.json') as r:
         inserted.append(track_id)
         db.commit()
         
-print "done!"
+print ("done!")
