@@ -72,6 +72,7 @@ router.post('/signup', function(req,res){
         res.status(400).send('Email exists.');
     }
     else {
+    	    req.session.uname=uname;
             var insert_query = "insert into user values('"+uname+"', '"+pwd+"', 0, '"+email+"', null);";
             con.query(insert_query, function (err, result, fields) {
                 if (err) throw err;
@@ -154,7 +155,7 @@ router.get('/user_type', function(req,res){
 });
 
 //fetching tracks as per the search query
-router.get('/search_track', function(req,res){
+router.post('/search_track', function(req,res){
 
     var search_query = req.body.search_track;
     var query = "select * from track where track_name LIKE = '%"+search_query+"%'";
