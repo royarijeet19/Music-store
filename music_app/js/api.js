@@ -54,13 +54,13 @@ router.post('/signup', function(req,res){
         if (err) throw err;
         data = JSON.parse(JSON.stringify(result));
         if(data != null) user_exists = true;
-    }
+    });
 
     con.query(check_email_query, function (err, result, fields) {
         if (err) throw err;
         data = JSON.parse(JSON.stringify(result));
         if(data != null) email_exists = true;
-    }
+    });
 
     if(user_exists && email_exists) {
         res.status(400).send('Username and email exists.');
@@ -149,7 +149,7 @@ router.get('/user_type', function(req,res){
         else {
             res.send({"user_type": "guest"});
         }
-    }
+    })
 
 });
 
@@ -195,7 +195,6 @@ router.get('/signout', function(req,res){
     req.session.destroy();
     res.status(200).send({"user_type": "guest"});
     });
-});
 
 //purchase order (move from cart to purchase table)
 router.get('/purchase', function(req,res){
