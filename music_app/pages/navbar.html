@@ -1,70 +1,80 @@
 <script type="text/javascript">
-	function userType() {
-           var request = new XMLHttpRequest();
-           request.open('GET', 'user_type', false); // `false` makes the request synchronous
-           request.send(null);
-         
-           if (request.status === 200) { // That's HTTP for 'ok'
-             req = JSON.parse(request.responseText);
-             return req.user_type;
-           }
-           return 'guest';
+function signout() {
+    $.ajax({
+        url: "/signout",
+        type: "GET",
+        success: function(data) {
+            if (data.status == 200) {
+                window.location.reload();
+            }
+        },
+        error: function(data) {
+            alert("error loading file");
         }
-    function signout() {
-         $.ajax({
-             url: "/signout",
-             type: "GET",
-             success: function (data) {
-             	if (data.status==200){
-             	    window.location.reload();
-                }
-             },
-             error: function (data) {
-               alert("error loading file");
-             }
-           });
+    });
+}
+
+function home() {
+    window.location.href = "/";
+}
+
+function login() {
+    window.location.href = "/login";
+}
+
+function signup() {
+    window.location.href = "/signup";
+}
+
+function cart() {
+    window.location.href = "/cart";
+}
+
+function purchases() {
+    window.location.href = "/purchases";
+}
+
+function additem() {
+    window.location.href = "/edit_item";
+}
+
+function edititems() {
+    window.location.href = "/edit_item";
+}
+
+function fixBar(usertype) {
+    if (usertype == 'guest') {
+        $("#signout").hide();
+        $("#purchases").hide();
+        $("#edititems").hide();
+        $("#cart").hide();
+        $("#additem").hide();
+
     }
-    function home(){
-      window.location.href="/";
+    if (usertype == 'user') {
+        $("#login").hide();
+        $("#signup").hide();
+        $("#edititems").hide();
+        $("#additem").hide();
     }
-    function login(){
-      window.location.href="/login";
+    if (usertype == 'admin') {
+        $("#login").hide();
+        $("#signup").hide();
     }
-    function signup(){
-      window.location.href="/signup";
-    }
-    function cart(){
-      window.location.href="/cart";
-    }
-    function purchases(){
-      window.location.href="/purchases";
-    }
-    function additem(){
-      window.location.href="/edit_item";
-    }
-    function edititems(){
-      window.location.href="/edit_item";
-    }
-	$(document).ready(function(){		
-		usertype=userType();
-		if (usertype=='guest'){
-			$("#signout").hide();
-			$("#purchases").hide();
-			$("#edititems").hide();
-			$("#cart").hide();
-      $("#additem").hide();
-		}
-		if (usertype=='user'){
-			$("#login").hide();
-			$("#signup").hide();
-			$("#edititems").hide();
-      $("#additem").hide();
-		}
-		if (usertype=='admin'){
-			$("#login").hide();
-			$("#signup").hide();
-		}
-	});
+}
+
+$(document).ready(function() {
+    $.ajax({
+        url: "/user_type",
+        type: "GET",
+        success: function(data) {
+            fixBar(data.user_type);
+        },
+        error: function(data) {
+            fixBar("guest");
+        }
+    });
+});
 </script>
   <div class="navbar">
     <button id="home" class="navbtn" onclick="home()">Home</button>
