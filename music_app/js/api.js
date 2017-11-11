@@ -5,7 +5,7 @@ var mysql = require('mysql');
 var con = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "",
+    password: "root",
     database: "musicstore"
 });
 
@@ -54,13 +54,13 @@ router.post('/signup', function(req,res){
         if (err) throw err;
         data = JSON.parse(JSON.stringify(result));
         if(data != null) user_exists = true;
-    }
+    });
 
     con.query(check_email_query, function (err, result, fields) {
         if (err) throw err;
         data = JSON.parse(JSON.stringify(result));
         if(data != null) email_exists = true;
-    }
+    });
 
     if(user_exists && email_exists) {
         res.status(400).send('Username and email exists.');
@@ -73,7 +73,7 @@ router.post('/signup', function(req,res){
     }
     else {
             var insert_query = "insert into user values('"+uname+"', '"+pwd+"', 0, '"+email+"', null);";
-            con.query(query, function (err, result, fields) {
+            con.query(insert_query, function (err, result, fields) {
                 if (err) throw err;
                 data = JSON.parse(JSON.stringify(result));
                 res.status(201).send('Signup successful');
@@ -149,19 +149,23 @@ router.get('/user_type', function(req,res){
         else {
             res.send({"user_type": "guest"});
         }
-    }
+    });
 
 });
 
 //fetching tracks as per the search query
-router.get('/search_track', function(req,res){
+router.post('/search_track', function(req,res){
 
     var search_query = req.body.search_track;
-    var query = "select * from track where track_name LIKE = '%"+search_query+"%'";
+    var query = "select track.track_name as track, track.price, track.track_no, track.length, album.year, album.album_art, album.album_name as album, album.artist_art, album.artist, group_concat(genre.genre) as genre from track join album on track.album_id = album.album_id join genre on track.track_id = genre.track_id where track.track_name LIKE '%"+search_query+"%' group by track.track_id";
     con.query(query, function(err, result, fields) {
         if(err) throw err;
         data = JSON.parse(JSON.stringify(result));
-        res.send(data[0]);
+        //iterate and seperate genre by comma
+        for(var i=0; i<data.length; i++) {
+            data[i].genre = data[i].genre.split(",");
+        }
+        res.send(data);
     });
 });
 
@@ -194,7 +198,6 @@ router.get('/fetch_cart', function(req,res){
 router.get('/signout', function(req,res){
     req.session.destroy();
     res.status(200).send({"user_type": "guest"});
-    });
 });
 
 //purchase order (move from cart to purchase table)
