@@ -150,7 +150,7 @@ router.get('/user_type', function(req,res){
         else {
             res.send({"user_type": "guest"});
         }
-    })
+    });
 
 });
 
@@ -158,11 +158,15 @@ router.get('/user_type', function(req,res){
 router.post('/search_track', function(req,res){
 
     var search_query = req.body.search_track;
-    var query = "select * from track where track_name LIKE = '%"+search_query+"%'";
+    var query = "select track.track_name as track, track.price, track.track_no, track.length, album.year, album.album_art, album.album_name as album, album.artist_art, album.artist, group_concat(genre.genre) as genre from track join album on track.album_id = album.album_id join genre on track.track_id = genre.track_id where track.track_name LIKE '%"+search_query+"%' group by track.track_id";
     con.query(query, function(err, result, fields) {
         if(err) throw err;
         data = JSON.parse(JSON.stringify(result));
-        res.send(data[0]);
+        //iterate and seperate genre by comma
+        for(var i=0; i<data.length; i++) {
+            data[i].genre = data[i].genre.split(",");
+        }
+        res.send(data);
     });
 });
 
@@ -195,7 +199,7 @@ router.get('/fetch_cart', function(req,res){
 router.get('/signout', function(req,res){
     req.session.destroy();
     res.status(200).send({"user_type": "guest"});
-    });
+});
 
 //purchase order (move from cart to purchase table)
 router.get('/purchase', function(req,res){
