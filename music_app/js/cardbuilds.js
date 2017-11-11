@@ -81,7 +81,7 @@ class CardBuilder {
 
 function userType(callback) {
     $.ajax({
-        url: "/user_type",
+        url: "/api/user_type",
         type: "GET",
         success: function(data) {
             callback(data.user_type);

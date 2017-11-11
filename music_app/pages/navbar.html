@@ -65,7 +65,7 @@ function fixBar(usertype) {
 
 $(document).ready(function() {
     $.ajax({
-        url: "/user_type",
+        url: "/api/user_type",
         type: "GET",
         success: function(data) {
             fixBar(data.user_type);

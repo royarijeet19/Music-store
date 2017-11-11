@@ -5,7 +5,7 @@ var mysql = require('mysql');
 var con = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "",
+    password: "root",
     database: "musicstore"
 });
 
@@ -73,7 +73,7 @@ router.post('/signup', function(req,res){
     }
     else {
             var insert_query = "insert into user values('"+uname+"', '"+pwd+"', 0, '"+email+"', null);";
-            con.query(query, function (err, result, fields) {
+            con.query(insert_query, function (err, result, fields) {
                 if (err) throw err;
                 data = JSON.parse(JSON.stringify(result));
                 res.status(201).send('Signup successful');
