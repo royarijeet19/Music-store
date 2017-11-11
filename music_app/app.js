@@ -1,11 +1,18 @@
 var mysql = require('mysql');
 var express = require('express');
+var path = require('path');
 var bodyParser = require('body-parser');
 var session = require('express-session');
+var api = require('./js/api');
 
 var app = express();
 app.use(bodyParser.json());
 app.use(session({secret:"string used for encrypting session", resave:false, saveUninitialized:true}));
+
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
+app.use('/api', api);
+
 
 var con = mysql.createConnection({
     host: "localhost",
@@ -15,34 +22,9 @@ var con = mysql.createConnection({
 });
 
 app.get('/', function(req,res){
-    res.send('home page: nothing to see here');
+    res.render('home');
 });
 
-// Fetches one track randomly
-app.get('/db/track/fetchOne', function(req,res){
-    console.log('GET: /db/track/fetchOne');
-    
-    con.query("select * from track order by rand() limit 1", function (err, result, fields) {
-	if (err) throw err;
-	data = JSON.parse(JSON.stringify(result));
-	res.send(data[0]);
-    });
-});
-
-// Fetche requested track
-// input: { track_id: '549e1ffd66ac099ccadbf6f61729897b' }
-app.post('/db/track/fetch', function(req,res){
-    console.log('POST: /db/track/fetch');
-    
-    var data = req.body;
-    console.log(data);
-    var query = "select * from track where track_id='"+data.track_id+"'";
-    con.query(query, function (err, result, fields) {
-	if (err) throw err;
-	data = JSON.parse(JSON.stringify(result));
-	res.send(data[0]);
-    });
-});
 
 // Authenticate user
 // input: {"uname":"test","pwd":"test123"}
@@ -60,101 +42,127 @@ app.post('/login', function(req,res){
     }
 });
 
-// Checks if the user is authenticated
-app.get('/login/auth-status', function(req,res){
-    console.log('GET: /login/auth-status');
+// // Authenticate user
+// app.get('/login', function(req,res){
+//     console.log('GET: /login');
 
-    if(!req.session.uname){
-        console.log("unauthorized");
-        res.send("unauthorized");
-    }else{
-        console.log("logged in");
-        res.send("logged in");
-    }
-});
+//     res.render('login');
+// });
 
 
-//----------------------------
-// Add item to user Cart
-// input: {"track_id":"549e1ffd66ac099ccadbf6f61729897b"}
-app.post('/add_to_cart', function(req,res){
-    console.log('POST: /add_to_cart');
-    console.log(JSON.stringify(req.body));
+// // signup new user
+// app.get('/signup', function(req,res){
+//     console.log('GET: /signup');
 
-});
+//     res.render('signup');
+// });
 
-// Return the type of user
-// output: {"user_type": x}
-// where x is any of "admin" "user" "guest"
-app.get('/user_type', function(req,res){
-    console.log('POST: /user_type');
+// // signup new user
+// app.post('/signup', function(req,res){
+//     console.log('POST: /signup');
+//     console.log(JSON.stringify(req.body));
 
-    res.send({"user_type": "admin"});
+//     res.render('signup');
+// });
 
-});
+// // edit_item new user
+// app.get('/edit_item', function(req,res){
+//     console.log('GET: /edit_item');
+
+//     data = {edit_header:"Add track"}
+//     res.render('edit_item',data);
+// });
+
+// // edit_item new user
+// app.post('/edit_item', function(req,res){
+//     console.log('POST: /edit_item');
+//     console.log(JSON.stringify(req.body));
+
+//     res.render('edit_item');
+// });
+
+// // display user cart
+// app.get('/cart', function(req,res){
+//     console.log('GET: /cart');
+
+//     res.render('cart');
+// });
+// // display user purchase history
+// app.get('/purchases', function(req,res){
+//     console.log('GET: /purchases');
+
+//     res.render('purchases');
+// });
+
+// // Checks if the user is authenticated
+// app.get('/login/auth-status', function(req,res){
+//     console.log('GET: /login/auth-status');
+
+//     if(!req.session.uname){
+//         console.log("unauthorized");
+//         res.send("unauthorized");
+//     }else{
+//         console.log("logged in");
+//         res.send("logged in");
+//     }
+// });
 
 
+// //----------------------------
+// // Add item to user Cart
+// // input: {"track_id":"549e1ffd66ac099ccadbf6f61729897b"}
+// app.post('/add_to_cart', function(req,res){
+//     console.log('POST: /add_to_cart');
+//     console.log(JSON.stringify(req.body));
 
-//--------------------------
-//---------Pages------------
-//--------------------------
-app.get('/search', function(req,res){
-    res.sendFile(__dirname+'/pages/search.html');
-});
+// });
+
+// // Return the type of user
+// // output: {"user_type": x}
+// // where x is any of "admin" "user" "guest"
+// app.get('/user_type', function(req,res){
+//     console.log('POST: /user_type');
+
+//     res.send({"user_type": "guest"});
+
+// });
+
+// // Sign out user
+// // output: {"status": 200}
+// // where x is any of "admin" "user" "guest"
+// app.get('/signout', function(req,res){
+//     console.log('POST: /signout');
+
+//     res.send({"status": 200});
+
+// });
+
+
+// //--------------------------
+// //---------Pages------------
+// //--------------------------
+// app.get('/search', function(req,res){
+//     res.render('search');
+// });
+// app.post('/search', function(req,res){
+//      console.log('POST: /search');
+//      console.log(JSON.stringify(req.body));
+
+//     var query = req.body.query;
+//     if (query){
+//         req.session.query = query;
+//         res.sendStatus(200);
+//     }
+// });
 
 
 //--------------------------
 //-------Resources----------
 //--------------------------
-app.get('/css/bg_slides.css', function(req,res){
-    res.sendFile(__dirname+'/css/bg_slides.css');
-});
-
-app.get('/css/search_style.css', function(req,res){
-    res.sendFile(__dirname+'/css/search_style.css');
-});
-
-app.get('/css/font-awesome.css', function(req,res){
-    res.sendFile(__dirname+'/css/font-awesome.css');
-});
-
-app.get('/fonts/fontawesome-webfont.woff', function(req,res){
-    res.sendFile(__dirname+'/fonts/fontawesome-webfont.woff');
-});
-
-app.get('/fonts/fontawesome-webfont.woff2', function(req,res){
-    res.sendFile(__dirname+'/fonts/fontawesome-webfont.woff2');
-});
-
-
-app.get('/other/metadata.json', function(req,res){
-    res.sendFile(__dirname+'/other/metadata.json');
-});
-
-
-app.get('/css/1.jpg', function(req,res){
-    res.sendFile(__dirname+'/other/1.jpg');
-});
-
-app.get('/css/2.jpg', function(req,res){
-    res.sendFile(__dirname+'/other/2.jpg');
-});
-
-app.get('/css/3.jpg', function(req,res){
-    res.sendFile(__dirname+'/other/3.jpg');
-});
-
-app.get('/css/4.jpg', function(req,res){
-    res.sendFile(__dirname+'/other/4.jpg');
-});
-
-app.get('/css/5.jpg', function(req,res){
-    res.sendFile(__dirname+'/other/5.jpg');
-});
-
-app.get('/css/6.jpg', function(req,res){
-    res.sendFile(__dirname+'/other/6.jpg');
-});
+app.use('/js',express.static(path.join(__dirname, 'js')));
+app.use('/css',express.static(path.join(__dirname, 'css')));
+app.use('/other',express.static(path.join(__dirname, 'other')));
+app.use('/fonts',express.static(path.join(__dirname, 'fonts')));
 
 
 app.listen(3000);
