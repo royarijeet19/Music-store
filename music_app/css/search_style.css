@@ -161,6 +161,54 @@ body .card_right__ebutton a:hover {
   transition-duration: .5s;
 }
 
+body .vcard {
+  width: 225px;
+  height: 275px;
+  background: rgba(0, 0, 0, 0.01);
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  border-radius: 1px;
+  display: inline-block;
+  margin: 20px;
+}
+body .vcard_left {
+  width: 225px;
+  height: 225px;
+  float: left;
+  overflow: hidden;
+}
+body .vcard_left img {
+  width:auto;
+  height:100%;
+  display:block;
+}
+body .vcard_right {
+  height: 50px;
+}
+body .vcard_right h1 {
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  text-align: left;
+  font-size: 15px;
+  margin: 18px 0 0 0;
+  padding: 0 0 0 0px;
+  letter-spacing: 1px;
+}
+body .vcard_right h2 {
+  color: #e8e8e8;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  text-align: left;
+  font-size: 11px;
+  margin: 2px 0 0 0;
+  padding: 0 0 0 0px;
+  letter-spacing: 1px;
+}
+
 body .top_container{
   background-color: rgba(80, 80, 80, 0.67);
   padding-left: 20%;

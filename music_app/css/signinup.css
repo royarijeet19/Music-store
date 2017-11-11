@@ -33,7 +33,7 @@ body .modal_input{
   margin-top: 20px;
   padding: 12px 0;
   padding-left: 30px;
-  width: 85%;
+  width: -webkit-fill-available;
   font-size: 14px;
   font-family: 'Roboto', sans-serif;
 }
