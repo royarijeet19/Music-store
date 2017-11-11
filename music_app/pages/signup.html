@@ -37,7 +37,7 @@
 
     data = {"uname": uname, "pwd":pwd_hash, "email":email}
      $.ajax({
-             url: "signup",
+             url: "/api/signup",
              contentType: "application/json",
              type: "POST",
              data: JSON.stringify(data),

@@ -72,6 +72,7 @@ router.post('/signup', function(req,res){
         res.status(400).send('Email exists.');
     }
     else {
+    	    req.session.uname=uname;
             var insert_query = "insert into user values('"+uname+"', '"+pwd+"', 0, '"+email+"', null);";
             con.query(insert_query, function (err, result, fields) {
                 if (err) throw err;

@@ -50,20 +50,12 @@ app.post('/login', function(req,res){
 // });
 
 
-// // signup new user
-// app.get('/signup', function(req,res){
-//     console.log('GET: /signup');
+// signup new user
+app.get('/signup', function(req,res){
+    console.log('GET: /signup');
 
-//     res.render('signup');
-// });
-
-// // signup new user
-// app.post('/signup', function(req,res){
-//     console.log('POST: /signup');
-//     console.log(JSON.stringify(req.body));
-
-//     res.render('signup');
-// });
+    res.render('signup');
+});
 
 // // edit_item new user
 // app.get('/edit_item', function(req,res){
