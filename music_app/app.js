@@ -130,30 +130,23 @@ app.get('/signup', function(req,res){
 // });
 
 
-// //--------------------------
-// //---------Pages------------
-// //--------------------------
-app.post('/search', function(req,res){
-    console.log(JSON.stringify(req.body));
-    console.log(req.body.search_track);
-    req.session.search_track=req.body.search_track;
-    res.render('search');
-});
+//--------------------------
+//---------Pages------------
+//--------------------------
+
 app.get('/search', function(req,res){
-    console.log(JSON.stringify(req.body));
+    console.log('GET: /search');
+    
     res.render('search');
 });
-// app.post('/search', function(req,res){
-//      console.log('POST: /search');
-//      console.log(JSON.stringify(req.body));
 
-//     var query = req.body.query;
-//     if (query){
-//         req.session.query = query;
-//         res.sendStatus(200);
-//     }
-// });
 
+// signup new user
+app.get('/signup', function(req,res){
+    console.log('GET: /signup');
+
+    res.render('signup');
+});
 
 //--------------------------
 //-------Resources----------
