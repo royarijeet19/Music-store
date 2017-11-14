@@ -22,6 +22,10 @@ function login() {
     window.location.href = "/login";
 }
 
+function edit_items() {
+    window.location.href = "/edit_items";
+}
+
 function signup() {
     window.location.href = "/signup";
 }
@@ -32,14 +36,6 @@ function cart() {
 
 function purchases() {
     window.location.href = "/purchases";
-}
-
-function additem() {
-    window.location.href = "/edit_item";
-}
-
-function edititems() {
-    window.location.href = "/edit_item";
 }
 
 function fixBar(usertype) {
@@ -78,8 +74,8 @@ $(document).ready(function() {
 </script>
   <div class="navbar">
     <button id="home" class="navbtn" onclick="home()">Home</button>
-    <button id="additem" class="navbtn" onclick="additem()">Add item</button>
-    <button id="edititems" class="navbtn" onclick="edititems()">Edit items</button>
+    <button id="additem" class="navbtn" onclick="add_click()">Add item</button>
+    <button id="edititems" class="navbtn" onclick="edit_items()">Edit items</button>
     <button id="purchases" class="navbtn" onclick="purchases()">Purchases</button>
     <button id="cart" class="navbtn" onclick="cart()">Cart</button>
     <button id="signout" class="navbtn" onclick="signout()">Sign out</button>

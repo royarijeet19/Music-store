@@ -43,3 +43,64 @@ function signin() {
         }
     });
 }
+
+function add_click() {
+    data = {"edit_type": "add"}
+    $.ajax({
+        url: "/api/edit_type",
+        contentType: "application/json",
+        type: "POST",
+        data: JSON.stringify(data),
+        success: function(res, textStatus, xhr) {
+            if(xhr.status==200){
+                window.location.href="/edit_item";
+            }
+        },
+        error: function(res) {
+            alert("error adding to cart");
+        }
+    });
+}
+
+function edit_click() {
+    data = {"edit_type": "edit"}
+    $.ajax({
+        url: "/api/edit_type",
+        contentType: "application/json",
+        type: "POST",
+        data: JSON.stringify(data),
+        success: function(res, textStatus, xhr) {
+            if(xhr.status==200){
+                window.location.href="/edit_item";
+            }
+        },
+        error: function(res) {
+            alert("error adding to cart");
+        }
+    });
+}
+
+function updateEditForm(){
+    $.ajax({
+        url: "/api/edit_type",
+        type: "GET",
+        success: function(res, textStatus, xhr) {
+            if (res.edit_type=="edit"){
+                l=["track", "album", "artist", "price", "length", "track_no", "year", "genre", "album_art"];
+                for(i=0;i<l.length;i++){
+                    x=$("#"+l[i]);
+                    x.val(res[l[i]]);
+                };
+            }
+        },
+        error: function(res) {
+            alert("error adding to cart");
+        }
+    });
+}
+
+$(document).ready(function() {
+    if(window.location.pathname=='/edit_item'){
+      updateEditForm();
+    }
+});

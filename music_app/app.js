@@ -26,36 +26,6 @@ app.get('/', function(req,res){
 });
 
 
-// Authenticate user
-// input: {"uname":"test","pwd":"test123"}
-app.post('/login', function(req,res){
-    console.log('POST: /login');
-    console.log(JSON.stringify(req.body));
-
-    var uname = req.body.uname;
-    var pwd = req.body.pwd;
-    if (uname){
-        req.session.uname = uname;
-        res.send('authorized as '+req.session.uname);
-    }else{
-        res.send('home page: nothing to see here');
-    }
-});
-
-// // Authenticate user
-// app.get('/login', function(req,res){
-//     console.log('GET: /login');
-
-//     res.render('login');
-// });
-
-
-// signup new user
-app.get('/signup', function(req,res){
-    console.log('GET: /signup');
-
-    res.render('signup');
-});
 
 // // edit_item new user
 // app.get('/edit_item', function(req,res){
@@ -153,6 +123,24 @@ app.get('/login', function(req,res){
     console.log('GET: /login');
 
     res.render('login');
+});
+
+app.get('/cart', function(req,res){
+    console.log('GET: /cart');
+
+    res.render('cart');
+});
+
+app.get('/edit_item', function(req,res){
+    console.log('GET: /edit_item');
+
+    res.render('edit_item');
+});
+
+app.get('/edit_items', function(req,res){
+    console.log('GET: /edit_items');
+
+    res.render('edit_items');
 });
 
 //--------------------------

@@ -232,6 +232,8 @@ router.get('/fetch_cart', function(req,res){
 
 //purchase order (move from cart to purchase table)
 router.get('/purchase', function(req,res){
+    console.log("GET /api/purchase");
+
     var uname = req.session.uname;
     var current_date = new Date().toISOString().slice(0, 19).replace('T', ' ');
     var query = "insert into purchase (uname, track_id) select * from cart where uname = '"+uname+"'";
@@ -245,5 +247,23 @@ router.get('/purchase', function(req,res){
         });
     });
 });
+
+// ----------------------------------------
+// -----------  ADMIN FUNCTIONS -----------
+// ----------------------------------------
+router.post('/edit_type', function(req,res){
+    console.log('POST: /api/edit_type');
+    console.log(JSON.stringify(req.body));
+
+    req.session.edit_type = req.body.edit_type;
+    res.status(200).send()
+});
+
+router.get('/edit_type', function(req,res){
+    console.log('GET: /api/edit_type');
+
+    res.send({"edit_type":req.session.edit_type});
+});
+
 
 module.exports = router;
