@@ -4,7 +4,12 @@ html
     title= title
     link(rel='stylesheet', href='/css/bg_slides.css')
     link(rel='stylesheet', href='/css/signinup.css')
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    script(src='/js/jquery.min.js')
     script(src='/js/sha512.js')
+    script(src='/js/actions.js')
   body
-    include ../pages/login.html
+    div(class="modal")
+      div(class="modal_header") Sign-in
+      input(class="modal_input" id="uname" type="text" placeholder="username")
+      input(class="modal_input" id="pwd" type="password" placeholder="password")
+      button(class="btn" onclick="signin()") Sign in

@@ -85,8 +85,8 @@ router.post('/signup', function(req,res){
 
 // Authenticate user
 // input: {"uname":"test","pwd":"test123"}
-router.post('/login', function(req,res){
-    console.log('POST: /login');
+router.post('/signin', function(req,res){
+    console.log('POST: /api/signin');
     console.log(JSON.stringify(req.body));
 
     var uname = req.body.uname;
@@ -97,6 +97,19 @@ router.post('/login', function(req,res){
     }else{
         res.send('home page: nothing to see here');
     }
+    var query = "select * from user where uname = '"+uname+"'";
+    con.query(query, function(err, result, fields) {
+        if(err) throw err;
+        data = JSON.parse(JSON.stringify(result));
+        if(data.length==0){
+            res.status(401).send();
+        }else{
+            data=data[0];
+            console.log(data);
+            console.log(data.pwd);
+            console.log(req.body.pwd);
+        }
+    });
 });
 
 // Checks if the user is authenticated
@@ -240,6 +253,8 @@ router.get('/fetch_cart', function(req,res){
 
 //sign out
 router.get('/signout', function(req,res){
+    console.log("GET /signout");
+
     req.session.destroy();
     res.status(200).send({"user_type": "guest"});
 });
