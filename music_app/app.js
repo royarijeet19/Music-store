@@ -49,12 +49,80 @@ app.get('/', function(req,res){
 
 //     res.render('cart');
 // });
-// // display user purchase history
-// app.get('/purchases', function(req,res){
-//     console.log('GET: /purchases');
+// display user purchase history
+app.get('/get_purchases', function(req,res){
+    console.log('GET: /purchases');
 
-//     res.render('purchases');
-// });
+    data =[{
+    "timestamp1": [{
+            "track": "What Lovers Do (Featuring SZA)",
+            "track_id": "606d2f43781119993f90f1f4cc522871",
+            "price": "1.35",
+            "year": "2017",
+            "genre": [
+                "Pop",
+                "Adult Alternative Pop",
+                "Western Pop"
+            ],
+            "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/F764/6709/6E9C/7F07_large_front.jpg",
+            "album": "What Lovers Do (Featuring SZA)",
+            "artist": "Maroon 5",
+            "length": "2:47",
+            "track_no": "1"
+        },
+        {
+            "track": "Look What You Made Me Do",
+            "track_id": "e3d64c16949ca20548118cf05798de16",
+            "price": "1.43",
+            "year": "2017",
+            "genre": [
+                "Pop",
+                "Adult Alternative Pop",
+                "Western Pop"
+            ],
+            "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/FB22/0DAA/4BBD/E903_large_front.jpg",
+            "album": "Look What You Made Me Do [Single]",
+            "artist": "Taylor Swift",
+            "length": "3:1",
+            "track_no": "1"
+        }
+    ]},
+    {"timestamp2": [{
+            "track": "What Lovers Do (Featuring SZA)",
+            "track_id": "606d2f43781119993f90f1f4cc522871",
+            "price": "1.35",
+            "year": "2017",
+            "genre": [
+                "Pop",
+                "Adult Alternative Pop",
+                "Western Pop"
+            ],
+            "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/F764/6709/6E9C/7F07_large_front.jpg",
+            "album": "What Lovers Do (Featuring SZA)",
+            "artist": "Maroon 5",
+            "length": "2:47",
+            "track_no": "1"
+        },
+        {
+            "track": "Look What You Made Me Do",
+            "track_id": "e3d64c16949ca20548118cf05798de16",
+            "price": "1.43",
+            "year": "2017",
+            "genre": [
+                "Pop",
+                "Adult Alternative Pop",
+                "Western Pop"
+            ],
+            "album_art": "http://akamai-b.cdn.cddbp.net/cds/2.0/cover/FB22/0DAA/4BBD/E903_large_front.jpg",
+            "album": "Look What You Made Me Do [Single]",
+            "artist": "Taylor Swift",
+            "length": "3:1",
+            "track_no": "1"
+        }
+    ]}];
+
+    res.send(data);
+});
 
 // // Checks if the user is authenticated
 // app.get('/login/auth-status', function(req,res){
@@ -129,6 +197,12 @@ app.get('/cart', function(req,res){
     console.log('GET: /cart');
 
     res.render('cart');
+});
+
+app.get('/purchases', function(req,res){
+    console.log('GET: /purchases');
+
+    res.render('purchases');
 });
 
 app.get('/edit_item', function(req,res){
