@@ -9,35 +9,14 @@ var con = mysql.createConnection({
     database: "musicstore"
 });
 
-// Fetches one track randomly
-router.get('/fetchOne', function(req,res){
-    console.log('GET: /api/fetchOne');
-    
-    con.query("select * from track order by rand() limit 1", function (err, result, fields) {
-	if (err) throw err;
-	data = JSON.parse(JSON.stringify(result));
-	res.send(data[0]);
-    });
-});
 
-// Fetche requested track
-// input: { track_id: '549e1ffd66ac099ccadbf6f61729897b' }
-router.post('/fetch', function(req,res){
-    console.log('POST: /db/track/fetch');
-    
-    var data = req.body;
-    console.log(data);
-    var query = "select * from track where track_id='"+data.track_id+"'";
-    con.query(query, function (err, result, fields) {
-    if (err) throw err;
-    data = JSON.parse(JSON.stringify(result));
-    res.send(data[0]);
-    });
-});
+// ---------------------------------------
+// --------- SIGNING FUNCTIONS -----------
+// ---------------------------------------
 
 //signup user
 router.post('/signup', function(req,res){
-    console.log('POST: /signup');
+    console.log('POST: /api/signup');
     console.log(JSON.stringify(req.body));
 
     var uname = req.body.uname;
@@ -112,42 +91,21 @@ router.post('/signin', function(req,res){
     });
 });
 
-// Checks if the user is authenticated
-router.get('/login/auth-status', function(req,res){
-    console.log('GET: /login/auth-status');
 
-    if(!req.session.uname){
-        console.log("unauthorized");
-        res.send("unauthorized");
-    }else{
-        console.log("logged in");
-        res.send("logged in");
-    }
+//sign out
+router.get('/signout', function(req,res){
+    console.log("GET /api/signout");
+
+    req.session.destroy();
+    res.status(200).send({"user_type": "guest"});
 });
 
-
-//----------------------------
-// Add item to user Cart
-// input: {"track_id":"549e1ffd66ac099ccadbf6f61729897b"}
-router.post('/add_to_cart', function(req,res){
-    console.log('POST: /add_to_cart');
-    console.log(JSON.stringify(req.body));
-
-    var uname = req.body.uname;
-    var track_id = req.body.track_id;
-    var add_to_cart_query = "insert into cart (uname, track_id) values ('"+uname+"', '"+track_id+"');"
-    con.query(add_to_cart_query, function(err, result, fields) {
-        if(err) throw err;
-        data = JSON.parse(JSON.stringify(result));
-        res.send(data[0]);
-    });
-});
 
 // Return the type of user
 // output: {"user_type": x}
 // where x is any of "admin" "user" "guest"
 router.get('/user_type', function(req,res){
-    console.log('POST: /user_type');
+    console.log('POST: /api/user_type');
 
     var uname = req.session.uname;
     var query = "select admin from user where uname = '"+uname+"'";
@@ -174,7 +132,7 @@ router.get('/user_type', function(req,res){
 
 // Search db using session variables (not GET request anymore)
 router.get('/search_track', function(req,res){
-	console.log('/search_track');
+	console.log('/api/search_track');
 
     var search_query = req.session.search_track;
     var orderby = req.session.orderby;
@@ -203,7 +161,7 @@ router.get('/search_track', function(req,res){
 
 // Returs search parameters stored in session variables
 router.get('/get_search_params', function(req,res){
-	console.log("GET /get_search_params");
+	console.log("GET /api/get_search_params");
 	console.log(JSON.stringify(req.body));
 
 	var data = {"search_track":req.session.search_track,
@@ -213,7 +171,7 @@ router.get('/get_search_params', function(req,res){
 
 // Stores session variables for search
 router.post('/search', function(req,res){
-    console.log('POST: /search');
+    console.log('POST: /api/search');
     console.log(JSON.stringify(req.body));
 
     req.session.search_track=req.body.search_track;
@@ -223,8 +181,26 @@ router.post('/search', function(req,res){
 
 
 // ----------------------------------------
-// ----------- SEARCH FUNCTIONS -----------
+// ------------- CART FUNCTIONS -----------
 // ----------------------------------------
+
+//----------------------------
+// Add item to user Cart
+// input: {"track_id":"549e1ffd66ac099ccadbf6f61729897b"}
+router.post('/add_to_cart', function(req,res){
+    console.log('POST: /api/add_to_cart');
+    console.log(JSON.stringify(req.body));
+
+    var uname = req.body.uname;
+    var track_id = req.body.track_id;
+    var add_to_cart_query = "insert into cart (uname, track_id) values ('"+uname+"', '"+track_id+"');"
+    con.query(add_to_cart_query, function(err, result, fields) {
+        if(err) throw err;
+        data = JSON.parse(JSON.stringify(result));
+        res.send(data[0]);
+    });
+});
+
 
 //deleting items/tracks from cart
 router.get('/delete_cart', function(req,res){
@@ -242,6 +218,8 @@ router.get('/delete_cart', function(req,res){
 
 //fetching cart details for a user
 router.get('/fetch_cart', function(req,res){
+    console.log("GET /api/fetch_cart");
+
     var uname = req.session.uname;
     var fetch_query = "select * from track where track_id in (select track_id from cart where uname ='"+uname+"')";
     con.query(fetch_query, function(err, result, fields) {
@@ -251,13 +229,6 @@ router.get('/fetch_cart', function(req,res){
     });
 });
 
-//sign out
-router.get('/signout', function(req,res){
-    console.log("GET /signout");
-
-    req.session.destroy();
-    res.status(200).send({"user_type": "guest"});
-});
 
 //purchase order (move from cart to purchase table)
 router.get('/purchase', function(req,res){

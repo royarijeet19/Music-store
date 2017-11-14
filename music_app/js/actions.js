@@ -5,7 +5,7 @@ function add_to_cart(x) {
     };
 
     $.ajax({
-        url: "add_to_cart",
+        url: "/api/add_to_cart",
         contentType: "application/json",
         type: "POST",
         data: JSON.stringify(data),

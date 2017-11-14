@@ -43,8 +43,8 @@ cur.execute("create table cart(uname char(10), track_id char(32), foreign key (u
 
 
 # Insert some default user data
-cur.execute("insert into user values('admin', '123', 1, 'admin@admin.com', 'richardson');");
-cur.execute("insert into user values('user', '123', 0, 'user@user.com', 'richardson');");
+cur.execute("insert into user values('admin', '5a713f1ca006808b43ec4d12b35a2d95cf141832d3237b51ff5519ea7a016d125bbd9b4f500332e3e58701f53c0faffe97a9a4573fc6c4a8b4e965e0f6a4c15d', 1, 'admin@admin.com', 'richardson');");
+cur.execute("insert into user values('user', '5a713f1ca006808b43ec4d12b35a2d95cf141832d3237b51ff5519ea7a016d125bbd9b4f500332e3e58701f53c0faffe97a9a4573fc6c4a8b4e965e0f6a4c15d', 0, 'user@user.com', 'richardson');");
 db.commit()
 
 
