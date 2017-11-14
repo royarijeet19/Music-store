@@ -190,7 +190,7 @@ DROP TABLE IF EXISTS `user`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user` (
   `uname` char(10) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `pwd` char(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `pwd` char(128) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `admin` bit(1) DEFAULT NULL,
   `email` char(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `address` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -204,7 +204,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('admin','123','','admin@admin.com','richardson'),('user','123','\0','user@user.com','richardson');
+INSERT INTO `user` VALUES ('admin','123','','admin@admin.com','richardson'),('ozz','5a713f1ca006808b43ec4d12b35a2d95cf141832d3237b51ff5519ea7a016d125bbd9b4f500332e3e58701f53c0faffe97a9a4573fc6c4a8b4e965e0f6a4c15d','\0','q@q.q',NULL),('user','123','\0','user@user.com','richardson');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -217,6 +217,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-27 13:53:45
-
-select * from track;
+-- Dump completed on 2017-11-14 13:10:19

@@ -37,7 +37,7 @@ cur.execute("create table mood(track_id char(32), mood char(50), foreign key (tr
 cur.execute("create table genre(track_id char(32), genre char(50), foreign key (track_id) references track(track_id))")
 
 # User tables: user, purchase, cart
-cur.execute("create table user(uname char(10), pwd char(32), admin bit, email char(32), address varchar(100), primary key (uname));")
+cur.execute("create table user(uname char(10), pwd char(128), admin bit, email char(32), address varchar(100), primary key (uname));")
 cur.execute("create table purchase(purchase_id char(32),uname char(10), date datetime, track_id char(32), foreign key (uname) references user(uname));")
 cur.execute("create table cart(uname char(10), track_id char(32), foreign key (uname) references user(uname));")
 
