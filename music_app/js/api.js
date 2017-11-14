@@ -141,14 +141,15 @@ router.get('/user_type', function(req,res){
     con.query(query, function(err, result, fields) {
         if(err) throw err;
         data = JSON.parse(JSON.stringify(result));
-        if(data[0] === 1) {
-            res.send({"user_type": "admin"});
-        }
-        else if(data[0] === 0) {
-            res.send({"user_type": "user"});
-        }
-        else {
-            res.send({"user_type": "guest"});
+        if(data.length==0){
+        	res.send({"user_type": "guest"});
+        }else{
+        	var isAdmin = data[0].admin.data[0];
+        	if(isAdmin==1){
+        		res.send({"user_type": "admin"});
+        	}else{
+        		res.send({"user_type": "user"});
+        	}
         }
     });
 
