@@ -99,8 +99,45 @@ function updateEditForm(){
     });
 }
 
+function purchase() {
+    console.log("purchase");
+
+    $.ajax({
+        url: "/api/purchase",
+        type: "GET",
+        success: function(res, textStatus, xhr) {
+            if (xhr.status = 200) {
+                alert("purchase successful");
+                window.location.href = "/";
+            }
+        },
+        error: function(res) {
+            alert("error purchasing cart");
+        }
+    });
+}
+
+
 $(document).ready(function() {
-    if(window.location.pathname=='/edit_item'){
-      updateEditForm();
+    if (window.location.pathname == '/edit_item') {
+        updateEditForm();
+    }
+    if (window.location.pathname == "/cart") {
+        $.ajax({
+            url: "other/metadata.json",
+            dataType: "JSON",
+            success: function(data) {
+                var totalcost = 0;
+                $(data).each(function(i, el) {
+                    var c = new CardBuilder(el.album_art, el.track, el.artist, el.album, el.track_no, el.length, el.year, el.genre, el.price);
+                    $('#result_container').append(c.cardHTML);
+                    totalcost = totalcost + parseFloat(el.price);
+                    $('#totalcost').text("Total Cost = $" + Math.round(totalcost * 100) / 100);
+                })
+            },
+            error: function(data) {
+                alert("error loading file");
+            }
+        });
     }
 });
