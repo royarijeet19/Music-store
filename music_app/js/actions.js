@@ -145,7 +145,7 @@ function fill_purchases(){
     //      }
     //  });
      $.ajax({
-         url: "/purchase_history",
+         url: "/api/purchase_history",
          type: "GET",
          success: function(data) {
              $(data).each(function(i, purch) {
