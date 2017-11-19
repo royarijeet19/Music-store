@@ -221,7 +221,8 @@ router.get('/fetch_cart', function(req,res){
     console.log("GET /api/fetch_cart");
 
     var uname = req.session.uname;
-    var fetch_query = "select * from track where track_id in (select track_id from cart where uname ='"+uname+"')";
+    var fetch_query = "select track.track_id as track_id, track.track_name as track, track.price, track.track_no, track.length, album.year, album.album_art, album.album_name as album, album.artist_art, album.artist, group_concat(genre.genre) as genre from track join album on track.album_id = album.album_id join genre on track.track_id = genre.track_id where track.track_id in (select track_id from cart where uname ='"+uname+"')";
+    // var fetch_query = "select * from track where track_id in (select track_id from cart where uname ='"+uname+"')";
     con.query(fetch_query, function(err, result, fields) {
         if(err) throw err;
         data = JSON.parse(JSON.stringify(result));
