@@ -133,11 +133,29 @@ function fill_purchases(){
                      $('#purchase_container').append("<div id='result_container" + i + "' class='result_container'></div>");
                      $(purchs).each(function(k, elm) {
                          var c = new CardBuilder(elm.track_id,elm.album_art, elm.track, elm.artist, elm.album, elm.track_no, elm.length, elm.year, elm.genre, elm.price);
+                         c.editable();
                          $('#result_container' + i).append(c.cardHTML);
                      });
                  });
              })
          },
+         error: function(data) {
+             alert("error loading file");
+         }
+     });
+}
+
+function fill_items_container(){
+    $.ajax({
+         url: "/other/metadata.json",
+         dataType: "JSON",
+         success: function(data) {
+                $(data).each(function(i, el) {
+                    var c = new CardBuilder(el.track_id, el.album_art, el.track, el.artist, el.album, el.track_no, el.length, el.year, el.genre, el.price);
+                    c.editable();
+                    $('#items_container').append(c.cardHTML);
+                })
+            },
          error: function(data) {
              alert("error loading file");
          }
@@ -169,5 +187,8 @@ $(document).ready(function() {
     }
     if (window.location.pathname=='/purchases'){
         fill_purchases();
+    }
+    if (window.location.pathname=='/edit_items'){
+        fill_items_container();
     }
 });
