@@ -229,8 +229,8 @@ router.get('/fetch_cart', function(req,res){
 
 
 //purchase order (move from cart to purchase table)
-router.get('/purchase', function(req,res){
-    console.log("GET /api/purchase");
+router.get('/make_purchase', function(req,res){
+    console.log("GET /api/make_purchase");
 
     var uname = req.session.uname;
     var current_date = new Date().toISOString().slice(0, 19).replace('T', ' ');
@@ -244,6 +244,12 @@ router.get('/purchase', function(req,res){
             res.send(data[0]);
         });
     });
+});
+
+//purchase history
+router.get('/purchase_history', function(req,res){
+    console.log("GET /api/purchase_history");
+
 });
 
 // ----------------------------------------
