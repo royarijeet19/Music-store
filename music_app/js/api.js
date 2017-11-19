@@ -191,7 +191,7 @@ router.post('/add_to_cart', function(req,res){
     console.log('POST: /api/add_to_cart');
     console.log(JSON.stringify(req.body));
 
-    var uname = req.body.uname;
+    var uname = req.session.uname;
     var track_id = req.body.track_id;
     var add_to_cart_query = "insert into cart (uname, track_id) values ('"+uname+"', '"+track_id+"');"
     con.query(add_to_cart_query, function(err, result, fields) {
