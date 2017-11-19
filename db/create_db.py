@@ -39,7 +39,7 @@ cur.execute("create table genre(track_id char(32), genre char(50), foreign key (
 # User tables: user, purchase, cart
 cur.execute("create table user(uname char(10), pwd char(128), admin bit, email char(32), address varchar(100), primary key (uname));")
 cur.execute("create table purchase(purchase_id char(32),uname char(10), date datetime, track_id char(32), foreign key (uname) references user(uname));")
-cur.execute("create table cart(uname char(10), track_id char(32), foreign key (uname) references user(uname));")
+cur.execute("create table cart(uname char(10), track_id char(32), primary key(uname, track_id), foreign key (uname) references user(uname));")
 
 
 # Insert some default user data
