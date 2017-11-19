@@ -144,6 +144,7 @@ function fill_purchases(){
              alert("error loading file");
          }
      });
+
 }
 
 function fill_items_container(){
@@ -169,22 +170,36 @@ $(document).ready(function() {
         updateEditForm();
     }
     if (window.location.pathname == "/cart") {
-        $.ajax({
-            url: "other/metadata.json",
-            dataType: "JSON",
-            success: function(data) {
-                var totalcost = 0;
-                $(data).each(function(i, el) {
-                    var c = new CardBuilder(el.track_id, el.album_art, el.track, el.artist, el.album, el.track_no, el.length, el.year, el.genre, el.price);
-                    $('#result_container').append(c.cardHTML);
-                    totalcost = totalcost + parseFloat(el.price);
-                    $('#totalcost').text("Total Cost = $" + Math.round(totalcost * 100) / 100);
-                })
-            },
-            error: function(data) {
-                alert("error loading file");
+        // $.ajax({
+        //     url: "other/metadata.json",
+        //     dataType: "JSON",
+        //     success: function(data) {
+        //         var totalcost = 0;
+        //         $(data).each(function(i, el) {
+        //             var c = new CardBuilder(el.track_id, el.album_art, el.track, el.artist, el.album, el.track_no, el.length, el.year, el.genre, el.price);
+        //             $('#result_container').append(c.cardHTML);
+        //             totalcost = totalcost + parseFloat(el.price);
+        //             $('#totalcost').text("Total Cost = $" + Math.round(totalcost * 100) / 100);
+        //         })
+        //     },
+        //     error: function(data) {
+        //         alert("error loading file");
+        //     }
+        // });
+            $.ajax({
+        url: "/api/fetch_cart",
+        type: "GET",
+        success: function(res, textStatus, xhr) {
+            if (xhr.status = 200) {
+                // alert("purchase successful");
+                // // window.location.href = "/";
+                console.log(res);
             }
-        });
+        },
+        error: function(res) {
+            alert("error purchasing cart");
+        }
+    });
     }
     if (window.location.pathname=='/purchases'){
         fill_purchases();
