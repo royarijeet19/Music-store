@@ -4,6 +4,7 @@ function add_to_cart(x) {
         "track_id": x
     };
 
+
     $.ajax({
         url: "/api/add_to_cart",
         contentType: "application/json",
@@ -11,6 +12,8 @@ function add_to_cart(x) {
         data: JSON.stringify(data),
         success: function(res) {
             console.log(res);
+            $('#'+x).css("background-color", "#f5d45c");
+            $('#'+x).html("<i class='fa fa-check' aria-hidden='true'></i> ADDED");
         },
         error: function(res) {
             alert("error adding to cart");
@@ -129,7 +132,7 @@ function fill_purchases(){
                      $('#purchase_container').append('<h1>Purchase on ' + ts + '</h1>');
                      $('#purchase_container').append("<div id='result_container" + i + "' class='result_container'></div>");
                      $(purchs).each(function(k, elm) {
-                         var c = new CardBuilder(elm.album_art, elm.track, elm.artist, elm.album, elm.track_no, elm.length, elm.year, elm.genre, elm.price);
+                         var c = new CardBuilder(elm.track_id,elm.album_art, elm.track, elm.artist, elm.album, elm.track_no, elm.length, elm.year, elm.genre, elm.price);
                          $('#result_container' + i).append(c.cardHTML);
                      });
                  });
@@ -153,7 +156,7 @@ $(document).ready(function() {
             success: function(data) {
                 var totalcost = 0;
                 $(data).each(function(i, el) {
-                    var c = new CardBuilder(el.album_art, el.track, el.artist, el.album, el.track_no, el.length, el.year, el.genre, el.price);
+                    var c = new CardBuilder(el.track_id, el.album_art, el.track, el.artist, el.album, el.track_no, el.length, el.year, el.genre, el.price);
                     $('#result_container').append(c.cardHTML);
                     totalcost = totalcost + parseFloat(el.price);
                     $('#totalcost').text("Total Cost = $" + Math.round(totalcost * 100) / 100);

@@ -66,8 +66,8 @@ class CardBuilder {
         this.card = this.card.replace('replace_placeholder', ebutton);
     }
     cartable() {
-        var button = '    <div class="card_right__button">' +
-            "      <a onclick='add_to_cart(\"" + this.track_id + "\")'>" +
+        var button = '    <div class="card_right__button"> ' +
+            "      <a  id='"+this.track_id+"'' onclick='add_to_cart(\"" + this.track_id + "\")'>" +
             '        <i class="fa fa-shopping-cart" aria-hidden="true"></i>' +
             '        ADD TO CART' +
             '      </a>' +
