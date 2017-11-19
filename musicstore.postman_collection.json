@@ -1,0 +1,111 @@
+{
+	"variables": [],
+	"info": {
+		"name": "musicstore",
+		"_postman_id": "3f8e77ad-775d-5a32-9021-582e3843a9dc",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Sign in as user",
+			"request": {
+				"url": "http://localhost:3000/api/signin",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"uname\":\"user\",\"pwd\":\"5703bdfbd16ef47f929ddbf4785d4486e385049f627233efb359b094add552921033f95f6e89453ec81c5d502f3f477de1e9c8948c61468a6ed9d9a615bde126\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add song to cart",
+			"request": {
+				"url": "http://localhost:3000/api/add_to_cart",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"track_id\":\"0580fc86e15b33ab7fc65d698e41c4a0\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch from cart",
+			"request": {
+				"url": "http://localhost:3000/api/fetch_cart",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"track_id\":\"0580fc86e15b33ab7fc65d698e41c4a0\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Purchase history",
+			"request": {
+				"url": "http://localhost:3000/api/purchase_history",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"track_id\":\"0580fc86e15b33ab7fc65d698e41c4a0\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Make purchase",
+			"request": {
+				"url": "http://localhost:3000/api/make_purchase",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"track_id\":\"0580fc86e15b33ab7fc65d698e41c4a0\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

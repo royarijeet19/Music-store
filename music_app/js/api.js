@@ -223,7 +223,7 @@ router.get('/fetch_cart', function(req,res){
     con.query(fetch_query, function(err, result, fields) {
         if(err) throw err;
         data = JSON.parse(JSON.stringify(result));
-        res.send(data[0]);
+        res.send(data);
     });
 });
 
