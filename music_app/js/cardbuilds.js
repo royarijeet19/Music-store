@@ -28,8 +28,9 @@ class vCardBuilder {
 
 class CardBuilder {
 
-    constructor(album_art, track, artist, album, track_no, length, year, genre, price) {
+    constructor(track_id, album_art, track, artist, album, track_no, length, year, genre, price) {
         this.track = track;
+        this.track_id = track_id;
         length = length.split(":");
         genre = genre[0];
         this.card = '<div class="card">' +
@@ -66,7 +67,7 @@ class CardBuilder {
     }
     cartable() {
         var button = '    <div class="card_right__button">' +
-            "      <a onclick='add_to_cart(\"" + this.track + "\")'>" +
+            "      <a onclick='add_to_cart(\"" + this.track_id + "\")'>" +
             '        <i class="fa fa-shopping-cart" aria-hidden="true"></i>' +
             '        ADD TO CART' +
             '      </a>' +
@@ -98,7 +99,7 @@ function populateSearch(user_type) {
         dataType: "JSON",
         success: function(data) {
             $(data).each(function(i, el) {
-                var c = new CardBuilder(el.album_art, el.track, el.artist, el.album, el.track_no, el.length, el.year, el.genre, el.price);
+                var c = new CardBuilder(el.track_id, el.album_art, el.track, el.artist, el.album, el.track_no, el.length, el.year, el.genre, el.price);
                 if (user_type != 'guest') {
                     c.cartable();
                 }
