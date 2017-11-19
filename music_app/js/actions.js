@@ -122,9 +122,31 @@ function purchase() {
 }
 
 function fill_purchases(){
-    $.ajax({
-         url: "/get_purchases",
-         dataType: "JSON",
+    // $.ajax({
+    //      url: "/get_purchases",
+    //      dataType: "JSON",
+    //      success: function(data) {
+    //          $(data).each(function(i, purch) {
+    //              $(purch).each(function(j, el) {
+    //                  ts = Object.keys(el)[0];
+    //                  purchs = Object.values(el)[0];
+    //                  $('#purchase_container').append('<h1>Purchase on ' + ts + '</h1>');
+    //                  $('#purchase_container').append("<div id='result_container" + i + "' class='result_container'></div>");
+    //                  $(purchs).each(function(k, elm) {
+    //                      var c = new CardBuilder(elm.track_id,elm.album_art, elm.track, elm.artist, elm.album, elm.track_no, elm.length, elm.year, elm.genre, elm.price);
+    //                      c.editable();
+    //                      $('#result_container' + i).append(c.cardHTML);
+    //                  });
+    //              });
+    //          })
+    //      },
+    //      error: function(data) {
+    //          alert("error loading file");
+    //      }
+    //  });
+     $.ajax({
+         url: "/purchase_history",
+         type: "GET",
          success: function(data) {
              $(data).each(function(i, purch) {
                  $(purch).each(function(j, el) {

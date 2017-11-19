@@ -84,9 +84,6 @@ router.post('/signin', function(req,res){
             res.status(401).send();
         }else{
             data=data[0];
-            console.log(data);
-            console.log(data.pwd);
-            console.log(req.body.pwd);
         }
     });
 });
