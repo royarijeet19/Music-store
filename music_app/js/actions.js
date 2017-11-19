@@ -107,7 +107,7 @@ function purchase() {
     console.log("purchase");
 
     $.ajax({
-        url: "/api/purchase",
+        url: "/api/make_purchase",
         type: "GET",
         success: function(res, textStatus, xhr) {
             if (xhr.status = 200) {
