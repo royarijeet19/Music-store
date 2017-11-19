@@ -59,9 +59,9 @@ DROP TABLE IF EXISTS `cart`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cart` (
-  `uname` char(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `track_id` char(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  KEY `uname` (`uname`),
+  `uname` char(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `track_id` char(32) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`uname`,`track_id`),
   CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`uname`) REFERENCES `user` (`uname`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -72,6 +72,7 @@ CREATE TABLE `cart` (
 
 LOCK TABLES `cart` WRITE;
 /*!40000 ALTER TABLE `cart` DISABLE KEYS */;
+INSERT INTO `cart` VALUES ('user','0580fc86e15b33ab7fc65d698e41c4a0');
 /*!40000 ALTER TABLE `cart` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -217,4 +218,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-19 10:09:52
+-- Dump completed on 2017-11-19 12:28:45
