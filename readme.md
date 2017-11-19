@@ -7,5 +7,4 @@
 - ~~delete item~~
 - ~~purchase history~~
 5. ~~update node_calls.md~~
-6. Issues 
-- User not logging in after signup
+6. ~~User not logging in after signup~~

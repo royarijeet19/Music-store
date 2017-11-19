@@ -14,6 +14,7 @@ function add_to_cart(x) {
             console.log(res);
             $('#'+x).css("background-color", "#f5d45c");
             $('#'+x).html("<i class='fa fa-check' aria-hidden='true'></i> ADDED");
+            $('#'+x).attr("onclick","");
         },
         error: function(res) {
             alert("error adding to cart");
