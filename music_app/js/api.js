@@ -10,6 +10,19 @@ var con = mysql.createConnection({
 });
 
 
+var purchase_id_auto_incr = 0;
+var fetch_query = "select * from purchase";
+con.query(fetch_query, function (err, result, fields) {
+    if (err) throw err;
+    data = JSON.parse(JSON.stringify(result));
+    console.log(data);
+    if(data != [] && data.length != 0) {
+        console.log(data);
+        purchase_id_auto_incr = data[data.length - 1].purchase_id;
+        purchase_id_auto_incr++;
+    }
+});
+
 // ---------------------------------------
 // --------- SIGNING FUNCTIONS -----------
 // ---------------------------------------
@@ -235,13 +248,26 @@ router.get('/make_purchase', function(req,res){
     var uname = req.session.uname;
     var current_date = new Date().toISOString().slice(0, 19).replace('T', ' ');
     var query = "insert into purchase (uname, track_id) select * from cart where uname = '"+uname+"'";
-    var query_date = "insert into purchase (date) values ('"+current_date+"') where uname = '"+uname+"'";
+    
     con.query(query, function(err, result, fields) {
         if(err) throw err;
+
+        var query_date = "insert into purchase (purchase_id, date) values ('"+purchase_id_auto_incr+"', '"+current_date+"') where uname = '"+uname+"'";
         con.query(query_date, function(err, result, fields) {
             if(err) throw err;
-            data = JSON.parse(JSON.stringify(result));
-            res.send(data[0]);
+            var delete_from_cart = "delete from cart where uname = '"+uname+"'";
+
+            con.query(delete_from_cart, function(err, result, fields) {
+                if(err) throw err;
+                var fetch_query = "select track.track_id as track_id, track.track_name as track, track.price, track.track_no, track.length, album.year, album.album_art, album.album_name as album, album.artist_art, album.artist, group_concat(genre.genre) as genre from track join album on track.album_id = album.album_id join genre on track.track_id = genre.track_id where track.track_id in (select track_id from purchase where uname ='"+uname+"') group by track.track_id";
+                con.query(fetch_query, function(err, result, fields) {
+                    if(err) throw err;
+                    data = JSON.parse(JSON.stringify(result));
+                    var result = {};
+                    result[current_date] = data;
+                    res.send(result);
+                });
+            });
         });
     });
 });
