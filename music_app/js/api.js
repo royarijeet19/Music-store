@@ -92,8 +92,6 @@ router.post('/signin', function(req,res){
             res.status(401).send();
         }else{
             data=data[0];
-            console.log(data.pwd);
-            console.log(pwd);
             if(data.pwd==pwd){
                 console.log("User: "+uname+", authorized");
                 req.session.uname=uname;
@@ -291,6 +289,14 @@ router.put('/track', function(req,res){
     
     
     res.status(200).send()
+});
+
+router.delete('/track/:track_id', function(req,res){
+    console.log('DELETE: /api/track');
+    console.log(JSON.stringify(req.params));
+    track_id = req.params.track_id;
+
+    // TODO: implement proper set of delete queries here
 });
 
 router.get('/edit_type', function(req,res){

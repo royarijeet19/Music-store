@@ -48,60 +48,7 @@ function signin() {
     });
 }
 
-function add_click() {
-    data = {"edit_type": "add"}
-    $.ajax({
-        url: "/api/edit_type",
-        contentType: "application/json",
-        type: "POST",
-        data: JSON.stringify(data),
-        success: function(res, textStatus, xhr) {
-            if(xhr.status==200){
-                window.location.href="/edit_item";
-            }
-        },
-        error: function(res) {
-            alert("error adding to cart");
-        }
-    });
-}
 
-function edit_click() {
-    data = {"edit_type": "edit"}
-    $.ajax({
-        url: "/api/edit_type",
-        contentType: "application/json",
-        type: "POST",
-        data: JSON.stringify(data),
-        success: function(res, textStatus, xhr) {
-            if(xhr.status==200){
-                window.location.href="/edit_item";
-            }
-        },
-        error: function(res) {
-            alert("error adding to cart");
-        }
-    });
-}
-
-function updateEditForm(){
-    $.ajax({
-        url: "/api/edit_type",
-        type: "GET",
-        success: function(res, textStatus, xhr) {
-            if (res.edit_type=="edit"){
-                l=["track", "album", "artist", "price", "length", "track_no", "year", "genre", "album_art"];
-                for(i=0;i<l.length;i++){
-                    x=$("#"+l[i]);
-                    x.val(res[l[i]]);
-                };
-            }
-        },
-        error: function(res) {
-            alert("error adding to cart");
-        }
-    });
-}
 
 function purchase() {
     console.log("purchase");
@@ -186,11 +133,51 @@ function fill_items_container(){
      });
 }
 
+function add_track(){
+    data={
+        "track" : $('#track').val(),
+        "album" : $('#album').val(),
+        "artist" : $('#artist').val(),
+        "price" : $('#price').val(),
+        "length" : $('#length').val(),
+        "track_no" : $('#track_no').val(),
+        "year" : $('#year').val(),
+        "genre" : $('#genre').val(),
+        "album_art" : $('#album_art').val(),
+        "type": "add"
+  }
+    $.ajax({
+        url: "/api/track",
+        dataType: "JSON",
+        type: "PUT",
+        contentType: "application/json",
+        data: JSON.stringify(data),
+        success: function(data){
+            alert("Added track!");
+            window.location.href="/";
+        },
+        error: function(data){
+
+        }
+    });
+}
+
+function delete_track(track_id){
+    $.ajax({
+        url: "/api/track/"+track_id,
+        type: "DELETE",
+        success: function(){
+            alert("Deleted track!");
+            $('#'+track_id).remove();
+        },
+        error: function(){
+
+        }
+    });
+}
+
 
 $(document).ready(function() {
-    if (window.location.pathname == '/edit_item') {
-        updateEditForm();
-    }
     if (window.location.pathname == "/cart") {
         // $.ajax({
         //     url: "other/metadata.json",
@@ -227,8 +214,5 @@ $(document).ready(function() {
     }
     if (window.location.pathname=='/purchases'){
         fill_purchases();
-    }
-    if (window.location.pathname=='/edit_items'){
-        fill_items_container();
     }
 });

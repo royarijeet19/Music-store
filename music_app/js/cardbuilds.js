@@ -33,7 +33,7 @@ class CardBuilder {
         this.track_id = track_id;
         length = length.split(":");
         genre = genre[0];
-        this.card = '<div class="card">' +
+        this.card = '<div class="card" id="'+this.track_id+'">' +
             '<div class="card_left">' +
             '<img src="' + album_art + '">' +
             '</div>' +
@@ -60,9 +60,18 @@ class CardBuilder {
         var ebutton = '    <div class="card_right__ebutton">' +
             "      <a onclick='edit_item(\"" + this.track + "\")'>" +
             '        <i class="fa fa-cog" aria-hidden="true"></i>' +
-            '        EDIT ITEM' +
+            '        EDIT' +
             '      </a>' +
-            '    </div>';
+            '    </div> replace_placeholder';
+        this.card = this.card.replace('replace_placeholder', ebutton);
+    }
+    deletable() {
+        var ebutton = '    <div class="card_right__dbutton">' +
+            "      <a onclick='delete_track(\"" + this.track_id + "\")'>" +
+            '        <i class="fa fa-trash" aria-hidden="true"></i>' +
+            '        DELETE' +
+            '      </a>' +
+            '    </div> replace_placeholder';
         this.card = this.card.replace('replace_placeholder', ebutton);
     }
     cartable() {
@@ -71,7 +80,7 @@ class CardBuilder {
             '        <i class="fa fa-shopping-cart" aria-hidden="true"></i>' +
             '        ADD TO CART' +
             '      </a>' +
-            '    </div>';
+            '    </div> replace_placeholder';
         this.card = this.card.replace('replace_placeholder', button);
     }
     get cardHTML() {
@@ -102,6 +111,11 @@ function populateSearch(user_type) {
                 var c = new CardBuilder(el.track_id, el.album_art, el.track, el.artist, el.album, el.track_no, el.length, el.year, el.genre, el.price);
                 if (user_type != 'guest') {
                     c.cartable();
+                }
+                if (user_type=='guest'){
+                    c.cartable();
+                    c.editable();
+                    c.deletable();
                 }
                 $('#result_container').append(c.cardHTML);
 

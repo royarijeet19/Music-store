@@ -23,7 +23,11 @@ function login() {
 }
 
 function edit_items() {
-    window.location.href = "/edit_items";
+    window.location.href = "/edit_track";
+}
+
+function add_item() {
+    window.location.href = "/add_item";
 }
 
 function signup() {
@@ -74,7 +78,7 @@ $(document).ready(function() {
 </script>
   <div class="navbar">
     <button id="home" class="navbtn" onclick="home()">Home</button>
-    <button id="additem" class="navbtn" onclick="add_click()">Add item</button>
+    <button id="additem" class="navbtn" onclick="add_item()">Add item</button>
     <button id="edititems" class="navbtn" onclick="edit_items()">Edit items</button>
     <button id="purchases" class="navbtn" onclick="purchases()">Purchases</button>
     <button id="cart" class="navbtn" onclick="cart()">Cart</button>

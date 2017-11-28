@@ -128,9 +128,15 @@ body .card_right__button a:hover {
 }
 body .card_right__ebutton {
   float: left;
-  padding-left: 250px;
-  margin-top: -25px;
+  padding-left: 300px;
+  margin-top: -18px;
 }
+body .card_right__dbutton {
+  float: left;
+  padding-left: 200px;
+  margin-top: -18px;
+}
+
 body .card_right__ebutton a {
   color: #af7171;
   text-decoration: none;
@@ -148,6 +154,35 @@ body .card_right__ebutton a {
   transition-duration: .5s;
 }
 body .card_right__ebutton a:hover {
+  color: #fff;
+  border: 0px solid #fff;
+  background-color: #ff4949;
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+  background-position: 10% 50%;
+  cursor: pointer;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: .5s;
+  transition-duration: .5s;
+}
+body .card_right__dbutton a {
+  color: #af7171;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  border: 2px solid #af7171;
+  padding: 10px 10px 10px 10px;
+  font-size: 12px;
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+  background-position: 7% 50%;
+  border-radius: 5px;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: .5s;
+  transition-duration: .5s;
+}
+body .card_right__dbutton a:hover {
   color: #fff;
   border: 0px solid #fff;
   background-color: #ff4949;

@@ -205,16 +205,22 @@ app.get('/purchases', function(req,res){
     res.render('purchases');
 });
 
-app.get('/edit_item', function(req,res){
-    console.log('GET: /edit_item');
+app.get('/add_track', function(req,res){
+    console.log('GET: /add_track');
 
-    res.render('edit_item');
+    res.render('add_track');
 });
 
-app.get('/edit_items', function(req,res){
-    console.log('GET: /edit_items');
+app.get('/edit_track', function(req,res){
+    console.log('GET: /edit_track');
 
-    res.render('edit_items');
+    res.render('add_track');
+});
+
+app.get('/all_items', function(req,res){
+    console.log('GET: /all_items');
+
+    res.render('all_items');
 });
 
 //--------------------------
