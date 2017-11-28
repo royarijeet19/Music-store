@@ -83,20 +83,24 @@ router.post('/signin', function(req,res){
 
     var uname = req.body.uname;
     var pwd = req.body.pwd;
-    if (uname){
-        req.session.uname = uname;
-        res.send('authorized as '+req.session.uname);
-    }else{
-        res.send('home page: nothing to see here');
-    }
     var query = "select * from user where uname = '"+uname+"'";
     con.query(query, function(err, result, fields) {
         if(err) throw err;
         data = JSON.parse(JSON.stringify(result));
+        console.log(data);
         if(data.length==0){
             res.status(401).send();
         }else{
             data=data[0];
+            console.log(data.pwd);
+            console.log(pwd);
+            if(data.pwd==pwd){
+                console.log("User: "+uname+", authorized");
+                req.session.uname=uname;
+                res.status(200).send();
+            }else{
+                res.status(401).send();
+            }
         }
     });
 });
@@ -281,11 +285,11 @@ router.get('/purchase_history', function(req,res){
 // ----------------------------------------
 // -----------  ADMIN FUNCTIONS -----------
 // ----------------------------------------
-router.post('/edit_type', function(req,res){
-    console.log('POST: /api/edit_type');
+router.put('/track', function(req,res){
+    console.log('PUT: /api/track');
     console.log(JSON.stringify(req.body));
-
-    req.session.edit_type = req.body.edit_type;
+    
+    
     res.status(200).send()
 });
 

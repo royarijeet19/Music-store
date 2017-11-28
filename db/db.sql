@@ -72,7 +72,6 @@ CREATE TABLE `cart` (
 
 LOCK TABLES `cart` WRITE;
 /*!40000 ALTER TABLE `cart` DISABLE KEYS */;
-INSERT INTO `cart` VALUES ('user','0580fc86e15b33ab7fc65d698e41c4a0');
 /*!40000 ALTER TABLE `cart` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -205,7 +204,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('admin','92f39f7f2a869838cd5085e6f17fc82109bcf98cd62a47cbc379e38de80bbc0213a23cee6e4a13de6caae0add8a390272d6f0883c274320b1ff60dbcfc6dd750','','admin@admin.com','richardson'),('user','5a713f1ca006808b43ec4d12b35a2d95cf141832d3237b51ff5519ea7a016d125bbd9b4f500332e3e58701f53c0faffe97a9a4573fc6c4a8b4e965e0f6a4c15d','\0','user@user.com','richardson');
+INSERT INTO `user` VALUES ('admin','92f39f7f2a869838cd5085e6f17fc82109bcf98cd62a47cbc379e38de80bbc0213a23cee6e4a13de6caae0add8a390272d6f0883c274320b1ff60dbcfc6dd750','','admin@admin.com','richardson'),('user','5703bdfbd16ef47f929ddbf4785d4486e385049f627233efb359b094add552921033f95f6e89453ec81c5d502f3f477de1e9c8948c61468a6ed9d9a615bde126','\0','user@user.com','richardson');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -218,4 +217,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-19 12:28:45
+-- Dump completed on 2017-11-28 13:02:46

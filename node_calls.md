@@ -183,7 +183,8 @@ same as search
 ## cart page: delete from cart
 *frontend:* extract track_id from card class/div. remove card after response
 
-*backend:* remove row from cart table with key as username and value as track_id.
+*backend:* remove row from cart table with key as username and value as track_id.  {
+    "track
 
 use session variables to determine username.
 **input:**
@@ -303,7 +304,7 @@ pass={"status":200}
 **input:**
 ```
  add_item = {
-    "edit_type": "add",
+    "type": "add",
     "track": "Doomsday", 
     "price": "5", 
     "year": "2017", 
@@ -315,6 +316,8 @@ pass={"status":200}
     "track_no": "1"
   }
 edit_item =   {
+    "type": "edit",
+    "track_id": "8f6f7d5c8e3fe84df",
     "track": "Thunder", 
     "price": "2.77", 
     "year": "2017", 
