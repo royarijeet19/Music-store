@@ -197,8 +197,8 @@ router.post('/search', function(req,res){
 // ----------------------------------------
 // ------------- CART FUNCTIONS -----------
 // ----------------------------------------
-
 //----------------------------
+
 // Add item to user Cart
 // input: {"track_id":"549e1ffd66ac099ccadbf6f61729897b"}
 router.post('/add_to_cart', function(req,res){
@@ -306,10 +306,22 @@ router.delete('/track/:track_id', function(req,res){
     res.status(200).send();
 });
 
-router.get('/edit_type', function(req,res){
-    console.log('GET: /api/edit_type');
+router.get('/track/:track_id', function(req,res){
+    console.log('GET: /api/track/'+req.params.track_id);
+    console.log(JSON.stringify(req.params));
+    track_id = req.params.track_id;
 
-    res.send({"edit_type":req.session.edit_type});
+    var query = "select track.track_id as track, track.track_name as track, track.price, track.track_no, track.length, album.year, album.album_art, album.album_name as album, album.artist_art, album.artist, group_concat(genre.genre) as genre from track join album on track.album_id = album.album_id join genre on track.track_id = genre.track_id where track.track_id ='"+track_id+"'";
+    con.query(query, function(err, result, fields) {
+        if(err) throw err;
+        data = JSON.parse(JSON.stringify(result))[0];
+        delete data['artist_art'];
+        obj = {"obj":data,
+                "edit_header": "Edit Song",
+               "type":"edit"};
+        res.render('add_track', obj);
+    });
+
 });
 
 
