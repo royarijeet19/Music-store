@@ -58,7 +58,7 @@ function purchase() {
         type: "GET",
         success: function(res, textStatus, xhr) {
             if (xhr.status = 200) {
-                alert("purchase successful");
+                // alert("purchase successful");
                 window.location.href = "/";
             }
         },
