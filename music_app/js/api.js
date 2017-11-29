@@ -152,15 +152,15 @@ router.get('/search_track', function(req,res){
     var orderby = req.session.orderby;
 
 	if(orderby==" Cost"){
-		var query = "select track.track_id as track_id, track.track_name as track, track.price, track.track_no, track.length, album.year, album.album_art, album.album_name as album, album.artist_art, album.artist, group_concat(genre.genre) as genre from track join album on track.album_id = album.album_id join genre on track.track_id = genre.track_id where track.track_name LIKE '%"+search_query+"%' group by track.track_id order by price";
+		var query = "select track.track_id as track_id, track.track_name as track, track.price, track.track_no, track.length, album.year, album.album_art, album.album_name as album, album.artist_art, album.artist, group_concat(genre.genre) as genre from track join album on track.album_id = album.album_id join genre on track.track_id = genre.track_id where track.track_name LIKE '%"+search_query+"%' AND track.deleted='0' group by track.track_id order by price ";
 	}else if(orderby==" Year"){
-		var query = "select track.track_id as track_id, track.track_name as track, track.price, track.track_no, track.length, album.year, album.album_art, album.album_name as album, album.artist_art, album.artist, group_concat(genre.genre) as genre from track join album on track.album_id = album.album_id join genre on track.track_id = genre.track_id where track.track_name LIKE '%"+search_query+"%' group by track.track_id order by year";
+		var query = "select track.track_id as track_id, track.track_name as track, track.price, track.track_no, track.length, album.year, album.album_art, album.album_name as album, album.artist_art, album.artist, group_concat(genre.genre) as genre from track join album on track.album_id = album.album_id join genre on track.track_id = genre.track_id where track.track_name LIKE '%"+search_query+"%' AND track.deleted='0' group by track.track_id order by year";
 	}else if(orderby==" Track no"){
-		var query = "select track.track_id as track_id, track.track_name as track, track.price, track.track_no, track.length, album.year, album.album_art, album.album_name as album, album.artist_art, album.artist, group_concat(genre.genre) as genre from track join album on track.album_id = album.album_id join genre on track.track_id = genre.track_id where track.track_name LIKE '%"+search_query+"%' group by track.track_id order by track_no";
+		var query = "select track.track_id as track_id, track.track_name as track, track.price, track.track_no, track.length, album.year, album.album_art, album.album_name as album, album.artist_art, album.artist, group_concat(genre.genre) as genre from track join album on track.album_id = album.album_id join genre on track.track_id = genre.track_id where track.track_name LIKE '%"+search_query+"%' AND track.deleted='0' group by track.track_id order by track_no";
 	}else if(orderby==" Duration"){
-		var query = "select track.track_id as track_id, track.track_name as track, track.price, track.track_no, track.length, album.year, album.album_art, album.album_name as album, album.artist_art, album.artist, group_concat(genre.genre) as genre from track join album on track.album_id = album.album_id join genre on track.track_id = genre.track_id where track.track_name LIKE '%"+search_query+"%' group by track.track_id order by length";
+		var query = "select track.track_id as track_id, track.track_name as track, track.price, track.track_no, track.length, album.year, album.album_art, album.album_name as album, album.artist_art, album.artist, group_concat(genre.genre) as genre from track join album on track.album_id = album.album_id join genre on track.track_id = genre.track_id where track.track_name LIKE '%"+search_query+"%' AND track.deleted='0' group by track.track_id order by length";
 	}else{
-		var query = "select track.track_id as track_id, track.track_name as track, track.price, track.track_no, track.length, album.year, album.album_art, album.album_name as album, album.artist_art, album.artist, group_concat(genre.genre) as genre from track join album on track.album_id = album.album_id join genre on track.track_id = genre.track_id where track.track_name LIKE '%"+search_query+"%' group by track.track_id";
+		var query = "select track.track_id as track_id, track.track_name as track, track.price, track.track_no, track.length, album.year, album.album_art, album.album_name as album, album.artist_art, album.artist, group_concat(genre.genre) as genre from track join album on track.album_id = album.album_id join genre on track.track_id = genre.track_id where track.track_name LIKE '%"+search_query+"%' AND track.deleted='0' group by track.track_id";
     }
     con.query(query, function(err, result, fields) {
         if(err) throw err;
@@ -291,8 +291,14 @@ router.put('/track', function(req,res){
     console.log('PUT: /api/track');
     console.log(JSON.stringify(req.body));
     //TODO: insert details into database
-    
-    
+    track_id = req.params.track_id;
+    var uname = req.session.uname;
+    if(uname=='admin'){
+        var track_id = req.body.track_id;
+        var data = "select * from track where track_id ='"+track_id+"'";
+        console.log(data);
+        //Remaining work
+    }
     res.status(200).send();
 });
 
@@ -301,9 +307,16 @@ router.delete('/track/:track_id', function(req,res){
     console.log('DELETE: /api/track');
     console.log(JSON.stringify(req.params));
     track_id = req.params.track_id;
-
     // TODO: implement proper set of delete queries here
-    res.status(200).send();
+    var uname = req.session.uname;
+    if(uname=='admin'){
+        var query = "update track set `deleted`='1' where `track_id`='"+track_id+"'";
+        con.query(query, function(err, result, fields) {
+        if(err) throw err;
+        res.status(200).send();
+    });
+    }
+    else res.status(401).send();
 });
 
 router.get('/edit_type', function(req,res){
