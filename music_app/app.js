@@ -6,7 +6,7 @@ var session = require('express-session');
 var api = require('./js/api');
 
 var app = express();
-app.use(bodyParser.json());
+app.use(bodyParser.json({limit: '50mb'}));
 app.use(session({secret:"string used for encrypting session", resave:false, saveUninitialized:true}));
 
 app.set('views', path.join(__dirname, 'views'));
