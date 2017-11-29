@@ -2,6 +2,7 @@ var express = require('express');
 var router  = express.Router();
 var mysql   = require('mysql');
 var fs      = require('fs');
+var path    = require('path');
 
 
 var con = mysql.createConnection({
@@ -316,7 +317,8 @@ router.get('/edit_type', function(req,res){
 router.put('/image', function(req,res){
     console.log('PUT: /api/image');
 
-    fs.writeFile("imgs/"+req.body.track_id+".png",req.body.content, 'binary',function(err){
+    filepath = path.join("imgs", req.body.track_id+".png");
+    fs.writeFile(filepath,req.body.content, 'binary',function(err){
         if(err) {console.log(err)};
         res.status(200).send();
         console.log("album art saved");
