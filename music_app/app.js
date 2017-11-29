@@ -208,14 +208,23 @@ app.get('/purchases', function(req,res){
 app.get('/add_item', function(req,res){
     console.log('GET: /add_item');
 
-    res.render('add_track');
+    obj={
+        "obj":{
+            "track": "Track Name",
+            "album": "Album Name",
+            "artist": "Artist Name",
+            "price": "2.34",
+            "length": "MM:SS",
+            "track_no": "4",
+            "year": "2015",
+            "genre": "Rock"
+        },
+        "type": "add",
+        "edit_header": "Add new Song"
+    };
+    res.render('add_track', obj);
 });
 
-app.get('/edit_track', function(req,res){
-    console.log('GET: /edit_track');
-
-    res.render('add_track');
-});
 
 app.get('/all_items', function(req,res){
     console.log('GET: /all_items');

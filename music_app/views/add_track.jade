@@ -4,33 +4,31 @@ html
     title= title
     link(rel='stylesheet', href='/css/bg_slides.css')
     link(rel='stylesheet', href='/css/signinup.css')
+    link(rel='stylesheet', href='/css/navbar.css')
+    link(rel='stylesheet', href='/css/search_style.css')
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
     script(src='/js/sha512.js')
     script(src='/js/actions.js')
     script(src='/js/md5.js')
   body
+    include ../pages/navbar.html
     .modal(style="width:50%")
       .modal_header2 #{edit_header}
-      label track
-      input(class="modal_input" id="track" placeholder="Track Name")
-      label album
-      input(class="modal_input" id="album" placeholder="Album Name")
-      label artist
-      input(class="modal_input" id="artist" placeholder="Artist Name")
-      label price
-      input(class="modal_input" id="price" placeholder="2.34")
-      label length
-      input(class="modal_input" id="length" placeholder="MM:SS")
-      label track_no
-      input(class="modal_input" id="track_no" placeholder="#1")
-      label year
-      input(class="modal_input" id="year" placeholder="2017")
-      label genre
-      input(class="modal_input" id="genre" placeholder="Rock")
-      label album_art
+      if type == 'edit'
+        each v,k in obj
+          label #{k}
+          input(class="modal_input" id="#{k}" value="#{v}")
+      if type == 'add'
+        each v,k in obj
+          label #{k}
+          input(class="modal_input" id="#{k}" placeholder="#{v}")
+
+      if type == 'edit'
+        label album_art(upload to override)
+      if type == 'add'
+        label album_art
       input(class="modal_input" id="album_art" type="file" placeholder="UPLOAD IMAGE")
       button(class="btn" onclick="add_track()") submit
-
 
 
 
