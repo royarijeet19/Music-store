@@ -212,6 +212,10 @@ function delete_track(track_id){
     });
 }
 
+function edit_track(track_id){
+    window.location.href='/api/track/'+track_id;
+}
+
 function fill_all_items_page(){
     data={
             "search_track": "",

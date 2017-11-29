@@ -58,7 +58,7 @@ class CardBuilder {
 
     editable() {
         var ebutton = '    <div class="card_right__ebutton">' +
-            "      <a onclick='edit_item(\"" + this.track + "\")'>" +
+            "      <a onclick='edit_track(\"" + this.track_id + "\")'>" +
             '        <i class="fa fa-cog" aria-hidden="true"></i>' +
             '        EDIT' +
             '      </a>' +
