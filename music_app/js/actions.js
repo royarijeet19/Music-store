@@ -12,9 +12,9 @@ function add_to_cart(x) {
         data: JSON.stringify(data),
         success: function(res) {
             console.log(res);
-            $('#'+x).css("background-color", "#f5d45c");
-            $('#'+x).html("<i class='fa fa-check' aria-hidden='true'></i> ADDED");
-            $('#'+x).attr("onclick","");
+            $('#cbtn'+x).css("background-color", "#f5d45c");
+            $('#cbtn'+x).html("<i class='fa fa-check' aria-hidden='true'></i> ADDED");
+            $('#cbtn'+x).attr("onclick","");
         },
         error: function(res) {
             alert("error adding to cart");
@@ -110,7 +110,6 @@ function fill_purchases(){
              })
          },
          error: function(data) {
-             alert("error loading file");
          }
      });
 
@@ -133,6 +132,22 @@ function fill_items_container(){
      });
 }
 
+function saveFile(data){
+    $.ajax({
+        url: "/api/image",
+        dataType: "JSON",
+        type: "PUT",
+        contentType: "application/json",
+        data: JSON.stringify(data),
+        success: function(data){
+            console.log("image written");
+        },
+        error: function(data){
+
+        }
+    });
+}
+
 function add_track(){
     data={
         "track" : $('#track').val(),
@@ -143,9 +158,22 @@ function add_track(){
         "track_no" : $('#track_no').val(),
         "year" : $('#year').val(),
         "genre" : $('#genre').val(),
-        "album_art" : $('#album_art').val(),
+        "album_art" : "none",
         "type": "add"
   }
+  data.track_id = $.md5(data.track+data.artist);
+  data.album_art = "/imgs/"+data.track_id+".png";
+
+  var f = document.getElementById('album_art').files[0];
+    if(typeof f !=='undefined'){
+        r = new FileReader();
+        r.onloadend = function(e){
+            saveFile({"track_id":data.track_id, "content":e.target.result});
+        }
+    }
+    if(typeof r !=='undefined'){
+        r.readAsBinaryString(f);
+    }
     $.ajax({
         url: "/api/track",
         dataType: "JSON",
@@ -174,6 +202,26 @@ function delete_track(track_id){
 
         }
     });
+}
+
+function fill_all_items_page(){
+    data={
+            "search_track": "",
+            "orderby": "none"
+        }
+        $.ajax({
+            url: "/api/search",
+            contentType: "application/json",
+            type: "POST",
+            data: JSON.stringify(data),
+            success: function(res) {
+                userType(populateSearch);
+            },
+            error: function(res) {
+                alert("error while search");
+            }
+        });
+     
 }
 
 
@@ -205,7 +253,10 @@ $(document).ready(function() {
                     $('#result_container').append(c.cardHTML);
                     totalcost = totalcost + parseFloat(el.price);
                     $('#totalcost').text("Total Cost = $" + Math.round(totalcost * 100) / 100);
-                })
+                });
+                if(data.length==0){
+                    $('#purchase_button').remove();
+                }
             },
         error: function(res) {
             alert("error purchasing cart");
@@ -214,5 +265,8 @@ $(document).ready(function() {
     }
     if (window.location.pathname=='/purchases'){
         fill_purchases();
+    }
+    if (window.location.pathname=='/all_items'){
+        fill_all_items_page();   
     }
 });

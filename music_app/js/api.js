@@ -1,6 +1,8 @@
 var express = require('express');
-var router = express.Router();
-var mysql = require('mysql');
+var router  = express.Router();
+var mysql   = require('mysql');
+var fs      = require('fs');
+
 
 var con = mysql.createConnection({
     host: "localhost",
@@ -87,7 +89,6 @@ router.post('/signin', function(req,res){
     con.query(query, function(err, result, fields) {
         if(err) throw err;
         data = JSON.parse(JSON.stringify(result));
-        console.log(data);
         if(data.length==0){
             res.status(401).send();
         }else{
@@ -283,26 +284,43 @@ router.get('/purchase_history', function(req,res){
 // ----------------------------------------
 // -----------  ADMIN FUNCTIONS -----------
 // ----------------------------------------
+
+// Insert new track or edit track
 router.put('/track', function(req,res){
     console.log('PUT: /api/track');
     console.log(JSON.stringify(req.body));
+    //TODO: insert details into database
     
     
-    res.status(200).send()
+    res.status(200).send();
 });
 
+// Delete track
 router.delete('/track/:track_id', function(req,res){
     console.log('DELETE: /api/track');
     console.log(JSON.stringify(req.params));
     track_id = req.params.track_id;
 
     // TODO: implement proper set of delete queries here
+    res.status(200).send();
 });
 
 router.get('/edit_type', function(req,res){
     console.log('GET: /api/edit_type');
 
     res.send({"edit_type":req.session.edit_type});
+});
+
+
+// Save image to disk
+router.put('/image', function(req,res){
+    console.log('PUT: /api/image');
+
+    fs.writeFile("imgs/"+req.body.track_id+".png",req.body.content, 'binary',function(err){
+        if(err) {console.log(err)};
+        res.status(200).send();
+        console.log("album art saved");
+    });
 });
 
 

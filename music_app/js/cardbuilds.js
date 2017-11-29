@@ -76,7 +76,7 @@ class CardBuilder {
     }
     cartable() {
         var button = '    <div class="card_right__button"> ' +
-            "      <a  id='"+this.track_id+"'' onclick='add_to_cart(\"" + this.track_id + "\")'>" +
+            "      <a  id='cbtn"+this.track_id+"'' onclick='add_to_cart(\"" + this.track_id + "\")'>" +
             '        <i class="fa fa-shopping-cart" aria-hidden="true"></i>' +
             '        ADD TO CART' +
             '      </a>' +
@@ -109,10 +109,10 @@ function populateSearch(user_type) {
         success: function(data) {
             $(data).each(function(i, el) {
                 var c = new CardBuilder(el.track_id, el.album_art, el.track, el.artist, el.album, el.track_no, el.length, el.year, el.genre, el.price);
-                if (user_type != 'guest') {
+                if (user_type == 'user') {
                     c.cartable();
                 }
-                if (user_type=='guest'){
+                if (user_type=='admin'){
                     c.cartable();
                     c.editable();
                     c.deletable();

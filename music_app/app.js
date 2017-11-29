@@ -205,8 +205,8 @@ app.get('/purchases', function(req,res){
     res.render('purchases');
 });
 
-app.get('/add_track', function(req,res){
-    console.log('GET: /add_track');
+app.get('/add_item', function(req,res){
+    console.log('GET: /add_item');
 
     res.render('add_track');
 });
@@ -220,7 +220,7 @@ app.get('/edit_track', function(req,res){
 app.get('/all_items', function(req,res){
     console.log('GET: /all_items');
 
-    res.render('all_items');
+    res.render('all_tracks');
 });
 
 //--------------------------
@@ -228,6 +228,7 @@ app.get('/all_items', function(req,res){
 //--------------------------
 app.use('/js',express.static(path.join(__dirname, 'js')));
 app.use('/css',express.static(path.join(__dirname, 'css')));
+app.use('/imgs',express.static(path.join(__dirname, 'imgs')));
 app.use('/other',express.static(path.join(__dirname, 'other')));
 app.use('/fonts',express.static(path.join(__dirname, 'fonts')));
 
