@@ -32,8 +32,8 @@ cur.execute("drop table if exists cart")
 
 # Music tables: album, track, mood, genre
 cur.execute("create table album(album_id char(32), album_name char(50), artist char(30), year int, album_art char(80), artist_art char(80), primary key (album_id))")
-cur.execute("create table track(track_id char(32), album_id char(32),track_name char(20), track_no int(3), length char(5), price char(5), primary key (track_id), foreign key (album_id) references album(album_id))")
-#cur.execute("create table track(track_id char(32), album_id char(32),track_name char(20), track_no int(3), length char(5), price char(5), deleted bit DEFAULT 0, primary key (track_id), foreign key (album_id) references album(album_id))")
+#cur.execute("create table track(track_id char(32), album_id char(32),track_name char(20), track_no int(3), length char(5), price char(5), primary key (track_id), foreign key (album_id) references album(album_id))")
+cur.execute("create table track(track_id char(32), album_id char(32),track_name char(20), track_no int(3), length char(5), price char(5), deleted bit DEFAULT 0, primary key (track_id), foreign key (album_id) references album(album_id))")
 cur.execute("create table mood(track_id char(32), mood char(50), foreign key (track_id) references track(track_id))")
 cur.execute("create table genre(track_id char(32), genre char(50), foreign key (track_id) references track(track_id))")
 
