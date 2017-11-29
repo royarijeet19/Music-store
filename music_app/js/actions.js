@@ -132,7 +132,8 @@ function fill_items_container(){
      });
 }
 
-function saveFile(data){
+function saveFile(data, args){
+    console.log(args);
     $.ajax({
         url: "/api/image",
         dataType: "JSON",
@@ -141,6 +142,24 @@ function saveFile(data){
         data: JSON.stringify(data),
         success: function(data){
             console.log("image written");
+            add_update_track(args);
+        },
+        error: function(data){
+
+        }
+    });
+}
+
+function add_update_track(data){
+    $.ajax({
+        url: "/api/track",
+        dataType: "JSON",
+        type: "PUT",
+        contentType: "application/json",
+        data: JSON.stringify(data),
+        success: function(data){
+            alert("Added track!");
+            window.location.href="/";
         },
         error: function(data){
 
@@ -158,36 +177,26 @@ function add_track(){
         "track_no" : $('#track_no').val(),
         "year" : $('#year').val(),
         "genre" : $('#genre').val(),
-        "album_art" : "none",
         "type": "add"
   }
   data.track_id = $.md5(data.track+data.artist);
-  data.album_art = "/imgs/"+data.track_id+".png";
+  
 
-  var f = document.getElementById('album_art').files[0];
+  var f = document.getElementById('album_artm').files[0];
     if(typeof f !=='undefined'){
         r = new FileReader();
         r.onloadend = function(e){
-            saveFile({"track_id":data.track_id, "content":e.target.result});
+            data.album_art = "/imgs/"+data.track_id+".png";
+            saveFile({"track_id":data.track_id, "content":e.target.result}, data);
         }
+    }else{
+        data.album_art = $('#album_art').val();
+        add_update_track(data);
     }
     if(typeof r !=='undefined'){
         r.readAsBinaryString(f);
     }
-    $.ajax({
-        url: "/api/track",
-        dataType: "JSON",
-        type: "PUT",
-        contentType: "application/json",
-        data: JSON.stringify(data),
-        success: function(data){
-            alert("Added track!");
-            window.location.href="/";
-        },
-        error: function(data){
-
-        }
-    });
+    
 }
 
 function delete_track(track_id){
