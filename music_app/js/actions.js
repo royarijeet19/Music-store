@@ -58,7 +58,7 @@ function purchase() {
         type: "GET",
         success: function(res, textStatus, xhr) {
             if (xhr.status = 200) {
-                // alert("purchase successful");
+                alert("purchase successful");
                 window.location.href = "/";
             }
         },
@@ -132,8 +132,7 @@ function fill_items_container(){
      });
 }
 
-function saveFile(data, args){
-    console.log(args);
+function saveFile(data){
     $.ajax({
         url: "/api/image",
         dataType: "JSON",
@@ -142,7 +141,6 @@ function saveFile(data, args){
         data: JSON.stringify(data),
         success: function(data){
             console.log("image written");
-            add_update_track(args);
         },
         error: function(data){
 
@@ -162,7 +160,7 @@ function add_update_track(data){
             window.location.href="/";
         },
         error: function(data){
-
+            console.log("error");
         }
     });
 }
@@ -187,7 +185,8 @@ function add_track(){
         r = new FileReader();
         r.onloadend = function(e){
             data.album_art = "/imgs/"+data.track_id+".png";
-            saveFile({"track_id":data.track_id, "content":e.target.result}, data);
+            saveFile({"track_id":data.track_id, "content":e.target.result});
+            add_update_track(data);
         }
     }else{
         data.album_art = $('#album_art').val();

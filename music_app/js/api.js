@@ -359,9 +359,10 @@ router.get('/track/:track_id', function(req,res){
         if(err) throw err;
         data = JSON.parse(JSON.stringify(result))[0];
         delete data['artist_art'];
-        obj = {"obj":data,
-                "edit_header": "Edit Song",
-               "type":"edit"};
+        obj = {
+            "obj":data,
+            "edit_header": "Edit Song",
+            "type":"edit"};
         res.render('add_track', obj);
     });
 
