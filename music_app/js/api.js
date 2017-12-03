@@ -325,11 +325,45 @@ router.put('/track', function(req,res){
     var uname = req.session.uname;
     if(uname=='admin'){
         var track_id = req.body.track_id;
-        var data = "select * from track where track_id ='"+track_id+"'";
-        console.log(data);
-        //Remaining work
+        var data = "select track_id from track where track_id ='"+track_id+"'";
+        con.query(data, function(err, result, fields) {
+            if(err) throw err;
+            data1 = JSON.parse(JSON.stringify(result));
+            console.log(data1.length);
+            if(data1.length==0){
+                console.log("inside new track adding");
+                var insertA = "insert into album values ('"+req.body.album_id+"','"+req.body.album+"','"+req.body.artist+"','"+req.body.year+"','"+req.body.album_art+"','"+req.body.album_art+"')";
+                con.query(insertA,function(err, result, fields){
+                    if(err) throw err;
+                    var insertT = "insert into track values ('"+req.body.track_id+"','"+req.body.album_id+"','"+req.body.track+"','"+req.body.track_no+"','"+req.body.length+"','"+req.body.price+"',0)";
+                    con.query(insertT, function(err, result, fields){
+                        if(err) throw err;
+                        var insertG = "insert into genre values ('"+req.body.track_id+"','"+req.body.genre+"')";
+                        con.query(insertG, function(err, result, fields){
+                            if(err) throw err;                            
+                        });
+                    });
+                });
+                res.status(200).send("adding successful");
+            }
+            else{
+                console.log("inside updating existing track");
+                var insertA = "update album set album_name like '"+req.body.album+"',artist like '"req.body.artist+"', year = '"+req.body.year+"', album_art like '"+req.body.album_art+"', artist_art like '"+req.body.artist_art+"' where album_id like '"+req.body.album_id+"'";
+                con.query(insertA,function(err, result, fields){
+                    if(err) throw err;
+                    var insertT = "update track set album_id like '"+req.body.album_id+"', track_name like '"+req.body.track+"', track_no = '"+req.body.track_no+"', length like '"+req.body.length+"', price like '"+req.body.price+"', deleted = 0 where track_id like '"+req.body.track_id"'";
+                    con.query(insertT, function(err, result, fields){
+                        if(err) throw err;
+                        var insertG = "update genre set track_id like '"+req.body.track_id+"', genre like '"+req.body.genre+"'";
+                        con.query(insertG, function(err, result, fields){
+                            if(err) throw err;                            
+                        });
+                    });
+                });
+                res.status(200).send("updating successful");
+            }
+        });
     }
-    res.status(200).send();
 });
 
 // Delete track
