@@ -178,6 +178,7 @@ function add_track(){
         "type": "add"
   }
   data.track_id = $.md5(data.track+data.artist);
+  data.album_id = $.md5(data.album+data.artist);
   
 
   var f = document.getElementById('album_artm').files[0];
