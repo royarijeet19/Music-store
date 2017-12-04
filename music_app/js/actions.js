@@ -165,6 +165,29 @@ function add_update_track(data){
     });
 }
 
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
 function add_track(){
     data={
         "track" : $('#track').val(),
@@ -175,7 +198,9 @@ function add_track(){
         "track_no" : $('#track_no').val(),
         "year" : $('#year').val(),
         "genre" : $('#genre').val(),
-        "type": "add"
+        "type": "add",
+        "old_track_id":getCookie("old_track_id"),
+        "old_album_id":getCookie("old_album_id")
   }
   data.track_id = $.md5(data.track+data.artist);
   data.album_id = $.md5(data.album+data.artist);
@@ -237,6 +262,13 @@ function fill_all_items_page(){
      
 }
 
+function ids_cookie(){
+    old_track_id = $.md5($('#track').val()+$('#artist').val());
+    old_album_id = $.md5($('#album').val()+$('#artist').val());
+    setCookie("old_track_id",old_track_id),1;
+    setCookie("old_album_id",old_album_id),1;
+}
+
 
 $(document).ready(function() {
     if (window.location.pathname == "/cart") {
@@ -281,5 +313,9 @@ $(document).ready(function() {
     }
     if (window.location.pathname=='/all_items'){
         fill_all_items_page();   
+    }
+    if (window.location.pathname.split('/').splice(0,3).join('/')=='/api/track'){
+        console.log("dddd");
+        ids_cookie();
     }
 });
