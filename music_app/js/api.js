@@ -322,7 +322,7 @@ router.put('/track', function(req,res){
     //TODO: insert details into database
     var uname = req.session.uname;
     if(uname=='admin'){
-        var data = "select track_id from track where track_id ='"+req.body.old_track_id+"'"; //check old track_id
+        var data = "select track_id from track where track_id ='"+req.body.track_id_header+"'"; //check old track_id
         con.query(data, function(err, result, fields) {
             if(err) throw err;
             var data1 = JSON.parse(JSON.stringify(result));
@@ -349,10 +349,10 @@ router.put('/track', function(req,res){
                     var insertA = "update album set album_name = '"+req.body.album+"',artist = '"+req.body.artist+"', year = '"+req.body.year+"', album_art = '"+req.body.album_art+"', artist_art = '"+req.body.artist_art+"' where album_id like '"+req.body.old_album_id+"'";
                     con.query(insertA,function(err, result, fields){
                         if(err) throw err;
-                        var insertT = "update track set track_name = '"+req.body.track+"', track_no = '"+req.body.track_no+"', length = '"+req.body.length+"', price = '"+req.body.price+"', deleted = 0 where track_id like '"+req.body.old_track_id+"'";
+                        var insertT = "update track set track_name = '"+req.body.track+"', track_no = '"+req.body.track_no+"', length = '"+req.body.length+"', price = '"+req.body.price+"', deleted = 0 where track_id like '"+req.body.track_id_header+"'";
                         con.query(insertT, function(err, result, fields){
                             if(err) throw err;
-                            var insertG = "update genre set genre = '"+req.body.genre+"' where track_id like '"+req.body.old_track_id+"'";
+                            var insertG = "update genre set genre = '"+req.body.genre+"' where track_id like '"+req.body.track_id_header+"'";
                             con.query(insertG, function(err, result, fields){
                                 if(err) throw err;                            
                             });
@@ -408,6 +408,7 @@ router.get('/track/:track_id', function(req,res){
         delete data['artist_art'];
         obj = {
             "obj":data,
+            "track_id_header":track_id,
             "edit_header": "Edit Song",
             "type":"edit"};
         res.render('add_track', obj);

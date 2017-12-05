@@ -188,7 +188,7 @@ function getCookie(cname) {
     return "";
 }
 
-function add_track(){
+function add_track(track_id_header){
     data={
         "track" : $('#track').val(),
         "album" : $('#album').val(),
@@ -200,7 +200,8 @@ function add_track(){
         "genre" : $('#genre').val(),
         "type": "add",
         "old_track_id":getCookie("old_track_id"),
-        "old_album_id":getCookie("old_album_id")
+        "old_album_id":getCookie("old_album_id"),
+        "track_id_header":track_id_header
   }
   data.track_id = $.md5(data.track+data.artist);
   data.album_id = $.md5(data.album+data.artist);
