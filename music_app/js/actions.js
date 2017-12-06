@@ -156,7 +156,7 @@ function add_update_track(data){
         contentType: "application/json",
         data: JSON.stringify(data),
         success: function(data){
-            alert("Added track!");
+            console.log("Added track!");
             window.location.href="/";
         },
         error: function(data){
@@ -213,10 +213,12 @@ function add_track(track_id_header){
         r.onloadend = function(e){
             data.album_art = "/imgs/"+data.track_id+".png";
             saveFile({"track_id":data.track_id, "content":e.target.result});
+            alert("Track Updated/Inserted");
             add_update_track(data);
         }
     }else{
         data.album_art = $('#album_art').val();
+        alert("Track Updated/Inserted");
         add_update_track(data);
     }
     if(typeof r !=='undefined'){

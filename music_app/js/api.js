@@ -341,7 +341,7 @@ router.put('/track', function(req,res){
                         });
                     });
                 });
-                res.status(200).send("adding successful");
+                res.status(200).send();
             }
             else{
                 //if(JSON.stringify(req.body.album_id) === JSON.stringify(req.body.old_album_id)) {
